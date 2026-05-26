@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.env
+*.pdf
+.sisyphus/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*

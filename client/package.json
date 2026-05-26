@@ -1,0 +1,11 @@
+{
+  "name": "@gesp/client",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "echo \"Client setup handled by T6\"",
+    "build": "echo \"Client setup handled by T6\"",
+    "test": "echo \"No tests yet\""
+  }
+}
