@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import client from '../api/client';
-import { LEVEL_COLORS } from '../../../shared/src/constants';
 import type { Question, ExamStart } from '../../../shared/src/types';
 
 type AnswerMap = Record<string, string>;
