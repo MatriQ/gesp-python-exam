@@ -8,6 +8,7 @@ import { QuestionBank } from './pages/QuestionBank';
 import { Practice } from './pages/Practice';
 import { QuestionDetail } from './pages/QuestionDetail';
 import { Dashboard } from './pages/Dashboard';
+import { ErrorBook } from './pages/ErrorBook';
 import { useAuthStore } from './stores/authStore';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/practice" element={<Practice />} />
           <Route path="/questions/:id" element={<QuestionDetail />} />
           <Route path="/progress" element={<Dashboard />} />
+          <Route path="/errors" element={<ErrorBook />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

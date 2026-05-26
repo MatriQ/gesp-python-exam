@@ -9,8 +9,13 @@
     "test": "echo \"No tests yet\""
   },
   "devDependencies": {
-    "typescript": "^5.5.0",
     "@types/node": "^20.14.0",
-    "tsx": "^4.15.0"
+    "@types/pdf-parse": "^1.1.5",
+    "tsx": "^4.15.0",
+    "typescript": "^5.5.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.98.0",
+    "pdf-parse": "^2.4.5"
   }
 }

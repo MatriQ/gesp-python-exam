@@ -13,6 +13,7 @@
     "prisma:studio": "prisma studio"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^20.14.0",
     "dotenv": "^17.4.2",
     "prisma": "^5.22.0",
@@ -24,12 +25,13 @@
     "@types/bcrypt": "^6.0.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
-    "@types/jsonwebtoken": "^9.0.10",
     "bcrypt": "^6.0.0",
+    "bullmq": "^5.77.3",
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
     "jsonwebtoken": "^9.0.3",
+    "socket.io": "^4.8.3",
     "zod": "^4.4.3"
   }
 }
