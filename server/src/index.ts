@@ -8,6 +8,7 @@ import questionRoutes from './routes/questions.js';
 import progressRoutes from './routes/progress.js';
 import errorBookRoutes from './routes/error-book.js';
 import submissionRoutes from './routes/submissions.js';
+import examRoutes from './routes/exams.js';
 import { setupJudgeListener } from './services/judge-queue.js';
 import { prisma } from './lib/prisma.js';
 
@@ -23,6 +24,7 @@ app.use('/api', progressRoutes);
 app.use('/api/error-book', errorBookRoutes);
 app.use('/api/questions', questionRoutes);
 app.use('/api/submissions', submissionRoutes);
+app.use('/api/exams', examRoutes);
 
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok' });
