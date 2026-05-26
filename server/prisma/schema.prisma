@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String         @id @default(cuid())
+  email        String         @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  userAnswers  UserAnswer[]
+  mockExams    MockExam[]
+  codeSubmissions CodeSubmission[]
+}
+
+model Question {
+  id            String   @id @default(cuid())
+  session       String
+  level         Int
+  type          String
+  questionIndex Int
+  questionText  String
+  options       Json?
+  answer        String?
+  explanation   String?
+  topics        String[]
+  difficulty    String?  @default("medium")
+  images        Json?
+  codeBlocks    Json?
+  inputFormat   String?
+  outputFormat  String?
+  constraints   String?
+  sampleInput   String?
+  sampleOutput  String?
+  templateCode  String?
+  testCases     Json?
+  createdAt     DateTime @default(now())
+  userAnswers     UserAnswer[]
+  mockExamAnswers MockExamAnswer[]
+  codeSubmissions CodeSubmission[]
+
+  @@unique([session, level, questionIndex])
+  @@index([level, type, session])
+}
+
+model UserAnswer {
+  id          String   @id @default(cuid())
+  userId      String
+  questionId  String
+  userAnswer  String
+  isCorrect   Boolean
+  timeSpentMs Int
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question    Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@index([userId, questionId])
+  @@index([userId, isCorrect])
+}
+
+model MockExam {
+  id          String            @id @default(cuid())
+  userId      String
+  level       Int
+  startedAt   DateTime
+  completedAt DateTime?
+  timeLimit   Int
+  status      String            @default("in_progress")
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  answers     MockExamAnswer[]
+}
+
+model MockExamAnswer {
+  id          String     @id @default(cuid())
+  mockExamId  String
+  questionId  String
+  userAnswer  String?
+  isCorrect   Boolean?
+  mockExam    MockExam   @relation(fields: [mockExamId], references: [id], onDelete: Cascade)
+  question    Question   @relation(fields: [questionId], references: [id], onDelete: Cascade)
+}
+
+model CodeSubmission {
+  id              String    @id @default(cuid())
+  userId          String
+  questionId      String
+  code            String
+  language        String    @default("python")
+  status          String    @default("pending")
+  stdout          String?
+  stderr          String?
+  executionTimeMs Int?
+  memoryUsedKb    Int?
+  testResults     Json?
+  createdAt       DateTime  @default(now())
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question        Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+}

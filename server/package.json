@@ -6,11 +6,20 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "test": "echo \"No tests yet\""
+    "test": "echo \"No tests yet\"",
+    "prisma": "prisma",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio"
   },
   "devDependencies": {
-    "typescript": "^5.5.0",
     "@types/node": "^20.14.0",
-    "tsx": "^4.15.0"
+    "dotenv": "^17.4.2",
+    "prisma": "^5.22.0",
+    "tsx": "^4.15.0",
+    "typescript": "^5.5.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0"
   }
 }
