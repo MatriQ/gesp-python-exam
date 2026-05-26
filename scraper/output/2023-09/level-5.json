@@ -1,0 +1,911 @@
+{
+  "session": "2023-09",
+  "level": 5,
+  "totalQuestions": 27,
+  "mock": true,
+  "questions": [
+    {
+      "id": "395fa5a7-a310-4b6e-b6da-6caec57be387",
+      "type": "mc",
+      "questionIndex": 1,
+      "questionText": "欧几里得算法用于计算？",
+      "options": [
+        {
+          "label": "A",
+          "text": "素数"
+        },
+        {
+          "label": "B",
+          "text": "最大公约数"
+        },
+        {
+          "label": "C",
+          "text": "最小公倍数"
+        },
+        {
+          "label": "D",
+          "text": "阶乘"
+        }
+      ],
+      "answer": "B",
+      "explanation": "欧几里得算法用于计算？ 正确答案是B。最大公约数是正确的。",
+      "topics": [
+        "埃氏筛法"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "d6839029-2295-43e2-83d7-17708c31e1c0",
+      "type": "mc",
+      "questionIndex": 2,
+      "questionText": "埃氏筛法的时间复杂度是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "O(n)"
+        },
+        {
+          "label": "B",
+          "text": "O(n log log n)"
+        },
+        {
+          "label": "C",
+          "text": "O(n²)"
+        },
+        {
+          "label": "D",
+          "text": "O(n log n)"
+        }
+      ],
+      "answer": "B",
+      "explanation": "埃氏筛法的时间复杂度是？ 正确答案是B。O(n log log n)是正确的。",
+      "topics": [
+        "递归"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "99350886-7600-4667-ab9a-0c57192a4193",
+      "type": "mc",
+      "questionIndex": 3,
+      "questionText": "二分查找的前提条件是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数组是无序的"
+        },
+        {
+          "label": "B",
+          "text": "数组是有序的"
+        },
+        {
+          "label": "C",
+          "text": "数组长度为偶数"
+        },
+        {
+          "label": "D",
+          "text": "数组元素唯一"
+        }
+      ],
+      "answer": "B",
+      "explanation": "二分查找的前提条件是？ 正确答案是B。数组是有序的是正确的。",
+      "topics": [
+        "快速排序"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "d41f0dee-f7e3-4dd6-b77a-109e0e603f45",
+      "type": "mc",
+      "questionIndex": 4,
+      "questionText": "链表相比数组的优势是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "随机访问更快"
+        },
+        {
+          "label": "B",
+          "text": "插入删除更高效"
+        },
+        {
+          "label": "C",
+          "text": "占用空间更少"
+        },
+        {
+          "label": "D",
+          "text": "排序更快"
+        }
+      ],
+      "answer": "B",
+      "explanation": "链表相比数组的优势是？ 正确答案是B。插入删除更高效是正确的。",
+      "topics": [
+        "快速排序"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "4ebe9529-42a9-42ba-832c-32d9a4df4425",
+      "type": "mc",
+      "questionIndex": 5,
+      "questionText": "贪心算法的核心思想是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "尝试所有方案"
+        },
+        {
+          "label": "B",
+          "text": "每步选择局部最优"
+        },
+        {
+          "label": "C",
+          "text": "自顶向下分解"
+        },
+        {
+          "label": "D",
+          "text": "记忆化搜索"
+        }
+      ],
+      "answer": "B",
+      "explanation": "贪心算法的核心思想是？ 正确答案是B。每步选择局部最优是正确的。",
+      "topics": [
+        "最大公约数",
+        "递归"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "79320758-ca01-40b8-859a-08fe0ba45006",
+      "type": "mc",
+      "questionIndex": 6,
+      "questionText": "归并排序使用了什么算法策略？",
+      "options": [
+        {
+          "label": "A",
+          "text": "贪心"
+        },
+        {
+          "label": "B",
+          "text": "动态规划"
+        },
+        {
+          "label": "C",
+          "text": "分治"
+        },
+        {
+          "label": "D",
+          "text": "回溯"
+        }
+      ],
+      "answer": "C",
+      "explanation": "归并排序使用了什么算法策略？ 正确答案是C。分治是正确的。",
+      "topics": [
+        "初等数论"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "daab4003-028f-4d10-8028-65e58f4ac788",
+      "type": "mc",
+      "questionIndex": 7,
+      "questionText": "唯一分解定理说明每个大于1的整数可以？",
+      "options": [
+        {
+          "label": "A",
+          "text": "表示为素数的乘积"
+        },
+        {
+          "label": "B",
+          "text": "表示为连续数的和"
+        },
+        {
+          "label": "C",
+          "text": "表示为平方和"
+        },
+        {
+          "label": "D",
+          "text": "表示为差"
+        }
+      ],
+      "answer": "A",
+      "explanation": "唯一分解定理说明每个大于1的整数可以？ 正确答案是A。表示为素数的乘积是正确的。",
+      "topics": [
+        "初等数论"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "3355a202-df26-464c-8c3b-7b037557bb3e",
+      "type": "mc",
+      "questionIndex": 8,
+      "questionText": "二分答案适用于什么类型的问题？",
+      "options": [
+        {
+          "label": "A",
+          "text": "最短路径"
+        },
+        {
+          "label": "B",
+          "text": "求满足条件的最大/最小值"
+        },
+        {
+          "label": "C",
+          "text": "排序"
+        },
+        {
+          "label": "D",
+          "text": "图的遍历"
+        }
+      ],
+      "answer": "B",
+      "explanation": "二分答案适用于什么类型的问题？ 正确答案是B。求满足条件的最大/最小值是正确的。",
+      "topics": [
+        "素数",
+        "递归"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "6615ade4-7581-4bed-8c53-380a01e58e4e",
+      "type": "mc",
+      "questionIndex": 9,
+      "questionText": "递归的三要素不包括？",
+      "options": [
+        {
+          "label": "A",
+          "text": "边界条件"
+        },
+        {
+          "label": "B",
+          "text": "递推关系"
+        },
+        {
+          "label": "C",
+          "text": "循环变量"
+        },
+        {
+          "label": "D",
+          "text": "返回值"
+        }
+      ],
+      "answer": "C",
+      "explanation": "递归的三要素不包括？ 正确答案是C。循环变量是正确的。",
+      "topics": [
+        "最小公倍数"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "f2d02ff0-109e-4838-95d8-3ba413ac82ec",
+      "type": "mc",
+      "questionIndex": 10,
+      "questionText": "快速排序的平均时间复杂度是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "O(n)"
+        },
+        {
+          "label": "B",
+          "text": "O(n log n)"
+        },
+        {
+          "label": "C",
+          "text": "O(n²)"
+        },
+        {
+          "label": "D",
+          "text": "O(log n)"
+        }
+      ],
+      "answer": "B",
+      "explanation": "快速排序的平均时间复杂度是？ 正确答案是B。O(n log n)是正确的。",
+      "topics": [
+        "最大公约数"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "7eb5acda-5c37-4065-9916-5c1140c14506",
+      "type": "mc",
+      "questionIndex": 11,
+      "questionText": "线性筛法相比埃氏筛法的优势是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "更简单"
+        },
+        {
+          "label": "B",
+          "text": "每个合数只被筛一次"
+        },
+        {
+          "label": "C",
+          "text": "空间更少"
+        },
+        {
+          "label": "D",
+          "text": "不需要数组"
+        }
+      ],
+      "answer": "B",
+      "explanation": "线性筛法相比埃氏筛法的优势是？ 正确答案是B。每个合数只被筛一次是正确的。",
+      "topics": [
+        "埃氏筛法",
+        "链表"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "0eab9164-9909-4bbc-bcaa-20f0e66dc888",
+      "type": "mc",
+      "questionIndex": 12,
+      "questionText": "分治算法的步骤不包括？",
+      "options": [
+        {
+          "label": "A",
+          "text": "分解"
+        },
+        {
+          "label": "B",
+          "text": "解决"
+        },
+        {
+          "label": "C",
+          "text": "合并"
+        },
+        {
+          "label": "D",
+          "text": "枚举"
+        }
+      ],
+      "answer": "D",
+      "explanation": "分治算法的步骤不包括？ 正确答案是D。枚举是正确的。",
+      "topics": [
+        "二分答案"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "13adadfc-ac02-405a-bc72-bb767c1690fb",
+      "type": "mc",
+      "questionIndex": 13,
+      "questionText": "gcd(12, 8) 的值是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "label": "D",
+          "text": "8"
+        }
+      ],
+      "answer": "B",
+      "explanation": "gcd(12, 8) 的值是？ 正确答案是B。4是正确的。",
+      "topics": [
+        "唯一分解定理"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "d21d6200-cb31-4751-bad0-87c055406101",
+      "type": "mc",
+      "questionIndex": 14,
+      "questionText": "以下哪个是背包问题的特征？",
+      "options": [
+        {
+          "label": "A",
+          "text": "求最短路径"
+        },
+        {
+          "label": "B",
+          "text": "在容量限制下选物品使价值最大"
+        },
+        {
+          "label": "C",
+          "text": "排序"
+        },
+        {
+          "label": "D",
+          "text": "查找"
+        }
+      ],
+      "answer": "B",
+      "explanation": "以下哪个是背包问题的特征？ 正确答案是B。在容量限制下选物品使价值最大是正确的。",
+      "topics": [
+        "初等数论"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "fa1b9c6a-513c-4dfa-85ba-1c7f3752afc2",
+      "type": "mc",
+      "questionIndex": 15,
+      "questionText": "素数的定义是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "能被2整除的数"
+        },
+        {
+          "label": "B",
+          "text": "只能被1和自身整除的大于1的整数"
+        },
+        {
+          "label": "C",
+          "text": "所有奇数"
+        },
+        {
+          "label": "D",
+          "text": "小于100的数"
+        }
+      ],
+      "answer": "B",
+      "explanation": "素数的定义是？ 正确答案是B。只能被1和自身整除的大于1的整数是正确的。",
+      "topics": [
+        "链表",
+        "唯一分解定理"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "94653e79-e50b-46c4-94fd-545cd9a2d9cf",
+      "type": "tf",
+      "questionIndex": 16,
+      "questionText": "1不是素数。",
+      "options": null,
+      "answer": "对",
+      "explanation": "1不是素数。 这个说法是正确的。",
+      "topics": [
+        "二分查找"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "921f4c9b-51cc-4ae3-a40d-753ebba8e03c",
+      "type": "tf",
+      "questionIndex": 17,
+      "questionText": "2是唯一的偶素数。",
+      "options": null,
+      "answer": "对",
+      "explanation": "2是唯一的偶素数。 这个说法是正确的。",
+      "topics": [
+        "素数"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "aba26195-a51b-409b-8556-d5c514cbd806",
+      "type": "tf",
+      "questionIndex": 18,
+      "questionText": "二分查找的前提是数据有序。",
+      "options": null,
+      "answer": "对",
+      "explanation": "二分查找的前提是数据有序。 这个说法是正确的。",
+      "topics": [
+        "素数"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "99ab624f-8de4-41b5-b243-54d30c7eb252",
+      "type": "tf",
+      "questionIndex": 19,
+      "questionText": "链表支持随机访问。",
+      "options": null,
+      "answer": "错",
+      "explanation": "链表支持随机访问。 这个说法是错误的。",
+      "topics": [
+        "分治算法"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "efc402ee-ffd9-4d3c-a0d1-6182ad234f1a",
+      "type": "tf",
+      "questionIndex": 20,
+      "questionText": "贪心算法一定能得到全局最优解。",
+      "options": null,
+      "answer": "错",
+      "explanation": "贪心算法一定能得到全局最优解。 这个说法是错误的。",
+      "topics": [
+        "初等数论"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "7368ba76-151b-41bc-b4f0-e973fd455991",
+      "type": "tf",
+      "questionIndex": 21,
+      "questionText": "归并排序是稳定排序。",
+      "options": null,
+      "answer": "对",
+      "explanation": "归并排序是稳定排序。 这个说法是正确的。",
+      "topics": [
+        "二分答案"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "5e4f1f05-97bd-4157-a659-d55dd2217814",
+      "type": "tf",
+      "questionIndex": 22,
+      "questionText": "快速排序的最坏时间复杂度是O(n²)。",
+      "options": null,
+      "answer": "对",
+      "explanation": "快速排序的最坏时间复杂度是O(n²)。 这个说法是正确的。",
+      "topics": [
+        "递归"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "8ac6bd3e-7994-42b5-ab07-a6cb865088d0",
+      "type": "tf",
+      "questionIndex": 23,
+      "questionText": "递归算法必须有递归终止条件。",
+      "options": null,
+      "answer": "对",
+      "explanation": "递归算法必须有递归终止条件。 这个说法是正确的。",
+      "topics": [
+        "归并排序"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "579e2883-9901-491c-9836-38a478eafe34",
+      "type": "tf",
+      "questionIndex": 24,
+      "questionText": "二分答案和二分查找是同一个算法。",
+      "options": null,
+      "answer": "错",
+      "explanation": "二分答案和二分查找是同一个算法。 这个说法是错误的。",
+      "topics": [
+        "初等数论"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "94ce6762-4cdd-433e-9107-738f9e1b12f4",
+      "type": "tf",
+      "questionIndex": 25,
+      "questionText": "埃氏筛法可以用于求区间内的素数个数。",
+      "options": null,
+      "answer": "对",
+      "explanation": "埃氏筛法可以用于求区间内的素数个数。 这个说法是正确的。",
+      "topics": [
+        "初等数论"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "83033d92-0b7e-4c3f-97f8-fe99d92d00e3",
+      "type": "programming",
+      "questionIndex": 26,
+      "questionText": "素数区间\n\n给定区间[L, R]，求该区间内素数的个数。",
+      "options": null,
+      "answer": "import math\nl, r = map(int, input().split())\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(math.sqrt(n)) + 1):\n        if n % i == 0:\n            return False\n    return True\ncount = sum(1 for i in range(l, r + 1) if is_prime(i))\nprint(count)",
+      "explanation": "解题思路：给定区间[L, R]，求该区间内素数的个数。",
+      "topics": [
+        "埃氏筛法",
+        "唯一分解定理"
+      ],
+      "difficulty": "hard",
+      "images": null,
+      "codeBlocks": [
+        "import math\nl, r = map(int, input().split())\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(math.sqrt(n)) + 1):\n        if n % i == 0:\n            return False\n    return True\ncount = sum(1 for i in range(l, r + 1) if is_prime(i))\nprint(count)"
+      ],
+      "inputFormat": "两个正整数L和R，用空格分隔",
+      "outputFormat": "一个整数，表示区间内素数的个数",
+      "constraints": "2 ≤ L ≤ R ≤ 1000000",
+      "sampleInput": "1 10",
+      "sampleOutput": "4",
+      "templateCode": null,
+      "testCases": [
+        {
+          "input": "1 10",
+          "expected": "4",
+          "isSample": true
+        }
+      ],
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    },
+    {
+      "id": "0a3acc64-6f99-4b67-a984-7b3f6b5a3810",
+      "type": "programming",
+      "questionIndex": 27,
+      "questionText": "二分查找位置\n\n在一个有序数组中查找目标值，如果找到返回其索引，否则返回-1。",
+      "options": null,
+      "answer": "arr = list(map(int, input().split()))\ntarget = int(input())\nleft, right = 0, len(arr) - 1\nresult = -1\nwhile left <= right:\n    mid = (left + right) // 2\n    if arr[mid] == target:\n        result = mid\n        break\n    elif arr[mid] < target:\n        left = mid + 1\n    else:\n        right = mid - 1\nprint(result)",
+      "explanation": "解题思路：在一个有序数组中查找目标值，如果找到返回其索引，否则返回-1。",
+      "topics": [
+        "欧几里得算法",
+        "二分查找"
+      ],
+      "difficulty": "hard",
+      "images": null,
+      "codeBlocks": [
+        "arr = list(map(int, input().split()))\ntarget = int(input())\nleft, right = 0, len(arr) - 1\nresult = -1\nwhile left <= right:\n    mid = (left + right) // 2\n    if arr[mid] == target:\n        result = mid\n        break\n    elif arr[mid] < target:\n        left = mid + 1\n    else:\n        right = mid - 1\nprint(result)"
+      ],
+      "inputFormat": "第一行n个有序整数，第二行目标值",
+      "outputFormat": "目标值的索引（从0开始），或-1",
+      "constraints": "1 ≤ n ≤ 100000",
+      "sampleInput": "1 3 5 7 9 11",
+      "sampleOutput": "3",
+      "templateCode": null,
+      "testCases": [
+        {
+          "input": "1 3 5 7 9 11",
+          "expected": "3",
+          "isSample": true
+        },
+        {
+          "input": "7",
+          "isSample": true
+        }
+      ],
+      "createdAt": "2026-05-26T12:15:23.433Z"
+    }
+  ],
+  "generatedAt": "2026-05-26T12:15:23.433Z"
+}

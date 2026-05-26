@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "test": "echo \"No tests yet\""
+    "test": "echo \"No tests yet\"",
+    "import": "tsx src/import-to-db.ts",
+    "parse": "tsx src/parse-pdf.ts",
+    "mock-data": "tsx src/generate-mock-data.ts"
   },
   "devDependencies": {
     "@types/node": "^20.14.0",
@@ -16,6 +19,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.98.0",
+    "@prisma/client": "^5.22.0",
     "pdf-parse": "^2.4.5"
   }
 }

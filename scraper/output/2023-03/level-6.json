@@ -1,0 +1,926 @@
+{
+  "session": "2023-03",
+  "level": 6,
+  "totalQuestions": 27,
+  "mock": true,
+  "questions": [
+    {
+      "id": "8618e66c-1602-4109-a923-72cd1ecadae7",
+      "type": "mc",
+      "questionIndex": 1,
+      "questionText": "DFS使用什么数据结构实现？",
+      "options": [
+        {
+          "label": "A",
+          "text": "队列"
+        },
+        {
+          "label": "B",
+          "text": "栈"
+        },
+        {
+          "label": "C",
+          "text": "堆"
+        },
+        {
+          "label": "D",
+          "text": "链表"
+        }
+      ],
+      "answer": "B",
+      "explanation": "DFS使用什么数据结构实现？ 正确答案是B。栈是正确的。",
+      "topics": [
+        "格雷编码"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "434ef23c-81ee-4cb2-bed8-790106a4a68c",
+      "type": "mc",
+      "questionIndex": 2,
+      "questionText": "动态规划与分治的主要区别是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "动态规划更快"
+        },
+        {
+          "label": "B",
+          "text": "动态规划有重叠子问题"
+        },
+        {
+          "label": "C",
+          "text": "分治更简单"
+        },
+        {
+          "label": "D",
+          "text": "没有区别"
+        }
+      ],
+      "answer": "B",
+      "explanation": "动态规划与分治的主要区别是？ 正确答案是B。动态规划有重叠子问题是正确的。",
+      "topics": [
+        "BFS",
+        "树"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "0e5410cc-5509-4934-9e75-31e0d694671e",
+      "type": "mc",
+      "questionIndex": 3,
+      "questionText": "面向对象的三大特征是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "输入、处理、输出"
+        },
+        {
+          "label": "B",
+          "text": "封装、继承、多态"
+        },
+        {
+          "label": "C",
+          "text": "定义、调用、返回"
+        },
+        {
+          "label": "D",
+          "text": "创建、使用、销毁"
+        }
+      ],
+      "answer": "B",
+      "explanation": "面向对象的三大特征是？ 正确答案是B。封装、继承、多态是正确的。",
+      "topics": [
+        "循环队列"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "48240c44-cd87-427f-acec-4674d1807787",
+      "type": "mc",
+      "questionIndex": 4,
+      "questionText": "BFS使用什么数据结构实现？",
+      "options": [
+        {
+          "label": "A",
+          "text": "栈"
+        },
+        {
+          "label": "B",
+          "text": "队列"
+        },
+        {
+          "label": "C",
+          "text": "堆"
+        },
+        {
+          "label": "D",
+          "text": "链表"
+        }
+      ],
+      "answer": "B",
+      "explanation": "BFS使用什么数据结构实现？ 正确答案是B。队列是正确的。",
+      "topics": [
+        "多态"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "069d985b-74eb-49b9-b8d8-b8ece53ac531",
+      "type": "mc",
+      "questionIndex": 5,
+      "questionText": "哈夫曼树的特点是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "完全平衡"
+        },
+        {
+          "label": "B",
+          "text": "带权路径长度最短"
+        },
+        {
+          "label": "C",
+          "text": "每个节点有两个子节点"
+        },
+        {
+          "label": "D",
+          "text": "深度最小"
+        }
+      ],
+      "answer": "B",
+      "explanation": "哈夫曼树的特点是？ 正确答案是B。带权路径长度最短是正确的。",
+      "topics": [
+        "格雷编码"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "817eacd2-3cee-41b4-9f74-08007689abbc",
+      "type": "mc",
+      "questionIndex": 6,
+      "questionText": "Python中 __init__ 方法的作用是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "销毁对象"
+        },
+        {
+          "label": "B",
+          "text": "初始化对象"
+        },
+        {
+          "label": "C",
+          "text": "调用方法"
+        },
+        {
+          "label": "D",
+          "text": "创建类"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Python中 __init__ 方法的作用是？ 正确答案是B。初始化对象是正确的。",
+      "topics": [
+        "哈夫曼编码",
+        "完全二叉树"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "647cb206-3b99-4e19-b3fb-191c0de870b3",
+      "type": "mc",
+      "questionIndex": 7,
+      "questionText": "一维DP中状态转移方程描述的是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "初始状态"
+        },
+        {
+          "label": "B",
+          "text": "状态之间的关系"
+        },
+        {
+          "label": "C",
+          "text": "边界条件"
+        },
+        {
+          "label": "D",
+          "text": "最终结果"
+        }
+      ],
+      "answer": "B",
+      "explanation": "一维DP中状态转移方程描述的是？ 正确答案是B。状态之间的关系是正确的。",
+      "topics": [
+        "面向对象",
+        "完全二叉树"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "05a4c04f-1b17-4af3-8b53-6cb7a9a2e97b",
+      "type": "mc",
+      "questionIndex": 8,
+      "questionText": "二叉排序树的中序遍历结果是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "无序的"
+        },
+        {
+          "label": "B",
+          "text": "递增有序的"
+        },
+        {
+          "label": "C",
+          "text": "递减有序的"
+        },
+        {
+          "label": "D",
+          "text": "随机的"
+        }
+      ],
+      "answer": "B",
+      "explanation": "二叉排序树的中序遍历结果是？ 正确答案是B。递增有序的是正确的。",
+      "topics": [
+        "哈夫曼编码",
+        "队列"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "75a0792d-923d-4d05-811a-21c4ed48995c",
+      "type": "mc",
+      "questionIndex": 9,
+      "questionText": "栈的特点是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "先进先出"
+        },
+        {
+          "label": "B",
+          "text": "先进后出"
+        },
+        {
+          "label": "C",
+          "text": "随机访问"
+        },
+        {
+          "label": "D",
+          "text": "双端操作"
+        }
+      ],
+      "answer": "B",
+      "explanation": "栈的特点是？ 正确答案是B。先进后出是正确的。",
+      "topics": [
+        "哈夫曼编码",
+        "多态"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "7337fe6f-90b0-43d7-9391-6a5b6e9d5ab6",
+      "type": "mc",
+      "questionIndex": 10,
+      "questionText": "循环队列解决了什么问题？",
+      "options": [
+        {
+          "label": "A",
+          "text": "排序问题"
+        },
+        {
+          "label": "B",
+          "text": "假溢出问题"
+        },
+        {
+          "label": "C",
+          "text": "查找问题"
+        },
+        {
+          "label": "D",
+          "text": "递归问题"
+        }
+      ],
+      "answer": "B",
+      "explanation": "循环队列解决了什么问题？ 正确答案是B。假溢出问题是正确的。",
+      "topics": [
+        "背包问题",
+        "面向对象"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "92745ddc-e762-40ad-b429-872f686326af",
+      "type": "mc",
+      "questionIndex": 11,
+      "questionText": "Python中 super() 函数的作用是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "创建对象"
+        },
+        {
+          "label": "B",
+          "text": "调用父类方法"
+        },
+        {
+          "label": "C",
+          "text": "销毁对象"
+        },
+        {
+          "label": "D",
+          "text": "定义类"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Python中 super() 函数的作用是？ 正确答案是B。调用父类方法是正确的。",
+      "topics": [
+        "面向对象"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "5e2608a2-8ca8-4ff7-81f1-283d1c5b5d3d",
+      "type": "mc",
+      "questionIndex": 12,
+      "questionText": "背包问题中，01背包与完全背包的区别是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "物品重量不同"
+        },
+        {
+          "label": "B",
+          "text": "物品能否重复选取"
+        },
+        {
+          "label": "C",
+          "text": "背包容量不同"
+        },
+        {
+          "label": "D",
+          "text": "物品价值不同"
+        }
+      ],
+      "answer": "B",
+      "explanation": "背包问题中，01背包与完全背包的区别是？ 正确答案是B。物品能否重复选取是正确的。",
+      "topics": [
+        "BFS"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "93f6b6b1-93e9-4808-8a1a-9e5b5098f43d",
+      "type": "mc",
+      "questionIndex": 13,
+      "questionText": "哈夫曼编码是哪种编码？",
+      "options": [
+        {
+          "label": "A",
+          "text": "等长编码"
+        },
+        {
+          "label": "B",
+          "text": "前缀编码"
+        },
+        {
+          "label": "C",
+          "text": "后缀编码"
+        },
+        {
+          "label": "D",
+          "text": "固定编码"
+        }
+      ],
+      "answer": "B",
+      "explanation": "哈夫曼编码是哪种编码？ 正确答案是B。前缀编码是正确的。",
+      "topics": [
+        "栈",
+        "树"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "49c16c16-7e86-426f-a668-6321a7f2dbe3",
+      "type": "mc",
+      "questionIndex": 14,
+      "questionText": "多态是指？",
+      "options": [
+        {
+          "label": "A",
+          "text": "一个类继承多个类"
+        },
+        {
+          "label": "B",
+          "text": "同一接口不同实现"
+        },
+        {
+          "label": "C",
+          "text": "方法重载"
+        },
+        {
+          "label": "D",
+          "text": "变量多次赋值"
+        }
+      ],
+      "answer": "B",
+      "explanation": "多态是指？ 正确答案是B。同一接口不同实现是正确的。",
+      "topics": [
+        "二叉排序树"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "56faee89-84e3-4452-8c5b-c0cc5f910b9e",
+      "type": "mc",
+      "questionIndex": 15,
+      "questionText": "完全二叉树的第k层最多有多少个节点？",
+      "options": [
+        {
+          "label": "A",
+          "text": "k"
+        },
+        {
+          "label": "B",
+          "text": "2k"
+        },
+        {
+          "label": "C",
+          "text": "2^(k-1)"
+        },
+        {
+          "label": "D",
+          "text": "2^k"
+        }
+      ],
+      "answer": "C",
+      "explanation": "完全二叉树的第k层最多有多少个节点？ 正确答案是C。2^(k-1)是正确的。",
+      "topics": [
+        "树"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "0ab3ac73-63cb-4745-8a60-a5713c0555a2",
+      "type": "tf",
+      "questionIndex": 16,
+      "questionText": "二叉树的前序遍历顺序是根-左-右。",
+      "options": null,
+      "answer": "对",
+      "explanation": "二叉树的前序遍历顺序是根-左-右。 这个说法是正确的。",
+      "topics": [
+        "一维DP"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "502fc985-6df9-4b03-8f9b-7789ed07ce81",
+      "type": "tf",
+      "questionIndex": 17,
+      "questionText": "BFS通常使用栈来实现。",
+      "options": null,
+      "answer": "错",
+      "explanation": "BFS通常使用栈来实现。 这个说法是错误的。",
+      "topics": [
+        "多态"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "211e49ae-0985-472c-9704-b183e69633e8",
+      "type": "tf",
+      "questionIndex": 18,
+      "questionText": "动态规划的两个核心要素是最优子结构和重叠子问题。",
+      "options": null,
+      "answer": "对",
+      "explanation": "动态规划的两个核心要素是最优子结构和重叠子问题。 这个说法是正确的。",
+      "topics": [
+        "继承"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "662bd086-ec5d-44bd-a749-168778e01791",
+      "type": "tf",
+      "questionIndex": 19,
+      "questionText": "Python中的类可以有多个父类。",
+      "options": null,
+      "answer": "对",
+      "explanation": "Python中的类可以有多个父类。 这个说法是正确的。",
+      "topics": [
+        "二叉排序树"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "e472de88-94aa-4e2e-934f-4a3260a176f4",
+      "type": "tf",
+      "questionIndex": 20,
+      "questionText": "哈夫曼树中，频率越高的字符离根越远。",
+      "options": null,
+      "answer": "错",
+      "explanation": "哈夫曼树中，频率越高的字符离根越远。 这个说法是错误的。",
+      "topics": [
+        "DFS"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "1c1ce8a3-f5e4-48a8-a464-3a1e27b97f73",
+      "type": "tf",
+      "questionIndex": 21,
+      "questionText": "01背包问题可以使用贪心算法解决。",
+      "options": null,
+      "answer": "错",
+      "explanation": "01背包问题可以使用贪心算法解决。 这个说法是错误的。",
+      "topics": [
+        "哈夫曼编码"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "0eec3d42-6157-488c-ae6d-70b9ff06cdd3",
+      "type": "tf",
+      "questionIndex": 22,
+      "questionText": "栈是后进先出(LIFO)的数据结构。",
+      "options": null,
+      "answer": "对",
+      "explanation": "栈是后进先出(LIFO)的数据结构。 这个说法是正确的。",
+      "topics": [
+        "BFS"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "a4d86d7f-9410-4d8c-8170-079248bd0205",
+      "type": "tf",
+      "questionIndex": 23,
+      "questionText": "封装是指隐藏对象的属性和实现细节。",
+      "options": null,
+      "answer": "对",
+      "explanation": "封装是指隐藏对象的属性和实现细节。 这个说法是正确的。",
+      "topics": [
+        "哈夫曼树"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "a8ff2838-a884-4265-8acc-00e7fcd7683e",
+      "type": "tf",
+      "questionIndex": 24,
+      "questionText": "完全二叉树一定是满二叉树。",
+      "options": null,
+      "answer": "错",
+      "explanation": "完全二叉树一定是满二叉树。 这个说法是错误的。",
+      "topics": [
+        "栈"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "7de010eb-aeaa-4d6b-bf7f-5310a44b3d7f",
+      "type": "tf",
+      "questionIndex": 25,
+      "questionText": "队列中，元素从队尾入队，从队首出队。",
+      "options": null,
+      "answer": "对",
+      "explanation": "队列中，元素从队尾入队，从队首出队。 这个说法是正确的。",
+      "topics": [
+        "封装"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "f60ee951-9a71-4056-ae67-a532fb9d06c0",
+      "type": "programming",
+      "questionIndex": 26,
+      "questionText": "二叉树遍历\n\n给定二叉树的层序遍历序列（空节点用-1表示），输出其前序遍历结果。",
+      "options": null,
+      "answer": "arr = list(map(int, input().split()))\ndef preorder(i):\n    if i >= len(arr) or arr[i] == -1:\n        return []\n    return [arr[i]] + preorder(2*i+1) + preorder(2*i+2)\nresult = preorder(0)\nprint(' '.join(map(str, result)))",
+      "explanation": "解题思路：给定二叉树的层序遍历序列（空节点用-1表示），输出其前序遍历结果。",
+      "topics": [
+        "一维DP",
+        "循环队列"
+      ],
+      "difficulty": "hard",
+      "images": null,
+      "codeBlocks": [
+        "arr = list(map(int, input().split()))\ndef preorder(i):\n    if i >= len(arr) or arr[i] == -1:\n        return []\n    return [arr[i]] + preorder(2*i+1) + preorder(2*i+2)\nresult = preorder(0)\nprint(' '.join(map(str, result)))"
+      ],
+      "inputFormat": "第一行n个整数，表示层序遍历序列",
+      "outputFormat": "前序遍历结果，空格分隔",
+      "constraints": "1 ≤ n ≤ 1000",
+      "sampleInput": "1 2 3 4 5 -1 7",
+      "sampleOutput": "1 2 4 5 3 7",
+      "templateCode": null,
+      "testCases": [
+        {
+          "input": "1 2 3 4 5 -1 7",
+          "expected": "1 2 4 5 3 7",
+          "isSample": true
+        }
+      ],
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    },
+    {
+      "id": "c02799d0-29c6-4728-9234-503145171779",
+      "type": "programming",
+      "questionIndex": 27,
+      "questionText": "01背包问题\n\n有n个物品和一个容量为W的背包，每个物品有重量和价值，求最大价值。",
+      "options": null,
+      "answer": "n, W = map(int, input().split())\nitems = [tuple(map(int, input().split())) for _ in range(n)]\ndp = [0] * (W + 1)\nfor w, v in items:\n    for j in range(W, w - 1, -1):\n        dp[j] = max(dp[j], dp[j-w] + v)\nprint(dp[W])",
+      "explanation": "解题思路：有n个物品和一个容量为W的背包，每个物品有重量和价值，求最大价值。",
+      "topics": [
+        "BFS",
+        "树"
+      ],
+      "difficulty": "hard",
+      "images": null,
+      "codeBlocks": [
+        "n, W = map(int, input().split())\nitems = [tuple(map(int, input().split())) for _ in range(n)]\ndp = [0] * (W + 1)\nfor w, v in items:\n    for j in range(W, w - 1, -1):\n        dp[j] = max(dp[j], dp[j-w] + v)\nprint(dp[W])"
+      ],
+      "inputFormat": "第一行n和W，接下来n行每行两个整数w和v",
+      "outputFormat": "一个整数，表示最大价值",
+      "constraints": "1 ≤ n ≤ 100, 1 ≤ W ≤ 1000",
+      "sampleInput": "4 5",
+      "sampleOutput": "8",
+      "templateCode": null,
+      "testCases": [
+        {
+          "input": "4 5",
+          "expected": "8",
+          "isSample": true
+        },
+        {
+          "input": "1 2",
+          "isSample": true
+        },
+        {
+          "input": "2 4",
+          "isSample": true
+        },
+        {
+          "input": "3 4",
+          "isSample": true
+        },
+        {
+          "input": "4 5",
+          "isSample": true
+        }
+      ],
+      "createdAt": "2026-05-26T12:15:23.463Z"
+    }
+  ],
+  "generatedAt": "2026-05-26T12:15:23.463Z"
+}

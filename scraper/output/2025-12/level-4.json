@@ -1,0 +1,912 @@
+{
+  "session": "2025-12",
+  "level": 4,
+  "totalQuestions": 27,
+  "mock": true,
+  "questions": [
+    {
+      "id": "94cd0443-15fd-477b-ba91-bef982401f73",
+      "type": "mc",
+      "questionIndex": 1,
+      "questionText": "以下关于变量作用域的说法正确的是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "局部变量可以在函数外访问"
+        },
+        {
+          "label": "B",
+          "text": "global关键字用于声明局部变量"
+        },
+        {
+          "label": "C",
+          "text": "函数内可直接修改全局变量"
+        },
+        {
+          "label": "D",
+          "text": "LEGB规则决定了名称查找顺序"
+        }
+      ],
+      "answer": "D",
+      "explanation": "以下关于变量作用域的说法正确的是？ 正确答案是D。LEGB规则决定了名称查找顺序是正确的。",
+      "topics": [
+        "文件操作"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "90b78838-719e-4896-966d-de33b287a3e0",
+      "type": "mc",
+      "questionIndex": 2,
+      "questionText": "冒泡排序的时间复杂度是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "O(n)"
+        },
+        {
+          "label": "B",
+          "text": "O(n log n)"
+        },
+        {
+          "label": "C",
+          "text": "O(n²)"
+        },
+        {
+          "label": "D",
+          "text": "O(2ⁿ)"
+        }
+      ],
+      "answer": "C",
+      "explanation": "冒泡排序的时间复杂度是？ 正确答案是C。O(n²)是正确的。",
+      "topics": [
+        "文件操作",
+        "选择排序"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "99f8d4ca-8ac1-4f05-be44-e88befc2e8cc",
+      "type": "mc",
+      "questionIndex": 3,
+      "questionText": "以下哪种异常处理结构是正确的？",
+      "options": [
+        {
+          "label": "A",
+          "text": "try...catch"
+        },
+        {
+          "label": "B",
+          "text": "try...except"
+        },
+        {
+          "label": "C",
+          "text": "try...handle"
+        },
+        {
+          "label": "D",
+          "text": "try...error"
+        }
+      ],
+      "answer": "B",
+      "explanation": "以下哪种异常处理结构是正确的？ 正确答案是B。try...except是正确的。",
+      "topics": [
+        "函数定义与调用"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "d3e2edf5-2e16-4914-8b70-2bd6015fa102",
+      "type": "mc",
+      "questionIndex": 4,
+      "questionText": "递推算法与递归算法的主要区别是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "递推自底向上，递归自顶向下"
+        },
+        {
+          "label": "B",
+          "text": "递推更快"
+        },
+        {
+          "label": "C",
+          "text": "递归更简单"
+        },
+        {
+          "label": "D",
+          "text": "没有区别"
+        }
+      ],
+      "answer": "A",
+      "explanation": "递推算法与递归算法的主要区别是？ 正确答案是A。递推自底向上，递归自顶向下是正确的。",
+      "topics": [
+        "冒泡排序"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "363a14fe-8891-470c-ae8d-93ac1bda1ec9",
+      "type": "mc",
+      "questionIndex": 5,
+      "questionText": "以下哪种排序算法是稳定的？",
+      "options": [
+        {
+          "label": "A",
+          "text": "选择排序"
+        },
+        {
+          "label": "B",
+          "text": "快速排序"
+        },
+        {
+          "label": "C",
+          "text": "冒泡排序"
+        },
+        {
+          "label": "D",
+          "text": "堆排序"
+        }
+      ],
+      "answer": "C",
+      "explanation": "以下哪种排序算法是稳定的？ 正确答案是C。冒泡排序是正确的。",
+      "topics": [
+        "递推算法"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "f8f57352-b8d3-4fba-8d69-7bcf7fc7af1f",
+      "type": "mc",
+      "questionIndex": 6,
+      "questionText": "Python中 with open(\"f.txt\") as f: 的作用是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "只读打开"
+        },
+        {
+          "label": "B",
+          "text": "自动关闭文件"
+        },
+        {
+          "label": "C",
+          "text": "写入文件"
+        },
+        {
+          "label": "D",
+          "text": "删除文件"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Python中 with open(\"f.txt\") as f: 的作用是？ 正确答案是B。自动关闭文件是正确的。",
+      "topics": [
+        "冒泡排序"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "e115dc8f-6c96-4154-be8d-cdfb109360f8",
+      "type": "mc",
+      "questionIndex": 7,
+      "questionText": "函数定义中 *args 的作用是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "接收关键字参数"
+        },
+        {
+          "label": "B",
+          "text": "接收任意数量位置参数"
+        },
+        {
+          "label": "C",
+          "text": "接收字典参数"
+        },
+        {
+          "label": "D",
+          "text": "设置默认参数"
+        }
+      ],
+      "answer": "B",
+      "explanation": "函数定义中 *args 的作用是？ 正确答案是B。接收任意数量位置参数是正确的。",
+      "topics": [
+        "复合类型嵌套"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "87bb76ea-8f67-4e02-9bf8-e18ec928834a",
+      "type": "mc",
+      "questionIndex": 8,
+      "questionText": "以下哪个是O(n log n)的排序算法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "冒泡排序"
+        },
+        {
+          "label": "B",
+          "text": "插入排序"
+        },
+        {
+          "label": "C",
+          "text": "归并排序"
+        },
+        {
+          "label": "D",
+          "text": "选择排序"
+        }
+      ],
+      "answer": "C",
+      "explanation": "以下哪个是O(n log n)的排序算法？ 正确答案是C。归并排序是正确的。",
+      "topics": [
+        "冒泡排序",
+        "文件操作"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "0af5d261-55a9-4266-953b-4f0a12ee8bc3",
+      "type": "mc",
+      "questionIndex": 9,
+      "questionText": "列表的sort()方法返回什么？",
+      "options": [
+        {
+          "label": "A",
+          "text": "排序后的新列表"
+        },
+        {
+          "label": "B",
+          "text": "None"
+        },
+        {
+          "label": "C",
+          "text": "原列表"
+        },
+        {
+          "label": "D",
+          "text": "True"
+        }
+      ],
+      "answer": "B",
+      "explanation": "列表的sort()方法返回什么？ 正确答案是B。None是正确的。",
+      "topics": [
+        "插入排序",
+        "异常处理"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "4b8bfe7d-9dfd-42bb-b9fe-231021bf3939",
+      "type": "mc",
+      "questionIndex": 10,
+      "questionText": "复合类型嵌套是指？",
+      "options": [
+        {
+          "label": "A",
+          "text": "函数嵌套调用"
+        },
+        {
+          "label": "B",
+          "text": "数据结构中包含数据结构"
+        },
+        {
+          "label": "C",
+          "text": "循环嵌套"
+        },
+        {
+          "label": "D",
+          "text": "条件嵌套"
+        }
+      ],
+      "answer": "B",
+      "explanation": "复合类型嵌套是指？ 正确答案是B。数据结构中包含数据结构是正确的。",
+      "topics": [
+        "复合类型嵌套"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "8b228ec0-824a-4ca5-b18b-960cab7b513f",
+      "type": "mc",
+      "questionIndex": 11,
+      "questionText": "Python中 raise 语句的作用是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "捕获异常"
+        },
+        {
+          "label": "B",
+          "text": "抛出异常"
+        },
+        {
+          "label": "C",
+          "text": "处理异常"
+        },
+        {
+          "label": "D",
+          "text": "忽略异常"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Python中 raise 语句的作用是？ 正确答案是B。抛出异常是正确的。",
+      "topics": [
+        "排序算法"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "38ce8359-3458-4edc-8396-b572d83bdf5d",
+      "type": "mc",
+      "questionIndex": 12,
+      "questionText": "插入排序的最优时间复杂度是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "O(n)"
+        },
+        {
+          "label": "B",
+          "text": "O(n log n)"
+        },
+        {
+          "label": "C",
+          "text": "O(n²)"
+        },
+        {
+          "label": "D",
+          "text": "O(1)"
+        }
+      ],
+      "answer": "A",
+      "explanation": "插入排序的最优时间复杂度是？ 正确答案是A。O(n)是正确的。",
+      "topics": [
+        "参数传递"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "50c4c7da-4666-48ff-b200-b51a69ec8b26",
+      "type": "mc",
+      "questionIndex": 13,
+      "questionText": "以下关于Python文件操作，错误的是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "\"r\"模式只读"
+        },
+        {
+          "label": "B",
+          "text": "\"w\"模式会覆盖"
+        },
+        {
+          "label": "C",
+          "text": "\"a\"模式追加"
+        },
+        {
+          "label": "D",
+          "text": "\"r\"模式可写"
+        }
+      ],
+      "answer": "D",
+      "explanation": "以下关于Python文件操作，错误的是？ 正确答案是D。\"r\"模式可写是正确的。",
+      "topics": [
+        "变量作用域"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "4d55cdd7-9599-4f00-99c2-63ec91aea1b5",
+      "type": "mc",
+      "questionIndex": 14,
+      "questionText": "以下哪个不是算法复杂度的表示法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "O(n)"
+        },
+        {
+          "label": "B",
+          "text": "Ω(n)"
+        },
+        {
+          "label": "C",
+          "text": "Θ(n)"
+        },
+        {
+          "label": "D",
+          "text": "T(n)"
+        }
+      ],
+      "answer": "D",
+      "explanation": "以下哪个不是算法复杂度的表示法？ 正确答案是D。T(n)是正确的。",
+      "topics": [
+        "冒泡排序"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "b9a293e9-b071-40f0-afe0-1198b170c8ac",
+      "type": "mc",
+      "questionIndex": 15,
+      "questionText": "Python中，函数参数的默认值是在什么时候计算的？",
+      "options": [
+        {
+          "label": "A",
+          "text": "函数调用时"
+        },
+        {
+          "label": "B",
+          "text": "函数定义时"
+        },
+        {
+          "label": "C",
+          "text": "运行时动态计算"
+        },
+        {
+          "label": "D",
+          "text": "编译时"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Python中，函数参数的默认值是在什么时候计算的？ 正确答案是B。函数定义时是正确的。",
+      "topics": [
+        "算法复杂度",
+        "函数定义与调用"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "d19a4e41-af94-41c7-b457-91f2ce3d2c30",
+      "type": "tf",
+      "questionIndex": 16,
+      "questionText": "Python函数可以返回多个值。",
+      "options": null,
+      "answer": "对",
+      "explanation": "Python函数可以返回多个值。 这个说法是正确的。",
+      "topics": [
+        "函数定义与调用"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "6f843db3-5bba-4eeb-b3f4-54b6dc7e1164",
+      "type": "tf",
+      "questionIndex": 17,
+      "questionText": "局部变量的生命周期是整个程序运行期间。",
+      "options": null,
+      "answer": "错",
+      "explanation": "局部变量的生命周期是整个程序运行期间。 这个说法是错误的。",
+      "topics": [
+        "插入排序"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "7b86f8ea-5bd6-40f9-bf1a-cad521d97647",
+      "type": "tf",
+      "questionIndex": 18,
+      "questionText": "异常处理中，finally块总是会执行。",
+      "options": null,
+      "answer": "对",
+      "explanation": "异常处理中，finally块总是会执行。 这个说法是正确的。",
+      "topics": [
+        "函数定义与调用"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "5bed30a8-8574-4ddc-82fe-7329db595c23",
+      "type": "tf",
+      "questionIndex": 19,
+      "questionText": "所有排序算法的最坏时间复杂度都是O(n²)。",
+      "options": null,
+      "answer": "错",
+      "explanation": "所有排序算法的最坏时间复杂度都是O(n²)。 这个说法是错误的。",
+      "topics": [
+        "选择排序"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "1bc8a7e7-e213-4b3d-a41d-088d9e20170f",
+      "type": "tf",
+      "questionIndex": 20,
+      "questionText": "Python中，函数可以作为参数传递给另一个函数。",
+      "options": null,
+      "answer": "对",
+      "explanation": "Python中，函数可以作为参数传递给另一个函数。 这个说法是正确的。",
+      "topics": [
+        "算法复杂度"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "12ee85f4-cc58-4c8d-a385-d1ff90a8aa06",
+      "type": "tf",
+      "questionIndex": 21,
+      "questionText": "选择排序是一种稳定排序。",
+      "options": null,
+      "answer": "错",
+      "explanation": "选择排序是一种稳定排序。 这个说法是错误的。",
+      "topics": [
+        "变量作用域"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "664baabd-7e8f-43c1-be6d-31ab2bba270c",
+      "type": "tf",
+      "questionIndex": 22,
+      "questionText": "递推和递归是同一种算法。",
+      "options": null,
+      "answer": "错",
+      "explanation": "递推和递归是同一种算法。 这个说法是错误的。",
+      "topics": [
+        "复合类型嵌套"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "f493ef88-74aa-4b31-859a-f5e719ac37dd",
+      "type": "tf",
+      "questionIndex": 23,
+      "questionText": "Python中打开文件后必须手动关闭。",
+      "options": null,
+      "answer": "错",
+      "explanation": "Python中打开文件后必须手动关闭。 这个说法是错误的。",
+      "topics": [
+        "递推算法"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "ecc827c0-000a-4f31-8047-9932c108d9a7",
+      "type": "tf",
+      "questionIndex": 24,
+      "questionText": "形参和实参必须同名。",
+      "options": null,
+      "answer": "错",
+      "explanation": "形参和实参必须同名。 这个说法是错误的。",
+      "topics": [
+        "冒泡排序"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "1807cf9d-05f4-4115-8f2d-2dac8a46146b",
+      "type": "tf",
+      "questionIndex": 25,
+      "questionText": "算法复杂度分析只考虑最坏情况。",
+      "options": null,
+      "answer": "错",
+      "explanation": "算法复杂度分析只考虑最坏情况。 这个说法是错误的。",
+      "topics": [
+        "插入排序"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "06c70afb-a046-464a-9f73-5db0b38fc39a",
+      "type": "programming",
+      "questionIndex": 26,
+      "questionText": "冒泡排序改进\n\n实现冒泡排序，并统计实际交换次数。如果某一轮没有发生交换，提前结束。",
+      "options": null,
+      "answer": "n = int(input())\narr = list(map(int, input().split()))\nswaps = 0\nfor i in range(n - 1):\n    swapped = False\n    for j in range(n - 1 - i):\n        if arr[j] > arr[j + 1]:\n            arr[j], arr[j + 1] = arr[j + 1], arr[j]\n            swaps += 1\n            swapped = True\n    if not swapped:\n        break\nprint(' '.join(map(str, arr)))\nprint(swaps)",
+      "explanation": "解题思路：实现冒泡排序，并统计实际交换次数。如果某一轮没有发生交换，提前结束。",
+      "topics": [
+        "冒泡排序",
+        "复合类型嵌套"
+      ],
+      "difficulty": "hard",
+      "images": null,
+      "codeBlocks": [
+        "n = int(input())\narr = list(map(int, input().split()))\nswaps = 0\nfor i in range(n - 1):\n    swapped = False\n    for j in range(n - 1 - i):\n        if arr[j] > arr[j + 1]:\n            arr[j], arr[j + 1] = arr[j + 1], arr[j]\n            swaps += 1\n            swapped = True\n    if not swapped:\n        break\nprint(' '.join(map(str, arr)))\nprint(swaps)"
+      ],
+      "inputFormat": "第一行一个整数n，第二行n个整数",
+      "outputFormat": "排序后的数组（空格分隔）和交换次数，各占一行",
+      "constraints": "1 ≤ n ≤ 1000",
+      "sampleInput": "5",
+      "sampleOutput": "1 2 3 4 5",
+      "templateCode": null,
+      "testCases": [
+        {
+          "input": "5",
+          "expected": "1 2 3 4 5",
+          "isSample": true
+        },
+        {
+          "input": "5 3 1 4 2",
+          "expected": "6",
+          "isSample": true
+        }
+      ],
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    },
+    {
+      "id": "748ac4ef-ce77-4aba-83ad-86a032d011a2",
+      "type": "programming",
+      "questionIndex": 27,
+      "questionText": "文件词频统计\n\n给定一个字符串，统计每个单词出现的次数，按出现次数从大到小输出。次数相同的按字典序输出。",
+      "options": null,
+      "answer": "words = input().split()\nfreq = {}\nfor w in words:\n    freq[w] = freq.get(w, 0) + 1\nresult = sorted(freq.items(), key=lambda x: (-x[1], x[0]))\nfor word, count in result:\n    print(word, count)",
+      "explanation": "解题思路：给定一个字符串，统计每个单词出现的次数，按出现次数从大到小输出。次数相同的按字典序输出。",
+      "topics": [
+        "冒泡排序",
+        "排序算法"
+      ],
+      "difficulty": "hard",
+      "images": null,
+      "codeBlocks": [
+        "words = input().split()\nfreq = {}\nfor w in words:\n    freq[w] = freq.get(w, 0) + 1\nresult = sorted(freq.items(), key=lambda x: (-x[1], x[0]))\nfor word, count in result:\n    print(word, count)"
+      ],
+      "inputFormat": "一行字符串，包含若干个英文单词，用空格分隔",
+      "outputFormat": "每行一个单词及其出现次数，用空格分隔",
+      "constraints": "字符串长度不超过10000",
+      "sampleInput": "hello world hello python world world",
+      "sampleOutput": "world 3",
+      "templateCode": null,
+      "testCases": [
+        {
+          "input": "hello world hello python world world",
+          "expected": "world 3",
+          "isSample": true
+        }
+      ],
+      "createdAt": "2026-05-26T12:15:23.332Z"
+    }
+  ],
+  "generatedAt": "2026-05-26T12:15:23.332Z"
+}
