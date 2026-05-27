@@ -66,6 +66,7 @@ export function CodeEditor() {
   const [submissionId, setSubmissionId] = useState<string | null>(null);
   const [result, setResult] = useState<JudgeResult | null>(null);
   const [resultStatus, setResultStatus] = useState<string>('idle');
+  const [activeTab, setActiveTab] = useState<'problem' | 'editor'>('problem');
 
   useEffect(() => {
     if (!id) return;
@@ -166,9 +167,33 @@ export function CodeEditor() {
   const statusCfg = STATUS_CONFIG[resultStatus] || STATUS_CONFIG.pending;
 
   return (
-    <div className="flex h-[calc(100vh-4rem)] overflow-hidden">
+    <div className="flex flex-col md:flex-row h-[calc(100vh-4rem)] overflow-hidden">
+      {/* Mobile/iPad tab bar */}
+      <div className="md:hidden flex border-b border-gray-200 bg-white shrink-0">
+        <button
+          onClick={() => setActiveTab('problem')}
+          className={`flex-1 py-2.5 text-sm font-medium text-center transition-colors ${
+            activeTab === 'problem'
+              ? 'text-blue-600 border-b-2 border-blue-600'
+              : 'text-gray-500 hover:text-gray-700'
+          }`}
+        >
+          题目描述
+        </button>
+        <button
+          onClick={() => setActiveTab('editor')}
+          className={`flex-1 py-2.5 text-sm font-medium text-center transition-colors ${
+            activeTab === 'editor'
+              ? 'text-blue-600 border-b-2 border-blue-600'
+              : 'text-gray-500 hover:text-gray-700'
+          }`}
+        >
+          代码编辑
+        </button>
+      </div>
+
       {/* Left panel: Problem description */}
-      <div className="w-[40%] min-w-[320px] border-r border-gray-200 bg-white overflow-y-auto">
+      <div className={`md:block ${activeTab === 'problem' ? 'block' : 'hidden'} md:w-[40%] md:min-w-[320px] border-r border-gray-200 bg-white overflow-y-auto flex-1 md:flex-initial`}>
         <div className="p-5">
           {/* Back button */}
           <button
@@ -263,7 +288,7 @@ export function CodeEditor() {
       </div>
 
       {/* Right panel: Editor + Results */}
-      <div className="flex-1 flex flex-col bg-[#1e1e1e] min-w-0">
+      <div className={`md:flex flex-col bg-[#1e1e1e] min-w-0 flex-1 ${activeTab === 'editor' ? 'flex' : 'hidden md:flex'}`}>
         {/* Toolbar */}
         <div className="flex items-center justify-between px-4 py-2 bg-[#2d2d2d] border-b border-[#3e3e3e]">
           <div className="flex items-center gap-2">

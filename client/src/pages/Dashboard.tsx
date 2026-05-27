@@ -63,7 +63,7 @@ export function Dashboard() {
   if (error) return <div className="text-center text-red-500 py-20">{error}</div>;
 
   return (
-    <div className="p-6 max-w-5xl mx-auto space-y-8">
+    <div className="p-4 md:p-6 max-w-5xl mx-auto space-y-8">
       <h1 className="text-2xl font-bold text-gray-800">学习进度</h1>
 
       {progress && (

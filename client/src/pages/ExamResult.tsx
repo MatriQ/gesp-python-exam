@@ -84,7 +84,7 @@ function Skeleton() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8 animate-pulse space-y-6">
       <div className="bg-gray-200 rounded-2xl h-48" />
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="bg-gray-200 rounded-xl h-28" />
         <div className="bg-gray-200 rounded-xl h-28" />
         <div className="bg-gray-200 rounded-xl h-28" />
@@ -150,7 +150,7 @@ export function ExamResult() {
   ];
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 space-y-6">
+    <div className="max-w-3xl mx-auto px-4 py-6 md:py-8 space-y-6">
       {/* Score Card */}
       <div
         className={`rounded-2xl p-8 text-center ${

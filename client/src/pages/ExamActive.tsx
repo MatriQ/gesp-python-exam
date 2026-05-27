@@ -99,7 +99,7 @@ export function ExamActive() {
 
   return (
     <div className="flex h-screen flex-col bg-white">
-      <div className="flex items-center justify-between border-b border-gray-200 px-6 py-3">
+      <div className="flex items-center justify-between border-b border-gray-200 px-3 md:px-6 py-3">
         <div className="text-sm font-medium text-gray-600">
           模拟考试 · {totalQuestions} 题
         </div>
@@ -113,7 +113,7 @@ export function ExamActive() {
       </div>
 
       <div className="flex flex-1 overflow-hidden">
-        <div className="w-[200px] shrink-0 overflow-y-auto border-r border-gray-200 bg-gray-50 p-4">
+        <div className="hidden md:block w-[200px] shrink-0 overflow-y-auto border-r border-gray-200 bg-gray-50 p-4">
           <div className="mb-2 text-xs font-medium text-gray-500">题目导航</div>
           <div className="grid grid-cols-5 gap-2">
             {questions.map((q, i) => {
@@ -143,8 +143,25 @@ export function ExamActive() {
           </div>
         </div>
 
+        <div className="flex flex-1 flex-col overflow-hidden">
+          <div className="md:hidden flex items-center gap-1.5 px-3 py-2 border-b border-gray-200 bg-gray-50 overflow-x-auto shrink-0">
+            {questions.map((q, i) => {
+              const isAnswered = !!answersRef.current[q.id]?.trim();
+              const isCurrent = i === currentIndex;
+              let cls = 'shrink-0 h-8 w-8 rounded text-xs font-medium transition ';
+              if (isCurrent) cls += 'bg-blue-500 text-white';
+              else if (isAnswered) cls += 'bg-green-500 text-white';
+              else cls += 'bg-gray-200 text-gray-600';
+              return (
+                <button key={q.id} onClick={() => setCurrentIndex(i)} className={cls}>
+                  {i + 1}
+                </button>
+              );
+            })}
+          </div>
+
         <div className="flex flex-1 flex-col overflow-y-auto">
-          <div className="flex-1 p-8">
+          <div className="flex-1 p-4 md:p-8">
             {currentQ && (
               <div>
                 <div className="mb-1 text-xs text-gray-400">
@@ -210,35 +227,36 @@ export function ExamActive() {
             )}
           </div>
 
-          <div className="flex items-center justify-between border-t border-gray-200 px-8 py-4">
-            <div className="flex gap-3">
+          <div className="flex items-center justify-between border-t border-gray-200 px-4 md:px-8 py-4">
+            <div className="flex gap-2 md:gap-3">
               <button
                 onClick={() => setCurrentIndex((i) => i - 1)}
                 disabled={currentIndex === 0}
-                className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 disabled:opacity-40"
+                className="rounded-lg border border-gray-300 px-3 md:px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 disabled:opacity-40"
               >
                 上一题
               </button>
               <button
                 onClick={() => setCurrentIndex((i) => i + 1)}
                 disabled={currentIndex === totalQuestions - 1}
-                className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 disabled:opacity-40"
+                className="rounded-lg border border-gray-300 px-3 md:px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 disabled:opacity-40"
               >
                 下一题
               </button>
             </div>
-            <div className="flex items-center gap-6">
-              <span className="text-sm text-gray-500">
+            <div className="flex items-center gap-3 md:gap-6">
+              <span className="text-xs md:text-sm text-gray-500">
                 已答 {answeredCount}/{totalQuestions}
               </span>
               <button
                 onClick={() => setShowSubmitDialog(true)}
-                className="rounded-lg bg-red-500 px-6 py-2 text-sm font-medium text-white hover:bg-red-600"
+                className="rounded-lg bg-red-500 px-4 md:px-6 py-2 text-sm font-medium text-white hover:bg-red-600"
               >
                 交卷
               </button>
             </div>
           </div>
+        </div>
         </div>
       </div>
 

@@ -49,7 +49,7 @@ export function QuestionDetail() {
   };
 
   return (
-    <div className="p-6 max-w-3xl mx-auto">
+    <div className="p-4 md:p-6 max-w-3xl mx-auto">
       <button
         onClick={() => navigate(-1)}
         className="text-sm text-gray-400 hover:text-gray-600 mb-4 inline-flex items-center gap-1"

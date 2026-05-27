@@ -34,7 +34,7 @@ export function ExamEntry() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="mx-auto max-w-5xl px-4 py-12">
+      <div className="mx-auto max-w-5xl px-4 py-8 md:py-12">
         <h1 className="mb-2 text-center text-3xl font-bold text-gray-900">
           GESP 模拟考试
         </h1>
@@ -42,7 +42,7 @@ export function ExamEntry() {
           选择等级开始模拟考试，考试时间到后将自动交卷
         </p>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {LEVELS.map((level) => {
             const color = LEVEL_COLORS[level];
             const config = EXAM_CONFIG[level];
