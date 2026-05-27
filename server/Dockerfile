@@ -8,7 +8,7 @@ COPY shared/package.json ./shared/package.json
 COPY server/package.json ./server/package.json
 
 # Install dependencies
-RUN pnpm config -g set onlyBuiltDependencies "esbuild,@prisma/engines,@prisma/client,cpu-features,protobufjs,ssh2"
+RUN printf 'onlyBuiltDependencies[]=esbuild\nonlyBuiltDependencies[]=@prisma/engines\nonlyBuiltDependencies[]=@prisma/client\nonlyBuiltDependencies[]=@tailwindcss/oxide-linux-x64-musl\n' > .npmrc
 RUN pnpm install --frozen-lockfile
 
 # Copy shared and server source
