@@ -2,7 +2,7 @@ import { Queue, QueueEvents } from 'bullmq';
 import type { Server as SocketIOServer } from 'socket.io';
 import { prisma } from '../lib/prisma.js';
 
-const connection = { host: 'localhost', port: 6379 };
+const connection = { host: process.env.REDIS_HOST || 'localhost', port: Number(process.env.REDIS_PORT) || 6379 };
 
 export const judgeQueue = new Queue('judge', { connection });
 
