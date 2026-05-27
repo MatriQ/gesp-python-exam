@@ -5,7 +5,7 @@
   "mock": true,
   "questions": [
     {
-      "id": "3f3e838f-ab41-451c-994b-b950166ae99e",
+      "id": "4b6d2ecc-ad93-45f6-b240-bb2231ce8966",
       "type": "mc",
       "questionIndex": 1,
       "questionText": "Kruskal算法使用了什么数据结构？",
@@ -30,7 +30,8 @@
       "answer": "B",
       "explanation": "Kruskal算法使用了什么数据结构？ 正确答案是B。并查集是正确的。",
       "topics": [
-        "计数原理"
+        "倍增法",
+        "复杂度分析"
       ],
       "difficulty": "medium",
       "images": null,
@@ -42,10 +43,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "466ad9b1-f542-4fcb-8c21-cc1a48bb6fac",
+      "id": "8629bb70-f177-4b3d-ad21-99504fd4f3ce",
       "type": "mc",
       "questionIndex": 2,
       "questionText": "杨辉三角中第n行第k个数的值等于？",
@@ -70,7 +71,7 @@
       "answer": "B",
       "explanation": "杨辉三角中第n行第k个数的值等于？ 正确答案是B。C(n-1,k-1)+C(n-1,k)是正确的。",
       "topics": [
-        "计数原理"
+        "Prim算法"
       ],
       "difficulty": "medium",
       "images": null,
@@ -82,10 +83,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "d9314d94-829f-4fbd-beb9-cb73e192ab42",
+      "id": "166d1ce9-70a9-4338-90c9-c9354fb4bd73",
       "type": "mc",
       "questionIndex": 3,
       "questionText": "Dijkstra算法的时间复杂度（使用优先队列）是？",
@@ -110,7 +111,8 @@
       "answer": "B",
       "explanation": "Dijkstra算法的时间复杂度（使用优先队列）是？ 正确答案是B。O(V log V + E log V)是正确的。",
       "topics": [
-        "倍增法"
+        "杨辉三角",
+        "复杂度分析"
       ],
       "difficulty": "medium",
       "images": null,
@@ -122,10 +124,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "8254f621-f365-41c5-ad1d-a0a0d808a1e0",
+      "id": "023ed66c-9a31-4f5e-af00-cc012c642a48",
       "type": "mc",
       "questionIndex": 4,
       "questionText": "倍增法（Binary Lifting）的核心思想是？",
@@ -150,8 +152,8 @@
       "answer": "B",
       "explanation": "倍增法（Binary Lifting）的核心思想是？ 正确答案是B。预处理2的幂次信息是正确的。",
       "topics": [
-        "计数原理",
-        "代数"
+        "Dijkstra算法",
+        "最小生成树"
       ],
       "difficulty": "medium",
       "images": null,
@@ -163,10 +165,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "79b7db64-29f9-4777-a593-605251a68f9a",
+      "id": "46f5dd1d-c14e-44c8-babe-1a944e303639",
       "type": "mc",
       "questionIndex": 5,
       "questionText": "Floyd算法的时间复杂度是？",
@@ -191,8 +193,7 @@
       "answer": "B",
       "explanation": "Floyd算法的时间复杂度是？ 正确答案是B。O(V³)是正确的。",
       "topics": [
-        "排列",
-        "杨辉三角"
+        "计数原理"
       ],
       "difficulty": "medium",
       "images": null,
@@ -204,10 +205,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "71c7ed25-10b6-4fb2-a0dd-e56dc9070b6b",
+      "id": "2758f6a6-792b-4cf7-83b7-46de0da75168",
       "type": "mc",
       "questionIndex": 6,
       "questionText": "排列数 P(n,k) 等于？",
@@ -232,8 +233,8 @@
       "answer": "C",
       "explanation": "排列数 P(n,k) 等于？ 正确答案是C。C(n,k)*k!是正确的。",
       "topics": [
-        "杨辉三角",
-        "Floyd算法"
+        "平面几何",
+        "杨辉三角"
       ],
       "difficulty": "medium",
       "images": null,
@@ -245,10 +246,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "4b753903-22a9-4e35-9110-e8a1ed7f3b58",
+      "id": "8bd2c77a-0c7e-4084-a851-205da41e5ea4",
       "type": "mc",
       "questionIndex": 7,
       "questionText": "Prim算法从一个顶点出发，每次选择？",
@@ -273,7 +274,8 @@
       "answer": "B",
       "explanation": "Prim算法从一个顶点出发，每次选择？ 正确答案是B。连接已选集和未选集的最短边是正确的。",
       "topics": [
-        "平面几何"
+        "Dijkstra算法",
+        "组合"
       ],
       "difficulty": "medium",
       "images": null,
@@ -285,10 +287,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "ed90aea1-b3ff-4988-9927-9b8d3dfd821a",
+      "id": "962d973f-227b-448d-a3cf-46c2e30f9f46",
       "type": "mc",
       "questionIndex": 8,
       "questionText": "最小生成树的边数是？",
@@ -325,10 +327,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "f26bbe21-505f-4a3a-938d-58074049d869",
+      "id": "9f20f85b-439c-40dc-90a8-4f9fc5b099e6",
       "type": "mc",
       "questionIndex": 9,
       "questionText": "平面几何中，三角形面积公式（海伦公式）需要知道？",
@@ -353,7 +355,8 @@
       "answer": "B",
       "explanation": "平面几何中，三角形面积公式（海伦公式）需要知道？ 正确答案是B。三边是正确的。",
       "topics": [
-        "平面几何"
+        "最短路径",
+        "排列"
       ],
       "difficulty": "medium",
       "images": null,
@@ -365,10 +368,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "ced44170-09c1-4383-9c24-bfec1d758a90",
+      "id": "aeba53c3-d332-4aac-8af5-69a1c426a754",
       "type": "mc",
       "questionIndex": 10,
       "questionText": "算法优化的主要目标不包括？",
@@ -393,7 +396,7 @@
       "answer": "C",
       "explanation": "算法优化的主要目标不包括？ 正确答案是C。增加代码行数是正确的。",
       "topics": [
-        "代数"
+        "算法优化"
       ],
       "difficulty": "medium",
       "images": null,
@@ -405,10 +408,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "2f15d6a9-3b1b-4faa-af9f-590e9defb927",
+      "id": "849d16c2-c2e0-4a11-9d1b-9c0277d8eefe",
       "type": "mc",
       "questionIndex": 11,
       "questionText": "计数原理中的乘法原理适用于？",
@@ -433,7 +436,7 @@
       "answer": "C",
       "explanation": "计数原理中的乘法原理适用于？ 正确答案是C。独立事件是正确的。",
       "topics": [
-        "算法优化"
+        "倍增法"
       ],
       "difficulty": "medium",
       "images": null,
@@ -445,10 +448,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "69be5929-fd34-4487-a2b9-bef623f35d41",
+      "id": "dfbb65b5-b993-479f-ad85-0d1ee5642a6b",
       "type": "mc",
       "questionIndex": 12,
       "questionText": "最短路径问题中，Bellman-Ford能处理？",
@@ -473,8 +476,8 @@
       "answer": "B",
       "explanation": "最短路径问题中，Bellman-Ford能处理？ 正确答案是B。正权和负权是正确的。",
       "topics": [
-        "代数",
-        "倍增法"
+        "计数原理",
+        "Prim算法"
       ],
       "difficulty": "medium",
       "images": null,
@@ -486,10 +489,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "371960fc-bf9f-4d41-8d74-326e267d0e2c",
+      "id": "2717bfa4-74e3-45ba-88d5-ba027f44acfd",
       "type": "mc",
       "questionIndex": 13,
       "questionText": "复杂度分析中，O(1)表示？",
@@ -514,7 +517,7 @@
       "answer": "A",
       "explanation": "复杂度分析中，O(1)表示？ 正确答案是A。常数时间是正确的。",
       "topics": [
-        "计数原理",
+        "平面几何",
         "复杂度分析"
       ],
       "difficulty": "medium",
@@ -527,10 +530,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "6703b385-7736-4366-a720-3a565fcdfdc0",
+      "id": "fe9f6884-ed2d-4ecb-acb2-122741b5fefa",
       "type": "mc",
       "questionIndex": 14,
       "questionText": "倍增法预处理的时间复杂度是？",
@@ -555,7 +558,7 @@
       "answer": "B",
       "explanation": "倍增法预处理的时间复杂度是？ 正确答案是B。O(n log n)是正确的。",
       "topics": [
-        "计数原理"
+        "复杂度分析"
       ],
       "difficulty": "medium",
       "images": null,
@@ -567,10 +570,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "294c7244-740e-4b7e-afc9-87103235ef66",
+      "id": "d176c8fb-36aa-4c9e-a9b5-88317402a177",
       "type": "mc",
       "questionIndex": 15,
       "questionText": "组合数 C(n,k) 的计算公式是？",
@@ -595,29 +598,7 @@
       "answer": "B",
       "explanation": "组合数 C(n,k) 的计算公式是？ 正确答案是B。n!/(k!(n-k)!)是正确的。",
       "topics": [
-        "计数原理"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
-    },
-    {
-      "id": "b83400b4-9e83-4945-b283-056672c4d866",
-      "type": "tf",
-      "questionIndex": 16,
-      "questionText": "排列和组合的区别在于是否考虑顺序。",
-      "options": null,
-      "answer": "对",
-      "explanation": "排列和组合的区别在于是否考虑顺序。 这个说法是正确的。",
-      "topics": [
+        "最小生成树",
         "复杂度分析"
       ],
       "difficulty": "medium",
@@ -630,18 +611,18 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "1fde6058-8573-4001-b50a-7d5f59970c85",
+      "id": "4941ab6a-72b9-400b-b568-1a07e4397d6b",
       "type": "tf",
-      "questionIndex": 17,
-      "questionText": "C(n,0) = 0。",
+      "questionIndex": 16,
+      "questionText": "排列和组合的区别在于是否考虑顺序。",
       "options": null,
-      "answer": "错",
-      "explanation": "C(n,0) = 0。 这个说法是错误的。",
+      "answer": "对",
+      "explanation": "排列和组合的区别在于是否考虑顺序。 这个说法是正确的。",
       "topics": [
-        "杨辉三角"
+        "计数原理"
       ],
       "difficulty": "medium",
       "images": null,
@@ -653,16 +634,16 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "d4944351-5ffa-4e9a-96e9-bc0e53ac248e",
+      "id": "980f9f69-e9e1-4f0c-b3ee-8ec6af5e9b2a",
       "type": "tf",
-      "questionIndex": 18,
-      "questionText": "Kruskal算法基于贪心策略。",
+      "questionIndex": 17,
+      "questionText": "C(n,0) = 0。",
       "options": null,
-      "answer": "对",
-      "explanation": "Kruskal算法基于贪心策略。 这个说法是正确的。",
+      "answer": "错",
+      "explanation": "C(n,0) = 0。 这个说法是错误的。",
       "topics": [
         "代数"
       ],
@@ -676,10 +657,33 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "2127fbf5-00d4-4440-bbb2-906167d6d303",
+      "id": "7bca2ee4-b62e-457d-9132-ecab4ae08678",
+      "type": "tf",
+      "questionIndex": 18,
+      "questionText": "Kruskal算法基于贪心策略。",
+      "options": null,
+      "answer": "对",
+      "explanation": "Kruskal算法基于贪心策略。 这个说法是正确的。",
+      "topics": [
+        "复杂度分析"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T01:47:31.504Z"
+    },
+    {
+      "id": "915f3df6-a3d0-43b4-8af4-673e0fcbebac",
       "type": "tf",
       "questionIndex": 19,
       "questionText": "Floyd算法可以处理负权边。",
@@ -687,7 +691,7 @@
       "answer": "对",
       "explanation": "Floyd算法可以处理负权边。 这个说法是正确的。",
       "topics": [
-        "最小生成树"
+        "Kruskal算法"
       ],
       "difficulty": "medium",
       "images": null,
@@ -699,10 +703,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "1f40012c-95a2-44fd-ba5c-1a4495958f90",
+      "id": "98864072-049a-4508-b708-bffa24ba685c",
       "type": "tf",
       "questionIndex": 20,
       "questionText": "最小生成树一定唯一。",
@@ -710,7 +714,7 @@
       "answer": "错",
       "explanation": "最小生成树一定唯一。 这个说法是错误的。",
       "topics": [
-        "杨辉三角"
+        "复杂度分析"
       ],
       "difficulty": "medium",
       "images": null,
@@ -722,10 +726,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "cb8e7bd9-bde8-4d3b-8467-2f46edca1272",
+      "id": "7bd3b41c-cb7c-4e5c-91ed-87d2677ecb2d",
       "type": "tf",
       "questionIndex": 21,
       "questionText": "杨辉三角中每行的和等于2的幂。",
@@ -745,10 +749,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "a2848da0-3bbe-4daa-8dc0-57a24b13bdec",
+      "id": "14814b7a-02ef-4843-ae0d-3cb5d20c46d6",
       "type": "tf",
       "questionIndex": 22,
       "questionText": "倍增法的预处理空间复杂度是O(n log n)。",
@@ -756,7 +760,7 @@
       "answer": "对",
       "explanation": "倍增法的预处理空间复杂度是O(n log n)。 这个说法是正确的。",
       "topics": [
-        "Floyd算法"
+        "复杂度分析"
       ],
       "difficulty": "medium",
       "images": null,
@@ -768,10 +772,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "342065b3-7234-4c84-9afa-a75572e82a7d",
+      "id": "b08ffac7-af7f-4f69-87a4-4622deab9ddc",
       "type": "tf",
       "questionIndex": 23,
       "questionText": "Dijkstra算法使用了动态规划思想。",
@@ -779,7 +783,7 @@
       "answer": "错",
       "explanation": "Dijkstra算法使用了动态规划思想。 这个说法是错误的。",
       "topics": [
-        "最小生成树"
+        "计数原理"
       ],
       "difficulty": "medium",
       "images": null,
@@ -791,10 +795,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "b9038b51-2d97-4737-b796-54cc160bfd10",
+      "id": "543a4026-2e11-49ee-a892-4198f6bdbef7",
       "type": "tf",
       "questionIndex": 24,
       "questionText": "P(n,n) = n!。",
@@ -802,7 +806,7 @@
       "answer": "对",
       "explanation": "P(n,n) = n!。 这个说法是正确的。",
       "topics": [
-        "最小生成树"
+        "复杂度分析"
       ],
       "difficulty": "medium",
       "images": null,
@@ -814,10 +818,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "cb475aee-8d1c-4258-a28b-4d35a727c5e5",
+      "id": "df8bb38f-229e-424d-b315-58bb28f9c0bc",
       "type": "tf",
       "questionIndex": 25,
       "questionText": "Prim算法适合稠密图。",
@@ -825,7 +829,7 @@
       "answer": "对",
       "explanation": "Prim算法适合稠密图。 这个说法是正确的。",
       "topics": [
-        "杨辉三角"
+        "Kruskal算法"
       ],
       "difficulty": "medium",
       "images": null,
@@ -837,10 +841,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "d829336c-028e-44cf-91ec-cfafef3da5ec",
+      "id": "0b1d4d62-9fff-4bb4-bddc-cd5b6d9683d5",
       "type": "programming",
       "questionIndex": 26,
       "questionText": "最短路径\n\n给定一个有向加权图，求从节点1到所有其他节点的最短路径。",
@@ -848,8 +852,8 @@
       "answer": "import heapq\nn, m = map(int, input().split())\nadj = [[] for _ in range(n + 1)]\nfor _ in range(m):\n    u, v, w = map(int, input().split())\n    adj[u].append((v, w))\ndist = [float('inf')] * (n + 1)\ndist[1] = 0\npq = [(0, 1)]\nwhile pq:\n    d, u = heapq.heappop(pq)\n    if d > dist[u]:\n        continue\n    for v, w in adj[u]:\n        if dist[u] + w < dist[v]:\n            dist[v] = dist[u] + w\n            heapq.heappush(pq, (dist[v], v))\nresult = []\nfor i in range(2, n + 1):\n    result.append(str(dist[i] if dist[i] != float('inf') else -1))\nprint(' '.join(result))",
       "explanation": "解题思路：给定一个有向加权图，求从节点1到所有其他节点的最短路径。",
       "topics": [
-        "组合",
-        "排列"
+        "计数原理",
+        "杨辉三角"
       ],
       "difficulty": "hard",
       "images": null,
@@ -885,10 +889,10 @@
           "isSample": true
         }
       ],
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     },
     {
-      "id": "b8c01660-2d40-4fb4-a2eb-4bf26e6e56cf",
+      "id": "474178db-9a70-465c-875b-567ef76221c9",
       "type": "programming",
       "questionIndex": 27,
       "questionText": "最小生成树\n\n给定一个无向加权图，求其最小生成树的总权重。",
@@ -896,8 +900,8 @@
       "answer": "n, m = map(int, input().split())\nedges = []\nfor _ in range(m):\n    u, v, w = map(int, input().split())\n    edges.append((w, u, v))\nedges.sort()\nparent = list(range(n + 1))\ndef find(x):\n    if parent[x] != x:\n        parent[x] = find(parent[x])\n    return parent[x]\ndef union(a, b):\n    a, b = find(a), find(b)\n    if a != b:\n        parent[a] = b\n        return True\n    return False\ntotal = 0\nfor w, u, v in edges:\n    if union(u, v):\n        total += w\nprint(total)",
       "explanation": "解题思路：给定一个无向加权图，求其最小生成树的总权重。",
       "topics": [
-        "排列",
-        "最短路径"
+        "Floyd算法",
+        "组合"
       ],
       "difficulty": "hard",
       "images": null,
@@ -937,8 +941,8 @@
           "isSample": true
         }
       ],
-      "createdAt": "2026-05-26T12:15:23.346Z"
+      "createdAt": "2026-05-27T01:47:31.504Z"
     }
   ],
-  "generatedAt": "2026-05-26T12:15:23.346Z"
+  "generatedAt": "2026-05-27T01:47:31.504Z"
 }

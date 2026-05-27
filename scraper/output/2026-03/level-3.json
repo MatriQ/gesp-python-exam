@@ -5,7 +5,7 @@
   "mock": true,
   "questions": [
     {
-      "id": "6e7b0590-8d03-498b-a89e-bfe150c9eecd",
+      "id": "40632ed9-3373-4876-816d-9c3e51898c7e",
       "type": "mc",
       "questionIndex": 1,
       "questionText": "表达式 0b1010 & 0b1100 的结果是？",
@@ -30,7 +30,6 @@
       "answer": "A",
       "explanation": "表达式 0b1010 & 0b1100 的结果是？ 正确答案是A。0b1000是正确的。",
       "topics": [
-        "元组",
         "位运算"
       ],
       "difficulty": "medium",
@@ -43,10 +42,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "63034a3e-9d29-4398-80c0-8a68cea545d8",
+      "id": "b063c37e-28ea-477e-9a92-c64c3d328696",
       "type": "mc",
       "questionIndex": 2,
       "questionText": "以下哪个方法可以向列表末尾添加元素？",
@@ -71,7 +70,6 @@
       "answer": "B",
       "explanation": "以下哪个方法可以向列表末尾添加元素？ 正确答案是B。append()是正确的。",
       "topics": [
-        "字典",
         "数据编码"
       ],
       "difficulty": "medium",
@@ -84,10 +82,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "caae773b-8a58-4f6b-b118-c5fffbe5a0f9",
+      "id": "f2e8d9a2-22b1-46e9-9126-e26d8968a084",
       "type": "mc",
       "questionIndex": 3,
       "questionText": "表达式 [1,2,3] + [4,5] 的结果是？",
@@ -112,8 +110,7 @@
       "answer": "B",
       "explanation": "表达式 [1,2,3] + [4,5] 的结果是？ 正确答案是B。[1,2,3,4,5]是正确的。",
       "topics": [
-        "枚举法",
-        "算法描述"
+        "进制转换"
       ],
       "difficulty": "medium",
       "images": null,
@@ -125,10 +122,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "b3d9e788-7bcc-4e8e-a1ce-8ede44e8b988",
+      "id": "b7b153af-d038-41f2-a026-950334cb1b83",
       "type": "mc",
       "questionIndex": 4,
       "questionText": "字典中获取所有键的方法是？",
@@ -153,7 +150,8 @@
       "answer": "B",
       "explanation": "字典中获取所有键的方法是？ 正确答案是B。.keys()是正确的。",
       "topics": [
-        "进制转换"
+        "列表",
+        "字典"
       ],
       "difficulty": "medium",
       "images": null,
@@ -165,10 +163,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "c985bff3-e28d-422d-92f2-73cab427f06d",
+      "id": "67e6e355-f348-4855-92ea-d36617350cc8",
       "type": "mc",
       "questionIndex": 5,
       "questionText": "表达式 {1,2,3} & {2,3,4} 的结果是？",
@@ -193,8 +191,7 @@
       "answer": "B",
       "explanation": "表达式 {1,2,3} & {2,3,4} 的结果是？ 正确答案是B。{2,3}是正确的。",
       "topics": [
-        "数据编码",
-        "枚举法"
+        "数据编码"
       ],
       "difficulty": "medium",
       "images": null,
@@ -206,10 +203,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "3b30fb76-ed23-4c91-90ee-d4aa76d0b637",
+      "id": "8420a6e9-7858-4bdd-8b9c-57e8d72a0d1b",
       "type": "mc",
       "questionIndex": 6,
       "questionText": "列表解析 [x**2 for x in range(5)] 的结果是？",
@@ -234,8 +231,7 @@
       "answer": "A",
       "explanation": "列表解析 [x**2 for x in range(5)] 的结果是？ 正确答案是A。[0,1,4,9,16]是正确的。",
       "topics": [
-        "数据编码",
-        "字符串函数"
+        "列表"
       ],
       "difficulty": "medium",
       "images": null,
@@ -247,10 +243,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "e199358f-5201-4bdd-8036-1e98d1cc2006",
+      "id": "2326f2b9-ef89-4785-a09f-65eabc7b5124",
       "type": "mc",
       "questionIndex": 7,
       "questionText": "表达式 \"hello\".upper() 的结果是？",
@@ -275,8 +271,7 @@
       "answer": "A",
       "explanation": "表达式 \"hello\".upper() 的结果是？ 正确答案是A。\"HELLO\"是正确的。",
       "topics": [
-        "元组",
-        "字典"
+        "元组"
       ],
       "difficulty": "medium",
       "images": null,
@@ -288,10 +283,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "1d14be05-bafb-4e75-817d-3feea6d864cd",
+      "id": "a465f085-3473-44e9-9aed-2ef158a45cf3",
       "type": "mc",
       "questionIndex": 8,
       "questionText": "元组与列表的主要区别是？",
@@ -316,7 +311,7 @@
       "answer": "B",
       "explanation": "元组与列表的主要区别是？ 正确答案是B。元组不可变是正确的。",
       "topics": [
-        "列表解析"
+        "元组"
       ],
       "difficulty": "medium",
       "images": null,
@@ -328,10 +323,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "fe302827-a75e-4db7-9e88-c6e65715b75a",
+      "id": "d82a5268-c301-4790-ab5d-ba88438b07fc",
       "type": "mc",
       "questionIndex": 9,
       "questionText": "表达式 bin(10) 的结果是？",
@@ -356,8 +351,7 @@
       "answer": "A",
       "explanation": "表达式 bin(10) 的结果是？ 正确答案是A。'0b1010'是正确的。",
       "topics": [
-        "字典",
-        "进制转换"
+        "列表"
       ],
       "difficulty": "medium",
       "images": null,
@@ -369,10 +363,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "e41d2e7c-0212-46a9-b8d4-8a3c999327ac",
+      "id": "d5353b72-2cf2-444a-9227-e2b186dc69ef",
       "type": "mc",
       "questionIndex": 10,
       "questionText": "以下哪个不是Python的内置数据结构？",
@@ -397,6 +391,7 @@
       "answer": "C",
       "explanation": "以下哪个不是Python的内置数据结构？ 正确答案是C。array是正确的。",
       "topics": [
+        "字典",
         "进制转换"
       ],
       "difficulty": "medium",
@@ -409,10 +404,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "b8db0c28-2634-4b66-a216-420b43958a0b",
+      "id": "fede0dc6-30f7-4285-8799-d6b12f38f88f",
       "type": "mc",
       "questionIndex": 11,
       "questionText": "表达式 list(range(1,10,2)) 的结果是？",
@@ -438,7 +433,7 @@
       "explanation": "表达式 list(range(1,10,2)) 的结果是？ 正确答案是A。[1,3,5,7,9]是正确的。",
       "topics": [
         "列表",
-        "模拟法"
+        "位运算"
       ],
       "difficulty": "medium",
       "images": null,
@@ -450,10 +445,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "334852cf-af5b-495d-a9c4-aefb4dcefb2a",
+      "id": "6e4e9e1b-f322-42a3-8fa3-fcfd22bb74db",
       "type": "mc",
       "questionIndex": 12,
       "questionText": "字符串方法 .find(\"x\") 找不到子串时返回？",
@@ -478,7 +473,8 @@
       "answer": "B",
       "explanation": "字符串方法 .find(\"x\") 找不到子串时返回？ 正确答案是B。-1是正确的。",
       "topics": [
-        "位运算"
+        "算法描述",
+        "集合"
       ],
       "difficulty": "medium",
       "images": null,
@@ -490,10 +486,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "d112dd61-6ec3-457a-86c8-ce25216994ad",
+      "id": "06306718-728b-4809-98c3-dfac958cd7eb",
       "type": "mc",
       "questionIndex": 13,
       "questionText": "枚举法的核心思想是？",
@@ -518,7 +514,7 @@
       "answer": "B",
       "explanation": "枚举法的核心思想是？ 正确答案是B。逐一尝试所有可能是正确的。",
       "topics": [
-        "算法描述"
+        "字典"
       ],
       "difficulty": "medium",
       "images": null,
@@ -530,10 +526,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "77b86a21-9bf4-48f8-93b1-017fbd6374cd",
+      "id": "a2e5ca6f-bd7d-4a17-a688-3f2e886a1133",
       "type": "mc",
       "questionIndex": 14,
       "questionText": "表达式 5 >> 1 的值是？",
@@ -558,8 +554,7 @@
       "answer": "A",
       "explanation": "表达式 5 >> 1 的值是？ 正确答案是A。2是正确的。",
       "topics": [
-        "算法描述",
-        "数据编码"
+        "模拟法"
       ],
       "difficulty": "medium",
       "images": null,
@@ -571,10 +566,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "7077a30c-de70-4156-b5ad-18db12b867f2",
+      "id": "b8aada41-2216-497e-9c79-5b5186690671",
       "type": "mc",
       "questionIndex": 15,
       "questionText": "十六进制数 FF 转换为十进制是？",
@@ -599,8 +594,7 @@
       "answer": "A",
       "explanation": "十六进制数 FF 转换为十进制是？ 正确答案是A。255是正确的。",
       "topics": [
-        "列表解析",
-        "集合"
+        "字典"
       ],
       "difficulty": "medium",
       "images": null,
@@ -612,10 +606,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "655ee4db-0adf-4ef8-8115-8ea755047dd4",
+      "id": "27984dc1-41ae-4a05-ac18-946ef814f18d",
       "type": "tf",
       "questionIndex": 16,
       "questionText": "列表中的元素可以是不同类型。",
@@ -635,10 +629,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "40918948-703c-437f-ae9a-e1496423cc0f",
+      "id": "2a4435d7-0a72-4f70-bf56-73206f27f93e",
       "type": "tf",
       "questionIndex": 17,
       "questionText": "字典中的键可以重复。",
@@ -646,7 +640,7 @@
       "answer": "错",
       "explanation": "字典中的键可以重复。 这个说法是错误的。",
       "topics": [
-        "模拟法"
+        "字典"
       ],
       "difficulty": "medium",
       "images": null,
@@ -658,154 +652,16 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "e20b9b27-04ac-460d-bf53-3a8942657494",
+      "id": "c81c2a54-f564-471f-b27a-77429f7f64fc",
       "type": "tf",
       "questionIndex": 18,
       "questionText": "集合(set)中的元素是有序的。",
       "options": null,
       "answer": "错",
       "explanation": "集合(set)中的元素是有序的。 这个说法是错误的。",
-      "topics": [
-        "数据编码"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
-    },
-    {
-      "id": "0645a508-ea13-4fcd-b623-0c4a20cd8956",
-      "type": "tf",
-      "questionIndex": 19,
-      "questionText": "列表推导式比普通for循环执行效率更高。",
-      "options": null,
-      "answer": "对",
-      "explanation": "列表推导式比普通for循环执行效率更高。 这个说法是正确的。",
-      "topics": [
-        "位运算"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
-    },
-    {
-      "id": "c1826235-ae56-4361-91d5-eb7a0a8ff584",
-      "type": "tf",
-      "questionIndex": 20,
-      "questionText": "元组创建后可以修改其中的元素。",
-      "options": null,
-      "answer": "错",
-      "explanation": "元组创建后可以修改其中的元素。 这个说法是错误的。",
-      "topics": [
-        "字符串函数"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
-    },
-    {
-      "id": "08579eed-f343-4edd-9f80-9a51f29ce201",
-      "type": "tf",
-      "questionIndex": 21,
-      "questionText": "字符串是不可变类型，不能原地修改。",
-      "options": null,
-      "answer": "对",
-      "explanation": "字符串是不可变类型，不能原地修改。 这个说法是正确的。",
-      "topics": [
-        "枚举法"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
-    },
-    {
-      "id": "664c359a-4f99-479b-afa4-562cb64d449f",
-      "type": "tf",
-      "questionIndex": 22,
-      "questionText": "八进制数在Python中用前缀0o表示。",
-      "options": null,
-      "answer": "对",
-      "explanation": "八进制数在Python中用前缀0o表示。 这个说法是正确的。",
-      "topics": [
-        "数据编码"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
-    },
-    {
-      "id": "8eb65672-8818-4ad8-96ef-e7e517ec9847",
-      "type": "tf",
-      "questionIndex": 23,
-      "questionText": "两个集合的差集 A-B 等价于 B-A。",
-      "options": null,
-      "answer": "错",
-      "explanation": "两个集合的差集 A-B 等价于 B-A。 这个说法是错误的。",
-      "topics": [
-        "算法描述"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
-    },
-    {
-      "id": "982413a9-09fe-4e4c-97d6-48fd9a962a85",
-      "type": "tf",
-      "questionIndex": 24,
-      "questionText": "位运算中的左移一位相当于乘以2。",
-      "options": null,
-      "answer": "对",
-      "explanation": "位运算中的左移一位相当于乘以2。 这个说法是正确的。",
       "topics": [
         "进制转换"
       ],
@@ -819,10 +675,148 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "2b8752ef-07e9-44e6-9f6f-9e569e11b884",
+      "id": "bdbd4517-5a0f-4062-ab43-19fd10e845ba",
+      "type": "tf",
+      "questionIndex": 19,
+      "questionText": "列表推导式比普通for循环执行效率更高。",
+      "options": null,
+      "answer": "对",
+      "explanation": "列表推导式比普通for循环执行效率更高。 这个说法是正确的。",
+      "topics": [
+        "模拟法"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T01:47:31.387Z"
+    },
+    {
+      "id": "793a1886-7a5a-4095-9474-4edc2ccd53a4",
+      "type": "tf",
+      "questionIndex": 20,
+      "questionText": "元组创建后可以修改其中的元素。",
+      "options": null,
+      "answer": "错",
+      "explanation": "元组创建后可以修改其中的元素。 这个说法是错误的。",
+      "topics": [
+        "算法描述"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T01:47:31.387Z"
+    },
+    {
+      "id": "c4eb7961-a20f-4e35-b13e-93b329389028",
+      "type": "tf",
+      "questionIndex": 21,
+      "questionText": "字符串是不可变类型，不能原地修改。",
+      "options": null,
+      "answer": "对",
+      "explanation": "字符串是不可变类型，不能原地修改。 这个说法是正确的。",
+      "topics": [
+        "模拟法"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T01:47:31.387Z"
+    },
+    {
+      "id": "b4f2f404-0e4e-4806-853c-9619d8c24bf4",
+      "type": "tf",
+      "questionIndex": 22,
+      "questionText": "八进制数在Python中用前缀0o表示。",
+      "options": null,
+      "answer": "对",
+      "explanation": "八进制数在Python中用前缀0o表示。 这个说法是正确的。",
+      "topics": [
+        "元组"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T01:47:31.387Z"
+    },
+    {
+      "id": "fd501400-4bc5-4ea7-97f4-5c3e1a55de05",
+      "type": "tf",
+      "questionIndex": 23,
+      "questionText": "两个集合的差集 A-B 等价于 B-A。",
+      "options": null,
+      "answer": "错",
+      "explanation": "两个集合的差集 A-B 等价于 B-A。 这个说法是错误的。",
+      "topics": [
+        "位运算"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T01:47:31.387Z"
+    },
+    {
+      "id": "05d9d710-5bdf-4cad-9d72-dc63b8822805",
+      "type": "tf",
+      "questionIndex": 24,
+      "questionText": "位运算中的左移一位相当于乘以2。",
+      "options": null,
+      "answer": "对",
+      "explanation": "位运算中的左移一位相当于乘以2。 这个说法是正确的。",
+      "topics": [
+        "元组"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T01:47:31.387Z"
+    },
+    {
+      "id": "68dd64d5-6dc2-444a-bfe0-06cf13cfca17",
       "type": "tf",
       "questionIndex": 25,
       "questionText": "Python中列表的索引从1开始。",
@@ -842,10 +836,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "d47bd437-587d-4e4c-a9ce-7ced8171eaec",
+      "id": "2ccf2327-de23-49fc-a287-9a4c2cc0a5e4",
       "type": "programming",
       "questionIndex": 26,
       "questionText": "列表操作\n\n输入n个整数存入列表，然后进行以下操作：1. 去除重复元素 2. 排序 3. 输出处理后的列表。",
@@ -853,8 +847,8 @@
       "answer": "n = int(input())\nnums = list(map(int, input().split()))\nresult = sorted(set(nums))\nprint(result)",
       "explanation": "解题思路：输入n个整数存入列表，然后进行以下操作：1. 去除重复元素 2. 排序 3. 输出处理后的列表。",
       "topics": [
-        "字符串函数",
-        "列表"
+        "进制转换",
+        "集合"
       ],
       "difficulty": "hard",
       "images": null,
@@ -878,10 +872,10 @@
           "isSample": true
         }
       ],
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     },
     {
-      "id": "dbfe62e7-11f6-498e-bc49-aedc01d0ff13",
+      "id": "bc7ec250-5262-453c-8d47-5b7ce3ae3071",
       "type": "programming",
       "questionIndex": 27,
       "questionText": "进制转换\n\n输入一个十进制正整数n，输出它的二进制、八进制和十六进制表示。",
@@ -890,7 +884,7 @@
       "explanation": "解题思路：输入一个十进制正整数n，输出它的二进制、八进制和十六进制表示。",
       "topics": [
         "字典",
-        "列表"
+        "进制转换"
       ],
       "difficulty": "hard",
       "images": null,
@@ -910,8 +904,8 @@
           "isSample": true
         }
       ],
-      "createdAt": "2026-05-26T12:15:23.328Z"
+      "createdAt": "2026-05-27T01:47:31.387Z"
     }
   ],
-  "generatedAt": "2026-05-26T12:15:23.328Z"
+  "generatedAt": "2026-05-27T01:47:31.387Z"
 }

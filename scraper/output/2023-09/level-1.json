@@ -5,7 +5,7 @@
   "mock": true,
   "questions": [
     {
-      "id": "972b8a55-98de-4277-9369-8f342190454b",
+      "id": "0491043f-9151-48e3-95c7-7ba9bc181a48",
       "type": "mc",
       "questionIndex": 1,
       "questionText": "Python中 print(type(3.14)) 的输出结果是？",
@@ -30,8 +30,8 @@
       "answer": "B",
       "explanation": "Python中 print(type(3.14)) 的输出结果是？ 正确答案是B。<class 'float'>是正确的。",
       "topics": [
-        "基础语法",
-        "运算符"
+        "三大结构",
+        "数据类型"
       ],
       "difficulty": "medium",
       "images": null,
@@ -43,10 +43,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "3bae5493-63c4-4e15-a875-46023aafd4db",
+      "id": "1f33b7b5-39a3-46fd-ab8f-8834c78de738",
       "type": "mc",
       "questionIndex": 2,
       "questionText": "以下哪个运算符用于整除？",
@@ -83,10 +83,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "4c1a7854-23d4-4c27-b50d-9b67deee004d",
+      "id": "aa695208-33a2-409b-8b56-decf236ccea0",
       "type": "mc",
       "questionIndex": 3,
       "questionText": "Python中 input() 函数的返回值类型是？",
@@ -111,8 +111,8 @@
       "answer": "C",
       "explanation": "Python中 input() 函数的返回值类型是？ 正确答案是C。str是正确的。",
       "topics": [
-        "三大结构",
-        "基础语法"
+        "计算机基础",
+        "数据类型"
       ],
       "difficulty": "medium",
       "images": null,
@@ -124,10 +124,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "d4452f7c-674b-48c2-b78f-1d28d84dd5d3",
+      "id": "68ed9c18-cbd9-4df7-814e-9a96325af550",
       "type": "mc",
       "questionIndex": 4,
       "questionText": "以下哪个是Python的注释符号？",
@@ -152,8 +152,7 @@
       "answer": "C",
       "explanation": "以下哪个是Python的注释符号？ 正确答案是C。#是正确的。",
       "topics": [
-        "基础语法",
-        "三大结构"
+        "计算机基础"
       ],
       "difficulty": "medium",
       "images": null,
@@ -165,10 +164,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "17627344-942c-4990-bc9a-cd11ff36ef91",
+      "id": "6b4ce06b-fcce-495a-8ee6-4997817aca46",
       "type": "mc",
       "questionIndex": 5,
       "questionText": "表达式 2 ** 3 的值是？",
@@ -193,7 +192,8 @@
       "answer": "B",
       "explanation": "表达式 2 ** 3 的值是？ 正确答案是B。8是正确的。",
       "topics": [
-        "三大结构"
+        "三大结构",
+        "数据类型"
       ],
       "difficulty": "medium",
       "images": null,
@@ -205,10 +205,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "76dfaf48-2d13-410a-9096-f47f4314ee6c",
+      "id": "36422af9-48b2-4d2e-9765-572fe246f342",
       "type": "mc",
       "questionIndex": 6,
       "questionText": "以下哪个语句可以正确导入math模块？",
@@ -233,8 +233,8 @@
       "answer": "A",
       "explanation": "以下哪个语句可以正确导入math模块？ 正确答案是A。import math是正确的。",
       "topics": [
-        "计算机基础",
-        "数据类型"
+        "模块导入",
+        "计算机基础"
       ],
       "difficulty": "medium",
       "images": null,
@@ -246,10 +246,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "e0720e58-5e64-4b5b-bc70-f6a569aa8ed1",
+      "id": "21f456e2-a905-4823-94d1-207a5585cb61",
       "type": "mc",
       "questionIndex": 7,
       "questionText": "在Python中，以下哪个关键字用于定义函数？",
@@ -274,8 +274,7 @@
       "answer": "B",
       "explanation": "在Python中，以下哪个关键字用于定义函数？ 正确答案是B。def是正确的。",
       "topics": [
-        "三大结构",
-        "运算符"
+        "三大结构"
       ],
       "difficulty": "medium",
       "images": null,
@@ -287,10 +286,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "b8bafba8-6c30-4c92-98c9-dd69ed1d5426",
+      "id": "fa404993-6713-4da4-bdda-a2ee780e6d2f",
       "type": "mc",
       "questionIndex": 8,
       "questionText": "表达式 len(\"Hello\") 的值是？",
@@ -315,7 +314,7 @@
       "answer": "B",
       "explanation": "表达式 len(\"Hello\") 的值是？ 正确答案是B。5是正确的。",
       "topics": [
-        "运算符"
+        "计算机基础"
       ],
       "difficulty": "medium",
       "images": null,
@@ -327,10 +326,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "3da87b3f-f4c7-4c95-a551-8f5a6828fb0a",
+      "id": "ea280b68-cbb7-412e-8976-065f48eaf2a8",
       "type": "mc",
       "questionIndex": 9,
       "questionText": "以下哪种数据类型是不可变的？",
@@ -355,7 +354,7 @@
       "answer": "C",
       "explanation": "以下哪种数据类型是不可变的？ 正确答案是C。tuple是正确的。",
       "topics": [
-        "三大结构",
+        "计算机基础",
         "编程规范"
       ],
       "difficulty": "medium",
@@ -368,10 +367,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "b442eeb0-4ba9-4051-bb62-6097acefeb98",
+      "id": "58f87849-5b3c-4a86-af45-695c86901d8f",
       "type": "mc",
       "questionIndex": 10,
       "questionText": "Python中布尔值 True 的整数值是？",
@@ -396,7 +395,8 @@
       "answer": "B",
       "explanation": "Python中布尔值 True 的整数值是？ 正确答案是B。1是正确的。",
       "topics": [
-        "计算机基础"
+        "Turtle绘图",
+        "模块导入"
       ],
       "difficulty": "medium",
       "images": null,
@@ -408,10 +408,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "cfcdfdf9-04f8-47c3-8e0f-35fdb44a52cb",
+      "id": "7e8fcc46-484c-44c4-ae84-5019a3a12ca2",
       "type": "mc",
       "questionIndex": 11,
       "questionText": "表达式 \"ab\" + \"cd\" 的结果是？",
@@ -436,7 +436,7 @@
       "answer": "A",
       "explanation": "表达式 \"ab\" + \"cd\" 的结果是？ 正确答案是A。\"abcd\"是正确的。",
       "topics": [
-        "模块导入"
+        "计算机基础"
       ],
       "difficulty": "medium",
       "images": null,
@@ -448,10 +448,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "b683f6b5-4f10-433c-881e-7b71690092be",
+      "id": "02b9e0b2-bd60-421e-9ebb-01f56fdc53b6",
       "type": "mc",
       "questionIndex": 12,
       "questionText": "以下哪个是Python的保留关键字？",
@@ -476,8 +476,8 @@
       "answer": "B",
       "explanation": "以下哪个是Python的保留关键字？ 正确答案是B。for是正确的。",
       "topics": [
-        "计算机基础",
-        "输入输出"
+        "模块导入",
+        "运算符"
       ],
       "difficulty": "medium",
       "images": null,
@@ -489,10 +489,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "eeddd67d-83bd-42fb-9437-63cec8735cfd",
+      "id": "07095e8a-bad3-4ca7-93ed-a2bfef55d525",
       "type": "mc",
       "questionIndex": 13,
       "questionText": "Turtle绘图中，forward(100) 的作用是？",
@@ -517,8 +517,8 @@
       "answer": "B",
       "explanation": "Turtle绘图中，forward(100) 的作用是？ 正确答案是B。前进100像素是正确的。",
       "topics": [
-        "输入输出",
-        "基础语法"
+        "运算符",
+        "输入输出"
       ],
       "difficulty": "medium",
       "images": null,
@@ -530,10 +530,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "c3e25fa4-10ef-4573-90b7-6e35ac29f48b",
+      "id": "c2c2f31f-4d6b-4fad-9789-eeac5b19f63a",
       "type": "mc",
       "questionIndex": 14,
       "questionText": "表达式 10 % 3 的值是？",
@@ -558,7 +558,7 @@
       "answer": "C",
       "explanation": "表达式 10 % 3 的值是？ 正确答案是C。1是正确的。",
       "topics": [
-        "数据类型"
+        "三大结构"
       ],
       "difficulty": "medium",
       "images": null,
@@ -570,10 +570,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "0e71381f-17c9-480e-be8c-2a9896554773",
+      "id": "711c457f-2bc5-4007-9a87-436ba53aa94d",
       "type": "mc",
       "questionIndex": 15,
       "questionText": "在Python中，以下哪个是合法的变量名？",
@@ -598,7 +598,7 @@
       "answer": "B",
       "explanation": "在Python中，以下哪个是合法的变量名？ 正确答案是B。_name是正确的。",
       "topics": [
-        "基础语法"
+        "计算机基础"
       ],
       "difficulty": "medium",
       "images": null,
@@ -610,10 +610,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "697ae42c-f1ae-4739-9297-2c8d9b4e05c5",
+      "id": "5c745ae4-90f8-46c1-b99b-6f888f71efe8",
       "type": "tf",
       "questionIndex": 16,
       "questionText": "Python是一种解释型语言。",
@@ -621,7 +621,7 @@
       "answer": "对",
       "explanation": "Python是一种解释型语言。 这个说法是正确的。",
       "topics": [
-        "运算符"
+        "数据类型"
       ],
       "difficulty": "medium",
       "images": null,
@@ -633,10 +633,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "cdcfab57-9d43-4b56-a2d8-cdaa9bbfd6b7",
+      "id": "e7608b3d-fdca-45e0-bbb5-e036de4728c6",
       "type": "tf",
       "questionIndex": 17,
       "questionText": "在Python中，缩进是语法的一部分。",
@@ -644,7 +644,7 @@
       "answer": "对",
       "explanation": "在Python中，缩进是语法的一部分。 这个说法是正确的。",
       "topics": [
-        "三大结构"
+        "数据类型"
       ],
       "difficulty": "medium",
       "images": null,
@@ -656,10 +656,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "449fc16a-e863-4e1b-a340-055856ee937d",
+      "id": "0fbf3519-c022-4218-802d-219e9d97eedf",
       "type": "tf",
       "questionIndex": 18,
       "questionText": "print语句可以同时输出多个值。",
@@ -679,10 +679,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "ec445a51-1721-462e-acd6-643ceabb43b7",
+      "id": "20b25d4d-020b-486d-93a2-ca5245460df6",
       "type": "tf",
       "questionIndex": 19,
       "questionText": "Python中变量必须先声明类型再使用。",
@@ -690,7 +690,7 @@
       "answer": "错",
       "explanation": "Python中变量必须先声明类型再使用。 这个说法是错误的。",
       "topics": [
-        "计算机基础"
+        "基础语法"
       ],
       "difficulty": "medium",
       "images": null,
@@ -702,39 +702,16 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "26704499-718d-4abb-8c4f-042faeba2025",
+      "id": "60bf4034-23c5-432e-a37a-3f95b1fe1c90",
       "type": "tf",
       "questionIndex": 20,
       "questionText": "整数和浮点数相加，结果是浮点数。",
       "options": null,
       "answer": "对",
       "explanation": "整数和浮点数相加，结果是浮点数。 这个说法是正确的。",
-      "topics": [
-        "模块导入"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
-    },
-    {
-      "id": "35e3a212-104e-480f-b289-e70c84ffbf1a",
-      "type": "tf",
-      "questionIndex": 21,
-      "questionText": "Python中单引号和双引号不能混用。",
-      "options": null,
-      "answer": "错",
-      "explanation": "Python中单引号和双引号不能混用。 这个说法是错误的。",
       "topics": [
         "数据类型"
       ],
@@ -748,62 +725,39 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "d7c0c533-5665-4d86-a0ed-1e85294427d5",
+      "id": "3c607852-67bc-4dbf-80ce-de8ba465865d",
+      "type": "tf",
+      "questionIndex": 21,
+      "questionText": "Python中单引号和双引号不能混用。",
+      "options": null,
+      "answer": "错",
+      "explanation": "Python中单引号和双引号不能混用。 这个说法是错误的。",
+      "topics": [
+        "输入输出"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T01:47:31.536Z"
+    },
+    {
+      "id": "f5b3f826-7ca9-4aa6-851d-30bdcda8fa29",
       "type": "tf",
       "questionIndex": 22,
       "questionText": "for循环只能用于遍历列表。",
       "options": null,
       "answer": "错",
       "explanation": "for循环只能用于遍历列表。 这个说法是错误的。",
-      "topics": [
-        "模块导入"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
-    },
-    {
-      "id": "5cb5433b-f12d-452c-b35d-499761841aca",
-      "type": "tf",
-      "questionIndex": 23,
-      "questionText": "while循环可能一次都不执行。",
-      "options": null,
-      "answer": "对",
-      "explanation": "while循环可能一次都不执行。 这个说法是正确的。",
-      "topics": [
-        "计算机基础"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
-    },
-    {
-      "id": "e2ce0bd0-b4cc-46ae-a6c5-d1d96a3a6a0d",
-      "type": "tf",
-      "questionIndex": 24,
-      "questionText": "Python中变量名区分大小写。",
-      "options": null,
-      "answer": "对",
-      "explanation": "Python中变量名区分大小写。 这个说法是正确的。",
       "topics": [
         "Turtle绘图"
       ],
@@ -817,18 +771,18 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "fd382bdd-deca-4a7d-993d-11d048496461",
+      "id": "e0e3f06d-6d2c-414b-ae0f-fec3367b3ca7",
       "type": "tf",
-      "questionIndex": 25,
-      "questionText": "在Turtle绘图中，penup()表示开始画线。",
+      "questionIndex": 23,
+      "questionText": "while循环可能一次都不执行。",
       "options": null,
-      "answer": "错",
-      "explanation": "在Turtle绘图中，penup()表示开始画线。 这个说法是错误的。",
+      "answer": "对",
+      "explanation": "while循环可能一次都不执行。 这个说法是正确的。",
       "topics": [
-        "运算符"
+        "数据类型"
       ],
       "difficulty": "medium",
       "images": null,
@@ -840,10 +794,56 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "a887179b-e3a5-4c3c-b79a-e5ef19a97b50",
+      "id": "8039610e-cb87-4a38-92f4-91eda8e5faf5",
+      "type": "tf",
+      "questionIndex": 24,
+      "questionText": "Python中变量名区分大小写。",
+      "options": null,
+      "answer": "对",
+      "explanation": "Python中变量名区分大小写。 这个说法是正确的。",
+      "topics": [
+        "模块导入"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T01:47:31.536Z"
+    },
+    {
+      "id": "a0d3d108-d48d-47cc-b6c5-5de29009f3fd",
+      "type": "tf",
+      "questionIndex": 25,
+      "questionText": "在Turtle绘图中，penup()表示开始画线。",
+      "options": null,
+      "answer": "错",
+      "explanation": "在Turtle绘图中，penup()表示开始画线。 这个说法是错误的。",
+      "topics": [
+        "计算机基础"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T01:47:31.536Z"
+    },
+    {
+      "id": "fa3909e9-296f-47a9-ae0b-a556176669fa",
       "type": "programming",
       "questionIndex": 26,
       "questionText": "温度转换\n\n输入一个华氏温度，输出对应的摄氏温度。转换公式：C = (F - 32) * 5 / 9，结果保留两位小数。",
@@ -851,8 +851,8 @@
       "answer": "f = float(input())\nc = (f - 32) * 5 / 9\nprint(f\"{c:.2f}\")",
       "explanation": "解题思路：输入一个华氏温度，输出对应的摄氏温度。转换公式：C = (F - 32) * 5 / 9，结果保留两位小数。",
       "topics": [
-        "数据类型",
-        "计算机基础"
+        "模块导入",
+        "运算符"
       ],
       "difficulty": "hard",
       "images": null,
@@ -872,10 +872,10 @@
           "isSample": true
         }
       ],
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     },
     {
-      "id": "3f501143-3b87-4e98-8b7d-ac34f00dfdb0",
+      "id": "58f662a1-5621-4955-9b99-626fec37869a",
       "type": "programming",
       "questionIndex": 27,
       "questionText": "奇偶判断\n\n输入一个整数，判断它是奇数还是偶数。如果是偶数输出\"even\"，否则输出\"odd\"。",
@@ -884,7 +884,7 @@
       "explanation": "解题思路：输入一个整数，判断它是奇数还是偶数。如果是偶数输出\"even\"，否则输出\"odd\"。",
       "topics": [
         "运算符",
-        "数据类型"
+        "基础语法"
       ],
       "difficulty": "hard",
       "images": null,
@@ -904,8 +904,8 @@
           "isSample": true
         }
       ],
-      "createdAt": "2026-05-26T12:15:23.431Z"
+      "createdAt": "2026-05-27T01:47:31.536Z"
     }
   ],
-  "generatedAt": "2026-05-26T12:15:23.431Z"
+  "generatedAt": "2026-05-27T01:47:31.536Z"
 }

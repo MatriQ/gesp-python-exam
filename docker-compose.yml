@@ -54,7 +54,7 @@ services:
       context: .
       dockerfile: client/Dockerfile
     ports:
-      - '80:80'
+      - '3002:80'
     depends_on:
       - server
     healthcheck:
