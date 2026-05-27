@@ -11,7 +11,8 @@ const submissionLimiter = rateLimit({
   windowMs: 60 * 1000,
   max: 10,
   message: { error: 'Too many submissions, please try again later' },
-  keyGenerator: (req) => req.user?.userId ?? req.ip ?? 'unknown',
+  standardHeaders: true,
+  legacyHeaders: false,
 });
 
 const submitSchema = z.object({
