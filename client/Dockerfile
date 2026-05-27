@@ -6,6 +6,7 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.json .npmrc ./
 COPY shared/package.json ./shared/package.json
 COPY client/package.json ./client/package.json
 
+RUN pnpm config -g set onlyBuiltDependencies "esbuild,@prisma/engines,@prisma/client,cpu-features,protobufjs,ssh2"
 RUN pnpm install --frozen-lockfile
 
 COPY shared/ ./shared/

@@ -8,6 +8,7 @@ RUN apk add --no-cache docker-cli
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.json .npmrc ./
 COPY judge/package.json ./judge/package.json
 
+RUN pnpm config -g set onlyBuiltDependencies "esbuild,@prisma/engines,@prisma/client,cpu-features,protobufjs,ssh2"
 RUN pnpm install --frozen-lockfile
 
 COPY judge/ ./judge/
