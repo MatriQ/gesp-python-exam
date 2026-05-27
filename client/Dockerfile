@@ -2,7 +2,7 @@ FROM node:22-alpine AS build
 RUN corepack enable && corepack prepare pnpm@latest --activate
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.json ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.json .npmrc ./
 COPY shared/package.json ./shared/package.json
 COPY client/package.json ./client/package.json
 

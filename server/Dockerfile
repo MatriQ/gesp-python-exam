@@ -3,7 +3,7 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 WORKDIR /app
 
 # Copy root configs
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.json ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.json .npmrc ./
 COPY shared/package.json ./shared/package.json
 COPY server/package.json ./server/package.json
 

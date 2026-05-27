@@ -5,7 +5,7 @@ WORKDIR /app
 # Install docker CLI for exec-based sandbox
 RUN apk add --no-cache docker-cli
 
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.json ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.json .npmrc ./
 COPY judge/package.json ./judge/package.json
 
 RUN pnpm install --frozen-lockfile
