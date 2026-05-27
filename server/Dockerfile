@@ -1,6 +1,7 @@
 FROM node:22-alpine AS base
 RUN corepack enable && corepack prepare pnpm@9 --activate
 WORKDIR /app
+RUN apk add --no-cache openssl libc6-compat
 
 # Copy root configs
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.json .npmrc ./
