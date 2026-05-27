@@ -12,24 +12,24 @@ export function Navbar() {
   const { isAuthenticated, user, logout } = useAuthStore();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm h-16 flex items-center px-6">
-      <Link to="/" className="font-bold text-blue-600 text-xl shrink-0">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm h-16 flex items-center px-3 md:px-6">
+      <Link to="/" className="font-bold text-blue-600 text-lg md:text-xl shrink-0">
         GESP Python
       </Link>
 
-      <div className="flex-1 flex justify-center gap-6">
+      <div className="flex-1 flex justify-center gap-2 md:gap-6">
         {navLinks.map((link) => (
           <Link
             key={link.to}
             to={link.to}
-            className="text-gray-600 hover:text-blue-600 transition-colors"
+            className="text-gray-600 hover:text-blue-600 transition-colors text-sm md:text-base"
           >
             {link.label}
           </Link>
         ))}
       </div>
 
-      <div className="shrink-0 flex items-center gap-3">
+      <div className="shrink-0 flex items-center gap-2 md:gap-3">
         {isAuthenticated && user ? (
           <>
             <span className="text-gray-600">{user.name}</span>

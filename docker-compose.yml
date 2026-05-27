@@ -1,33 +1,89 @@
+version: '3.8'
+
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: gesp-postgres
     environment:
+      POSTGRES_DB: gesp_exam
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: gesp_exam
     ports:
-      - "5432:5432"
+      - '5432:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
       interval: 5s
       timeout: 5s
       retries: 5
-    restart: unless-stopped
 
   redis:
     image: redis:7-alpine
-    container_name: gesp-redis
     ports:
-      - "6379:6379"
+      - '6379:6379'
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ['CMD', 'redis-cli', 'ping']
       interval: 5s
       timeout: 5s
       retries: 5
-    restart: unless-stopped
+
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/gesp_exam
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: gesp-exam-secret-change-in-production
+      PORT: 3000
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:3000/api/health']
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    ports:
+      - '80:80'
+    depends_on:
+      - server
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:80']
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  judge:
+    build:
+      context: .
+      dockerfile: judge/Dockerfile
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JUDGE_PORT: 3001
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:3001/judge/health']
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
 
 volumes:
   postgres_data:
