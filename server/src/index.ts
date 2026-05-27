@@ -19,13 +19,7 @@ const io = new Server(server, { cors: { origin: '*' } });
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/auth', authRoutes);
-app.use('/api', progressRoutes);
-app.use('/api/error-book', errorBookRoutes);
-app.use('/api/questions', questionRoutes);
-app.use('/api/submissions', submissionRoutes);
-app.use('/api/exams', examRoutes);
-
+// Health + sessions (no auth required) - MUST be before route mounts
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok' });
 });
@@ -42,6 +36,16 @@ app.get('/api/sessions', async (_req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+// Auth routes
+app.use('/api/auth', authRoutes);
+
+// API routes (all require auth via their own middleware)
+app.use('/api/progress', progressRoutes);
+app.use('/api/error-book', errorBookRoutes);
+app.use('/api/questions', questionRoutes);
+app.use('/api/submissions', submissionRoutes);
+app.use('/api/exams', examRoutes);
 
 io.on('connection', (socket) => {
   console.log('Client connected:', socket.id);
