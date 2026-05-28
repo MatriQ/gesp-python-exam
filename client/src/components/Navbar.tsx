@@ -6,6 +6,7 @@ const navLinks = [
   { to: '/practice', label: '练习' },
   { to: '/exam', label: '模拟考试' },
   { to: '/errors', label: '错题本' },
+  { to: '/game', label: '🎮 游戏闯关' },
 ];
 
 export function Navbar() {
