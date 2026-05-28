@@ -47,9 +47,9 @@ export const useGameStoryStore = create<StoryState>((set) => ({
   fetchProgress: async () => {
     try {
       const res = await gameApi.getStoryProgress();
-      set({ progress: res.data });
+      const data = res.data?.progress ?? res.data ?? [];
+      set({ progress: Array.isArray(data) ? data : [] });
     } catch {
-      /* intentionally silent */
     }
   },
 

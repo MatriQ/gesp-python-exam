@@ -28,7 +28,7 @@ export const useGameProfileStore = create<GameProfileState>((set) => ({
     set({ isLoading: true, error: null });
     try {
       const res = await gameApi.getGameProfile();
-      set({ profile: res.data, isLoading: false });
+      set({ profile: res.data?.profile ?? res.data, isLoading: false });
     } catch (err: unknown) {
       const error = err as { response?: { status?: number } };
       if (error.response?.status === 404) {
@@ -43,7 +43,7 @@ export const useGameProfileStore = create<GameProfileState>((set) => ({
     set({ isLoading: true, error: null });
     try {
       const res = await gameApi.createGameProfile({ nickname, avatar });
-      set({ profile: res.data, isLoading: false });
+      set({ profile: res.data?.profile ?? res.data, isLoading: false });
     } catch {
       set({ error: '创建失败', isLoading: false });
     }
@@ -52,9 +52,8 @@ export const useGameProfileStore = create<GameProfileState>((set) => ({
   updateProfile: async (data) => {
     try {
       const res = await gameApi.updateGameProfile(data);
-      set({ profile: res.data });
+      set({ profile: res.data?.profile ?? res.data });
     } catch {
-      /* intentionally silent */
     }
   },
 }));

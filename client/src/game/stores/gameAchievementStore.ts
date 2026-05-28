@@ -27,7 +27,8 @@ export const useAchievementStore = create<AchievementState>((set) => ({
     set({ isLoading: true });
     try {
       const res = await gameApi.getAchievements();
-      set({ achievements: res.data, isLoading: false });
+      const data = res.data?.achievements ?? res.data ?? [];
+      set({ achievements: Array.isArray(data) ? data : [], isLoading: false });
     } catch {
       set({ isLoading: false });
     }
