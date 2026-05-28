@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import client from '../api/client';
 import { useAppStore } from '../stores/appStore';
+import { FeedbackModal } from '../components/FeedbackModal';
 
 interface Option {
   label: string;
@@ -31,6 +32,7 @@ export function Practice() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [count, setCount] = useState(1);
+  const [showFeedback, setShowFeedback] = useState(false);
 
   const loadQuestion = useCallback(() => {
     setLoading(true);
@@ -175,14 +177,31 @@ export function Practice() {
           </button>
         )}
         {result && (
-          <button
-            onClick={handleNext}
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            下一题
-          </button>
+          <>
+            <button
+              onClick={handleNext}
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              下一题
+            </button>
+            <button
+              onClick={() => setShowFeedback(true)}
+              className="text-gray-400 hover:text-gray-600 text-sm"
+              title="反馈此题目"
+            >
+              📝 反馈
+            </button>
+          </>
         )}
       </div>
+
+      {showFeedback && question && (
+        <FeedbackModal
+          questionId={question.id}
+          onClose={() => setShowFeedback(false)}
+          onSubmitted={() => setShowFeedback(false)}
+        />
+      )}
     </div>
   );
 }

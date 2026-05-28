@@ -1,4 +1,4 @@
-import type { ExamLevel, FeedbackCategory, FeedbackStatus } from './types.js';
+import type { ExamLevel } from './types.js';
 
 export const EXAM_CONFIG: Record<ExamLevel, { timeLimitMin: number; timeLimitSec: number }> = {
   1: { timeLimitMin: 120, timeLimitSec: 7200 },
@@ -130,17 +130,17 @@ export const ACHIEVEMENT_DEFINITIONS = [
   { key: 'answer_200', name: '坚持不懈', description: '累计答题 200 道', icon: '💪', condition: { type: 'total_answered', threshold: 200 } },
 ] as const;
 
-export const FEEDBACK_CATEGORIES: Array<{ value: FeedbackCategory; label: string }> = [
-  { value: '答案错误', label: '答案错误' },
-  { value: '题目有误', label: '题目有误' },
-  { value: '解析不清', label: '解析不清' },
-  { value: '选项重复', label: '选项重复' },
-  { value: '其他', label: '其他' },
+export const FEEDBACK_CATEGORIES = [
+  { value: '答案错误' as const, label: '答案错误' },
+  { value: '题目有误' as const, label: '题目有误' },
+  { value: '解析不清' as const, label: '解析不清' },
+  { value: '选项重复' as const, label: '选项重复' },
+  { value: '其他' as const, label: '其他' },
 ];
 
-export const FEEDBACK_STATUSES: Array<{ value: FeedbackStatus; label: string; color: string }> = [
-  { value: 'pending', label: '待处理', color: 'bg-yellow-100 text-yellow-700' },
-  { value: 'fixed', label: '已修复', color: 'bg-green-100 text-green-700' },
-  { value: 'ignored', label: '已忽略', color: 'bg-gray-100 text-gray-700' },
-  { value: 'invalid', label: '无效反馈', color: 'bg-red-100 text-red-700' },
+export const FEEDBACK_STATUSES = [
+  { value: 'pending' as const, label: '待处理', color: 'bg-yellow-100 text-yellow-700' },
+  { value: 'fixed' as const, label: '已修复', color: 'bg-green-100 text-green-700' },
+  { value: 'ignored' as const, label: '已忽略', color: 'bg-gray-100 text-gray-700' },
+  { value: 'invalid' as const, label: '无效反馈', color: 'bg-red-100 text-red-700' },
 ];

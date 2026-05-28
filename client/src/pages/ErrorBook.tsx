@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import client from '../api/client';
+import { FeedbackModal } from '../components/FeedbackModal';
 
 interface ErrorItem {
   id: string;
@@ -61,6 +62,7 @@ export function ErrorBook() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [confirmId, setConfirmId] = useState<string | null>(null);
+  const [feedbackQuestionId, setFeedbackQuestionId] = useState<string | null>(null);
 
   // Reset page when filters change
   useEffect(() => {
@@ -291,6 +293,12 @@ export function ErrorBook() {
                       移除
                     </button>
                   )}
+                  <button
+                    onClick={() => setFeedbackQuestionId(item.questionId)}
+                    className="text-sm text-gray-400 hover:text-blue-500 ml-auto"
+                  >
+                    📝 反馈
+                  </button>
                 </div>
               </div>
             ))}
@@ -335,6 +343,14 @@ export function ErrorBook() {
             </div>
           )}
         </>
+      )}
+
+      {feedbackQuestionId && (
+        <FeedbackModal
+          questionId={feedbackQuestionId}
+          onClose={() => setFeedbackQuestionId(null)}
+          onSubmitted={() => setFeedbackQuestionId(null)}
+        />
       )}
     </div>
   );

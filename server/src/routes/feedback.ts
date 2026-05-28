@@ -1,7 +1,7 @@
 import { Router, type Router as RouterType, type Request, type Response, type NextFunction } from 'express';
 import { prisma } from '../lib/prisma.js';
 import { authMiddleware } from '../middleware/auth.js';
-import { FEEDBACK_CATEGORIES, FEEDBACK_STATUSES } from '@gesp/shared/constants.js';
+import { FEEDBACK_CATEGORIES, FEEDBACK_STATUSES } from '@gesp/shared';
 
 const router: RouterType = Router();
 

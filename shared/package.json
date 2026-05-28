@@ -5,11 +5,6 @@
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": "./dist/index.js",
-    "./constants.js": "./dist/constants.js",
-    "./types.js": "./dist/types.js"
-  },
   "scripts": {
     "build": "tsc",
     "test": "echo \"No tests yet\""
