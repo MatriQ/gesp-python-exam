@@ -16,7 +16,10 @@ client.interceptors.request.use((config) => {
 client.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
+    // Skip redirect for auth endpoints — let the component handle the error
+    const isAuthEndpoint = error.config?.url?.startsWith('/auth/login') ||
+      error.config?.url?.startsWith('/auth/register');
+    if (error.response?.status === 401 && !isAuthEndpoint) {
       useAuthStore.getState().logout();
       window.location.href = '/login';
     }

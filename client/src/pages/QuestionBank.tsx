@@ -14,23 +14,26 @@ interface Question {
 }
 
 interface PageData {
-  questions: Question[];
+  items: Question[];
   total: number;
   page: number;
-  pageSize: number;
   totalPages: number;
 }
 
 const typeLabels: Record<string, string> = {
+  mc: '单选',
+  tf: '判断',
+  programming: '编程',
   single_choice: '单选',
   true_false: '判断',
-  programming: '编程',
 };
 
 const typeColors: Record<string, string> = {
+  mc: 'bg-blue-100 text-blue-700',
+  tf: 'bg-green-100 text-green-700',
+  programming: 'bg-purple-100 text-purple-700',
   single_choice: 'bg-blue-100 text-blue-700',
   true_false: 'bg-green-100 text-green-700',
-  programming: 'bg-purple-100 text-purple-700',
 };
 
 export function QuestionBank() {
@@ -50,7 +53,7 @@ export function QuestionBank() {
     const params: Record<string, string | number> = {
       level: selectedLevel,
       page,
-      pageSize: 12,
+      limit: 12,
     };
     if (type !== 'all') params.type = type;
     if (session) params.session = session;
@@ -66,8 +69,8 @@ export function QuestionBank() {
 
   const typeTabs = [
     { key: 'all', label: '全部' },
-    { key: 'single_choice', label: '单选' },
-    { key: 'true_false', label: '判断' },
+    { key: 'mc', label: '单选' },
+    { key: 'tf', label: '判断' },
     { key: 'programming', label: '编程' },
   ];
 
@@ -115,7 +118,7 @@ export function QuestionBank() {
       {!loading && !error && data && (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {data.questions.map((q) => (
+            {data.items.map((q) => (
               <Link
                 key={q.id}
                 to={`/questions/${q.id}`}
@@ -141,7 +144,7 @@ export function QuestionBank() {
             ))}
           </div>
 
-          {data.questions.length === 0 && (
+          {data.items.length === 0 && (
             <div className="text-center text-gray-400 py-12">暂无题目</div>
           )}
 

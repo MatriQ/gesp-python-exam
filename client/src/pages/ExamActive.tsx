@@ -48,10 +48,11 @@ export function ExamActive() {
   }, [timeLeft]);
 
   useEffect(() => {
-    if (timeLeft !== 0 || autoSubmittedRef.current) return;
-    autoSubmittedRef.current = true;
-    submitExam();
-  }, [timeLeft]);
+    if (!loading && timeLeft === 0 && !autoSubmittedRef.current) {
+      autoSubmittedRef.current = true;
+      submitExam();
+    }
+  }, [timeLeft, loading]);
 
   const saveAnswer = useCallback(
     debounce(async (questionId: string, answer: string) => {

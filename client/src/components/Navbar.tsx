@@ -10,6 +10,7 @@ const navLinks = [
 
 export function Navbar() {
   const { isAuthenticated, user, logout } = useAuthStore();
+  const showAdmin = !!localStorage.getItem('adminKey');
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm h-16 flex items-center px-3 md:px-6">
@@ -27,6 +28,14 @@ export function Navbar() {
             {link.label}
           </Link>
         ))}
+        {showAdmin && (
+          <Link
+            to="/admin"
+            className="text-gray-400 hover:text-blue-600 transition-colors text-sm md:text-base"
+          >
+            Admin
+          </Link>
+        )}
       </div>
 
       <div className="shrink-0 flex items-center gap-2 md:gap-3">

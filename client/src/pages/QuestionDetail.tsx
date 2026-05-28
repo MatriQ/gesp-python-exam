@@ -8,12 +8,12 @@ interface Option {
 }
 
 interface Question {
-  id: number;
+  id: string;
   questionIndex: number;
-  type: 'single_choice' | 'true_false' | 'programming';
+  type: 'single_choice' | 'mc' | 'true_false' | 'tf' | 'programming';
   questionText: string;
   options?: Option[];
-  correctAnswer: string;
+  answer: string;
   explanation: string;
   level: number;
   session: string;
@@ -32,8 +32,8 @@ export function QuestionDetail() {
     setLoading(true);
     setError('');
     client
-      .get<Question>(`/questions/${id}`)
-      .then((res) => setQuestion(res.data))
+      .get<{ question: Question }>(`/questions/${id}`)
+      .then((res) => setQuestion(res.data.question || res.data))
       .catch((err) => setError(err.response?.data?.message || '加载失败'))
       .finally(() => setLoading(false));
   }, [id]);
@@ -43,6 +43,8 @@ export function QuestionDetail() {
   if (!question) return null;
 
   const typeLabel: Record<string, string> = {
+    mc: '单选题',
+    tf: '判断题',
     single_choice: '单选题',
     true_false: '判断题',
     programming: '编程题',
@@ -75,7 +77,7 @@ export function QuestionDetail() {
         {question.options && (
           <div className="space-y-2 mb-6">
             {question.options.map((opt) => {
-              const isCorrect = opt.label === question.correctAnswer;
+              const isCorrect = opt.label === question.answer;
               return (
                 <div
                   key={opt.label}
@@ -96,7 +98,7 @@ export function QuestionDetail() {
           </div>
         )}
 
-        {question.type === 'true_false' && (
+        {(question.type === 'true_false' || question.type === 'tf') && (
           <div className="flex gap-4 mb-6">
             {[
               { label: '正确', val: 'true' },
@@ -105,13 +107,13 @@ export function QuestionDetail() {
               <div
                 key={val}
                 className={`flex-1 py-3 rounded-lg border text-center text-lg font-medium ${
-                  val === question.correctAnswer
+                  val === question.answer
                     ? 'border-green-400 bg-green-50 text-green-700'
                     : 'border-gray-200 text-gray-600'
                 }`}
               >
                 {label}
-                {val === question.correctAnswer && (
+                {val === question.answer && (
                   <span className="ml-2 text-sm">✓</span>
                 )}
               </div>

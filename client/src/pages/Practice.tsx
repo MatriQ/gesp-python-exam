@@ -9,8 +9,8 @@ interface Option {
 }
 
 interface Question {
-  id: number;
-  type: 'single_choice' | 'true_false' | 'programming';
+  id: string;
+  type: 'single_choice' | 'mc' | 'true_false' | 'tf' | 'programming';
   questionText: string;
   options?: Option[];
   level: number;
@@ -18,7 +18,7 @@ interface Question {
 }
 
 interface AnswerResult {
-  correct: boolean;
+  isCorrect: boolean;
   correctAnswer: string;
   explanation: string;
 }
@@ -38,8 +38,11 @@ export function Practice() {
     setSelected('');
     setResult(null);
     client
-      .get<Question>('/questions/random', { params: { level: selectedLevel } })
-      .then((res) => setQuestion(res.data))
+      .get<{ question: Question }>('/questions/random', { params: { level: selectedLevel } })
+      .then((res) => {
+        const q = res.data.question || res.data;
+        setQuestion(q as Question);
+      })
       .catch((err) => setError(err.response?.data?.message || '加载失败'))
       .finally(() => setLoading(false));
   }, [selectedLevel]);
@@ -48,12 +51,13 @@ export function Practice() {
     loadQuestion();
   }, [loadQuestion]);
 
-  const handleSubmit = () => {
+      const handleSubmit = () => {
     if (!question || !selected) return;
     client
-      .post<AnswerResult>('/answers', {
+      .post<AnswerResult>('/progress/answers', {
         questionId: question.id,
-        answer: selected,
+        userAnswer: selected,
+        timeSpentMs: 0,
       })
       .then((res) => setResult(res.data))
       .catch((err) => setError(err.response?.data?.message || '提交失败'));
@@ -77,12 +81,12 @@ export function Practice() {
           {question.questionText}
         </p>
 
-        {question.type === 'single_choice' && question.options && (
+        {(question.type === 'single_choice' || question.type === 'mc') && question.options && (
           <div className="space-y-3">
             {question.options.map((opt) => {
               const isSelected = selected === opt.label;
               const isCorrect = result && opt.label === result.correctAnswer;
-              const isWrong = result && isSelected && !result.correct;
+              const isWrong = result && isSelected && !result.isCorrect;
               let cls = 'border-gray-200 hover:border-blue-300';
               if (isCorrect) cls = 'border-green-400 bg-green-50';
               if (isWrong) cls = 'border-red-400 bg-red-50';
@@ -103,13 +107,13 @@ export function Practice() {
           </div>
         )}
 
-        {question.type === 'true_false' && (
+        {(question.type === 'true_false' || question.type === 'tf') && (
           <div className="flex gap-4">
             {['正确', '错误'].map((label) => {
               const val = label === '正确' ? 'true' : 'false';
               const isSelected = selected === val;
               const isCorrect = result && val === result.correctAnswer;
-              const isWrong = result && isSelected && !result.correct;
+              const isWrong = result && isSelected && !result.isCorrect;
               let cls = 'border-gray-200 hover:border-blue-300';
               if (isCorrect) cls = 'border-green-400 bg-green-50';
               if (isWrong) cls = 'border-red-400 bg-red-50';
@@ -145,13 +149,13 @@ export function Practice() {
       {result && (
         <div
           className={`mt-4 p-4 rounded-lg ${
-            result.correct ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'
+            result.isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'
           }`}
         >
-          <p className={`font-medium mb-1 ${result.correct ? 'text-green-700' : 'text-red-700'}`}>
-            {result.correct ? '✓ 回答正确！' : '✗ 回答错误'}
+          <p className={`font-medium mb-1 ${result.isCorrect ? 'text-green-700' : 'text-red-700'}`}>
+            {result.isCorrect ? '✓ 回答正确！' : '✗ 回答错误'}
           </p>
-          {!result.correct && (
+          {!result.isCorrect && (
             <p className="text-sm text-gray-600 mb-1">正确答案：{result.correctAnswer}</p>
           )}
           {result.explanation && (

@@ -19,8 +19,8 @@ export function Register() {
       login(data.token, data.user);
       navigate('/');
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : '注册失败';
-      setError(msg);
+      const serverMsg = (err as { response?: { data?: { error?: string } } })?.response?.data?.error;
+      setError(serverMsg || '注册失败');
     }
   };
 

@@ -18,8 +18,8 @@ export function Login() {
       login(data.token, data.user);
       navigate('/');
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : '登录失败';
-      setError(msg);
+      const serverMsg = (err as { response?: { data?: { error?: string } } })?.response?.data?.error;
+      setError(serverMsg || '登录失败');
     }
   };
 
