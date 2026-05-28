@@ -226,3 +226,36 @@ export interface StoryProgress {
   completed: boolean;
   completedAt: string | null;
 }
+
+// Feedback types
+export type FeedbackCategory = '答案错误' | '题目有误' | '解析不清' | '选项重复' | '其他';
+export type FeedbackStatus = 'pending' | 'fixed' | 'ignored' | 'invalid';
+
+export interface QuestionFeedback {
+  id: string;
+  questionId: string;
+  userId: string;
+  category: FeedbackCategory;
+  comment: string | null;
+  status: FeedbackStatus;
+  adminNote: string | null;
+  resolvedAt: string | null;
+  createdAt: string;
+  question?: { id: string; questionText: string; level: number; type: string };
+  user?: { id: string; name: string; email: string };
+}
+
+export interface FeedbackListResponse {
+  items: QuestionFeedback[];
+  total: number;
+  page: number;
+  totalPages: number;
+}
+
+export interface FeedbackStats {
+  total: number;
+  byCategory: Record<string, number>;
+  byStatus: Record<string, number>;
+  recentDaily: Array<{ date: string; count: number }>;
+  topQuestions: Array<{ questionId: string; questionText: string; count: number }>;
+}

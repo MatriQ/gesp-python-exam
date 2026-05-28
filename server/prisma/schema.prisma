@@ -18,6 +18,7 @@ model User {
   mockExams    MockExam[]
   codeSubmissions CodeSubmission[]
   gameProfile     GameProfile?
+  feedbacks       QuestionFeedback[]
 }
 
 model Question {
@@ -45,6 +46,7 @@ model Question {
   userAnswers     UserAnswer[]
   mockExamAnswers MockExamAnswer[]
   codeSubmissions CodeSubmission[]
+  feedbacks       QuestionFeedback[]
 
   @@unique([session, level, questionIndex])
   @@index([level, type, session])
@@ -204,4 +206,23 @@ model StoryProgress {
   chapter       StoryChapter  @relation(fields: [chapterId], references: [id], onDelete: Cascade)
 
   @@unique([userId, chapterId])
+}
+
+model QuestionFeedback {
+  id         String    @id @default(cuid())
+  questionId String
+  userId     String
+  category   String
+  comment    String?
+  status     String    @default("pending")
+  adminNote  String?
+  resolvedAt DateTime?
+  createdAt  DateTime  @default(now())
+
+  question   Question  @relation(fields: [questionId], references: [id], onDelete: NoAction, onUpdate: Cascade)
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questionId])
+  @@index([status])
+  @@index([createdAt])
 }
