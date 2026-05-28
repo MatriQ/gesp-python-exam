@@ -38,8 +38,6 @@ export function GameOnboarding() {
     }
   };
 
-  const canNext = step === 0 || (step === 1) || (step === 2 && nickname.trim());
-
   return (
     <div className="animate-fadeIn" style={{
       padding: 24, maxWidth: 400, margin: '0 auto',

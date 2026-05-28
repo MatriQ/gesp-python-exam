@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { gameApi } from '../api/gameApi';
+import * as gameApi from '../api/gameApi';
 
 interface Achievement {
   id: string;

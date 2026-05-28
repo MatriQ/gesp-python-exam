@@ -48,7 +48,6 @@ export function RpgProfile() {
   const xpForCurrent = XP_THRESHOLDS[profile.level - 1] || 0;
   const xpProgress = Math.min(100, ((profile.totalXP - xpForCurrent) / (xpForNext - xpForCurrent)) * 100);
   const unlocked = achievements.filter((a: any) => a.unlockedAt || a.unlocked);
-  const locked = achievements.filter((a: any) => !a.unlockedAt && !a.unlocked);
 
   return (
     <div className="animate-fadeIn" style={{ padding: 16, maxWidth: 480, margin: '0 auto' }}>

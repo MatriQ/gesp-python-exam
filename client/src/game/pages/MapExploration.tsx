@@ -107,7 +107,6 @@ export function MapExploration() {
 
             // Winding path layout: alternate left-right
             const isLeft = idx % 2 === 0;
-            const offsetY = idx * 90;
 
             return (
               <div key={stage.id} style={{

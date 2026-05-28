@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useGameStoryStore } from '../stores/gameStoryStore';
-import { saveStoryProgress, completeStoryChapter, getStoryChapters } from '../api/gameApi';
+import { saveStoryProgress, completeStoryChapter } from '../api/gameApi';
 
 const SCENE_NARRATIVES = [
   '🤖 小机器人来到了一片神秘的代码森林，前方有一扇密码门...',

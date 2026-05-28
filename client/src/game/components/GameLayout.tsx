@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Outlet, useNavigate, useLocation, Link } from 'react-router-dom';
-import { useAuthStore } from '../../stores/authStore';
 import { useGameProfileStore } from '../stores/gameProfileStore';
 import { AchievementNotification } from './AchievementNotification';
 import '../assets/game-theme.css';
@@ -15,7 +14,6 @@ const tabs = [
 export function GameLayout() {
   const navigate = useNavigate();
   const location = useLocation();
-  const user = useAuthStore((s) => s.user);
   const { profile, fetchProfile } = useGameProfileStore();
 
   useEffect(() => {

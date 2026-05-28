@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { gameApi } from '../api/gameApi';
+import * as gameApi from '../api/gameApi';
 
 interface GameProfile {
   id: string;
@@ -51,7 +51,7 @@ export const useGameProfileStore = create<GameProfileState>((set) => ({
 
   updateProfile: async (data) => {
     try {
-      const res = await gameApi.updateProfile(data);
+      const res = await gameApi.updateGameProfile(data);
       set({ profile: res.data });
     } catch {
       /* intentionally silent */

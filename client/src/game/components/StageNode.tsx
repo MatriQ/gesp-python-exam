@@ -8,7 +8,7 @@ interface StageNodeProps {
   onClick: () => void;
 }
 
-export function StageNode({ stageIndex, title, type, status, stars, color, onClick }: StageNodeProps) {
+export function StageNode({ stageIndex, title: _title, type, status, stars, color, onClick }: StageNodeProps) {
   const isBoss = type === 'boss';
   const size = isBoss ? 72 : 56;
 
