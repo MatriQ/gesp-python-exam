@@ -217,9 +217,21 @@ export async function submitAnswer(
   const question = await prisma.question.findUnique({ where: { id: questionId } });
   if (!question) throw new Error('Question not found');
 
-  const isCorrect = question.answer
-    ? userAnswer.trim().toLowerCase() === question.answer.trim().toLowerCase()
-    : false;
+  let isCorrect = false;
+  if (question.answer) {
+    const ua = userAnswer.trim().toLowerCase();
+    const ca = question.answer.trim().toLowerCase();
+    if (question.type === 'tf' || question.type === 'true_false') {
+      const normalize = (v: string) => {
+        if (v === 'true' || v === '对') return 'true';
+        if (v === 'false' || v === '错') return 'false';
+        return v;
+      };
+      isCorrect = normalize(ua) === normalize(ca);
+    } else {
+      isCorrect = ua === ca;
+    }
+  }
 
   await prisma.userAnswer.create({
     data: { userId, questionId, userAnswer, isCorrect, timeSpentMs },
@@ -316,6 +328,7 @@ export async function getRandomQuestions(level: number, type: string, count: num
       questionIndex: true,
       questionText: true,
       options: true,
+      answer: true,
       level: true,
       topics: true,
     },

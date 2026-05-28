@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { getStagesByLevel, completeStage } from '../api/gameApi';
 import { AnswerCard } from '../components/AnswerCard';
 import { StageResult } from '../components/StageResult';
@@ -15,6 +15,8 @@ interface QuestionData {
 export function StagePlay() {
   const { stageId } = useParams();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const level = Number(searchParams.get('level')) || 1;
   const [questions, setQuestions] = useState<QuestionData[]>([]);
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
@@ -29,8 +31,7 @@ export function StagePlay() {
   const loadQuestions = async () => {
     setLoading(true);
     try {
-      // Fetch from API - stages come with questions
-      const res = await getStagesByLevel(1); // fallback
+      const res = await getStagesByLevel(level);
       const stages = res.data?.stages ?? res.data ?? [];
       const stage = stages.find((s: any) => s.id === stageId);
       if (stage?.questions?.length) {

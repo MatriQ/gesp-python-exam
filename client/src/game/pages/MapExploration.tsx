@@ -50,11 +50,10 @@ export function MapExploration() {
     progress.find((p) => p.stageId === stageId);
 
   const handleStageClick = (stage: StageData) => {
-    if (stage.type === 'boss') {
-      navigate(`/game/map/boss/${stage.id}`);
-    } else {
-      navigate(`/game/map/stage/${stage.id}`);
-    }
+    const url = stage.type === 'boss'
+      ? `/game/map/boss/${stage.id}?level=${selectedLevel}`
+      : `/game/map/stage/${stage.id}?level=${selectedLevel}`;
+    navigate(url);
   };
 
   return (

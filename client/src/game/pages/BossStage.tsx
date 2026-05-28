@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { getStagesByLevel, completeStage } from '../api/gameApi';
 import { AnswerCard } from '../components/AnswerCard';
 import { StageResult } from '../components/StageResult';
@@ -15,6 +15,8 @@ interface QuestionData {
 export function BossStage() {
   const { stageId } = useParams();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const level = Number(searchParams.get('level')) || 1;
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [phase, setPhase] = useState<'intro' | 'playing' | 'result'>('intro');
   const [countdown, setCountdown] = useState(3);
@@ -61,7 +63,7 @@ export function BossStage() {
 
   const loadQuestions = async () => {
     try {
-      const res = await getStagesByLevel(1);
+      const res = await getStagesByLevel(level);
       const stages = res.data?.stages ?? res.data ?? [];
       const stage = stages.find((s: any) => s.id === stageId);
       if (stage?.questions?.length) {

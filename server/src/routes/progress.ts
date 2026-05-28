@@ -13,10 +13,18 @@ const submitAnswerSchema = z.object({
 });
 
 function checkAnswer(userAnswer: string, correctAnswer: string, questionType: string): boolean {
+  const ua = userAnswer.trim();
+  const ca = correctAnswer.trim();
   if (questionType === 'true_false' || questionType === 'tf') {
-    return userAnswer.toLowerCase().trim() === correctAnswer.toLowerCase().trim();
+    const normalize = (v: string) => {
+      const lower = v.toLowerCase();
+      if (lower === 'true' || v === '对') return 'true';
+      if (lower === 'false' || v === '错') return 'false';
+      return lower;
+    };
+    return normalize(ua) === normalize(ca);
   }
-  return userAnswer.trim().toUpperCase() === correctAnswer.trim().toUpperCase();
+  return ua.toUpperCase() === ca.toUpperCase();
 }
 
 // POST /answers — submit answer for a question
@@ -47,9 +55,16 @@ router.post('/answers', async (req, res) => {
       },
     });
 
+    let displayAnswer = question.answer;
+    if ((question.type === 'true_false' || question.type === 'tf') && question.answer === '对') {
+      displayAnswer = 'true';
+    } else if ((question.type === 'true_false' || question.type === 'tf') && question.answer === '错') {
+      displayAnswer = 'false';
+    }
+
     res.json({
       isCorrect,
-      correctAnswer: question.answer,
+      correctAnswer: displayAnswer,
       explanation: question.explanation ?? null,
     });
   } catch (err) {
