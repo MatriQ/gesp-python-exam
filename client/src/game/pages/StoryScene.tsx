@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useGameStoryStore } from '../stores/gameStoryStore';
 import * as gameApi from '../api/gameApi';
+import { playSound } from '../utils/sounds';
 
 const SCENE_NARRATIVES = [
   '🤖 小机器人来到了一片神秘的代码森林，前方有一扇密码门...',
@@ -80,7 +81,12 @@ export function StoryScene() {
     setIsCorrect(correct);
     setShowFeedback(true);
     setTotalCount((prev) => prev + 1);
-    if (correct) setCorrectCount((prev) => prev + 1);
+    if (correct) {
+      playSound('correct');
+      setCorrectCount((prev) => prev + 1);
+    } else {
+      playSound('wrong');
+    }
 
     // Save progress
     if (chapterId) {
@@ -89,13 +95,13 @@ export function StoryScene() {
 
     setTimeout(() => {
       if (currentScene + 1 >= totalScenes) {
-        // Chapter complete
         if (chapterId) {
           gameApi.completeStoryChapter(chapterId, {
             correctCount: correct ? correctCount + 1 : correctCount,
             totalCount: totalCount + 1,
           }).catch(() => {});
         }
+        playSound('stageComplete');
         setChapterComplete(true);
       } else {
         // Next scene
@@ -198,7 +204,7 @@ export function StoryScene() {
           <button
             className="game-btn"
             style={{ marginTop: 16, padding: '8px 24px' }}
-            onClick={() => { setShowNarrative(false); setShowQuestion(true); }}
+            onClick={() => { playSound('click'); setShowNarrative(false); setShowQuestion(true); }}
           >
             接受挑战 💪
           </button>

@@ -3,6 +3,7 @@ import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { getStagesByLevel, completeStage } from '../api/gameApi';
 import { AnswerCard } from '../components/AnswerCard';
 import { StageResult } from '../components/StageResult';
+import { playSound } from '../utils/sounds';
 
 interface QuestionData {
   id: string;
@@ -52,14 +53,15 @@ export function StagePlay() {
         timeSpentMs: 0,
         answers: [],
       });
+      playSound('stageComplete');
       setResult({
         stars: res.data?.stars ?? 0,
         xpEarned: res.data?.xpEarned ?? 0,
       });
     } catch {
-      // Still show result with calculated values
       const accuracy = finalCorrect / questions.length;
       const stars = accuracy >= 1 ? 3 : accuracy >= 0.8 ? 2 : accuracy >= 0.6 ? 1 : 0;
+      playSound('stageComplete');
       setResult({ stars, xpEarned: finalCorrect * 10 });
     }
   };
@@ -71,9 +73,11 @@ export function StagePlay() {
 
     const isCorrect = answer === question?.answer;
     if (isCorrect) {
+      playSound('correct');
       setCorrectCount((c) => c + 1);
       setCombo((c) => c + 1);
     } else {
+      playSound('wrong');
       setCombo(0);
     }
 

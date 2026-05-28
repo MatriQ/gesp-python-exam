@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useGameProfileStore } from '../stores/gameProfileStore';
 import { getAchievements, updateGameProfile } from '../api/gameApi';
 
@@ -6,6 +7,7 @@ const AVATARS = ['🐱', '🐶', '🦊', '🐻', '🐼', '🐰', '🦁', '🐯',
 const XP_THRESHOLDS = [0, 100, 250, 500, 800, 1200, 1800, 2500, 3500, 5000];
 
 export function RpgProfile() {
+  const navigate = useNavigate();
   const { profile, fetchProfile, updateProfile } = useGameProfileStore();
   const [achievements, setAchievements] = useState<any[]>([]);
   const [showAvatarPicker, setShowAvatarPicker] = useState(false);
@@ -40,6 +42,13 @@ export function RpgProfile() {
     return (
       <div className="game-card" style={{ textAlign: 'center', padding: 40, margin: 16 }}>
         <p>请先创建游戏角色 🎮</p>
+        <button
+          className="game-btn"
+          style={{ marginTop: 16 }}
+          onClick={() => navigate('/game/onboarding')}
+        >
+          创建角色
+        </button>
       </div>
     );
   }

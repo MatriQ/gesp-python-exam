@@ -37,7 +37,8 @@ export const useGameStoryStore = create<StoryState>((set) => ({
     set({ isLoading: true });
     try {
       const res = await gameApi.getStoryChapters(level);
-      set({ chapters: res.data, isLoading: false });
+      const data = res.data?.chapters ?? res.data ?? [];
+      set({ chapters: Array.isArray(data) ? data : [], isLoading: false });
     } catch {
       set({ isLoading: false });
     }

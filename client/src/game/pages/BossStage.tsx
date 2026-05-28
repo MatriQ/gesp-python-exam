@@ -3,6 +3,7 @@ import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { getStagesByLevel, completeStage } from '../api/gameApi';
 import { AnswerCard } from '../components/AnswerCard';
 import { StageResult } from '../components/StageResult';
+import { playSound } from '../utils/sounds';
 
 interface QuestionData {
   id: string;
@@ -36,6 +37,7 @@ export function BossStage() {
       setPhase('playing');
       return;
     }
+    playSound('countdown');
     const t = setTimeout(() => setCountdown((c) => c - 1), 1000);
     return () => clearTimeout(t);
   }, [phase, countdown]);
@@ -84,11 +86,13 @@ export function BossStage() {
 
     const isCorrect = answer === questions[current].answer;
     if (isCorrect) {
+      playSound('correct');
       setCorrectCount((c) => c + 1);
       setCombo((c) => c + 1);
     } else {
+      playSound('wrong');
       setCombo(0);
-      setTimeLeft((t) => Math.max(0, t - 5)); // Wrong answer penalty
+      setTimeLeft((t) => Math.max(0, t - 5));
     }
 
     setTimeout(() => {
@@ -110,9 +114,11 @@ export function BossStage() {
         correctCount: cc, totalCount: questions.length || 1,
         timeSpentMs: 0, answers: [],
       });
+      playSound('bossDefeat');
       setResult({ stars: res.data?.stars ?? 0, xpEarned: res.data?.xpEarned ?? 0 });
     } catch {
       const acc = cc / (questions.length || 1);
+      playSound('bossDefeat');
       setResult({ stars: acc >= 1 ? 3 : acc >= 0.8 ? 2 : acc >= 0.6 ? 1 : 0, xpEarned: cc * 20 });
     }
     setPhase('result');

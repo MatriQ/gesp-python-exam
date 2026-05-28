@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useGameProfileStore } from '../stores/gameProfileStore';
 
@@ -44,10 +44,15 @@ const MODES = [
 export function GameHome() {
   const navigate = useNavigate();
   const { profile, fetchProfile } = useGameProfileStore();
+  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
-    if (!profile) fetchProfile();
-  }, [profile, fetchProfile]);
+    fetchProfile().finally(() => setChecked(true));
+  }, [fetchProfile]);
+
+  useEffect(() => {
+    if (checked && !profile) navigate('/game/onboarding');
+  }, [checked, profile, navigate]);
 
   const modes = MODES.map((m) => {
     if (m.path === '/game/rpg' && profile) return { ...m, statValue: `Lv.${profile.level}` };
