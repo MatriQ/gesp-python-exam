@@ -17,6 +17,7 @@ model User {
   userAnswers  UserAnswer[]
   mockExams    MockExam[]
   codeSubmissions CodeSubmission[]
+  gameProfile     GameProfile?
 }
 
 model Question {
@@ -101,4 +102,106 @@ model CodeSubmission {
   createdAt       DateTime  @default(now())
   user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   question        Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+}
+
+model GameProfile {
+  id              String          @id @default(cuid())
+  userId          String          @unique
+  nickname        String
+  avatar          String          @default("🐱")
+  totalXP         Int             @default(0)
+  level           Int             @default(1)
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  stageProgresses StageProgress[]
+  achievements    UserAchievement[]
+  storyProgresses StoryProgress[]
+}
+
+model Stage {
+  id              String         @id @default(cuid())
+  level           Int
+  stageIndex      Int
+  title           String
+  description     String?
+  type            String         @default("normal")
+  questionCount   Int            @default(5)
+  timeLimit       Int?
+  requiredScore   Float          @default(0.8)
+  createdAt       DateTime       @default(now())
+  stageProgresses StageProgress[]
+
+  @@unique([level, stageIndex])
+}
+
+model StageProgress {
+  id          String      @id @default(cuid())
+  userId      String
+  stageId     String
+  status      String      @default("locked")
+  stars       Int         @default(0)
+  bestScore   Float?
+  attempts    Int         @default(0)
+  completedAt DateTime?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  gameProfile GameProfile @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  stage       Stage       @relation(fields: [stageId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, stageId])
+}
+
+model Achievement {
+  id              String           @id @default(cuid())
+  key             String           @unique
+  name            String
+  description     String
+  icon            String
+  condition       Json
+  createdAt       DateTime         @default(now())
+  userAchievements UserAchievement[]
+}
+
+model UserAchievement {
+  id            String      @id @default(cuid())
+  userId        String
+  achievementId String
+  unlockedAt    DateTime    @default(now())
+  gameProfile   GameProfile @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  achievement   Achievement @relation(fields: [achievementId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, achievementId])
+}
+
+model LeaderboardEntry {
+  id         String   @id @default(cuid())
+  userId     String   @unique
+  totalScore Int      @default(0)
+  updatedAt  DateTime @updatedAt
+}
+
+model StoryChapter {
+  id              String         @id @default(cuid())
+  level           Int
+  chapterIndex    Int
+  title           String
+  scenes          Json
+  createdAt       DateTime       @default(now())
+  storyProgresses StoryProgress[]
+
+  @@unique([level, chapterIndex])
+}
+
+model StoryProgress {
+  id            String        @id @default(cuid())
+  userId        String
+  chapterId     String
+  currentScene  Int           @default(0)
+  completed     Boolean       @default(false)
+  completedAt   DateTime?
+  gameProfile   GameProfile   @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  chapter       StoryChapter  @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, chapterId])
 }

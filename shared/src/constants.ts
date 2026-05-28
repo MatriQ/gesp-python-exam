@@ -75,3 +75,57 @@ export const JUDGE_LIMITS = {
   CONTAINER_CPU_QUOTA: 100000,  // 1 core
   NETWORK_MODE: 'none' as const,
 } as const;
+
+export const GAME_COLORS = {
+  red: '#FF6B6B',
+  teal: '#4ECDC4',
+  yellow: '#FFE66D',
+  green: '#95E1D3',
+  pink: '#F38181',
+  purple: '#AA96DA',
+  lightPink: '#FCBAD3',
+  blue: '#A8D8EA',
+  orange: '#FF9A3C',
+  mint: '#B8F3FF',
+} as const;
+
+export const LEVEL_GAME_COLORS: Record<number, string> = {
+  1: '#FF6B6B',
+  2: '#4ECDC4',
+  3: '#FFE66D',
+  4: '#95E1D3',
+  5: '#AA96DA',
+  6: '#F38181',
+  7: '#FF9A3C',
+  8: '#A8D8EA',
+};
+
+export const AVATAR_OPTIONS = ['🐱', '🐶', '🦊', '🐻', '🐼', '🐰', '🦁', '🐯', '🐸', '🐵'] as const;
+
+export const STAR_THRESHOLDS = [0.6, 0.8, 1.0] as const;
+
+export const XP_THRESHOLDS = [0, 100, 250, 500, 800, 1200, 1800, 2500, 3500, 5000] as const;
+
+export const STAGE_CONFIG: Record<number, { stageCount: number; questionsPerStage: number; bossQuestions: number; bossTimeLimit: number }> = {
+  1: { stageCount: 3, questionsPerStage: 5, bossQuestions: 8, bossTimeLimit: 180 },
+  2: { stageCount: 3, questionsPerStage: 5, bossQuestions: 8, bossTimeLimit: 180 },
+  3: { stageCount: 4, questionsPerStage: 5, bossQuestions: 10, bossTimeLimit: 240 },
+  4: { stageCount: 4, questionsPerStage: 5, bossQuestions: 10, bossTimeLimit: 240 },
+  5: { stageCount: 5, questionsPerStage: 5, bossQuestions: 10, bossTimeLimit: 300 },
+  6: { stageCount: 5, questionsPerStage: 5, bossQuestions: 10, bossTimeLimit: 300 },
+  7: { stageCount: 5, questionsPerStage: 5, bossQuestions: 12, bossTimeLimit: 300 },
+  8: { stageCount: 5, questionsPerStage: 5, bossQuestions: 12, bossTimeLimit: 300 },
+};
+
+export const ACHIEVEMENT_DEFINITIONS = [
+  { key: 'first_clear', name: '初出茅庐', description: '完成第一个关卡', icon: '🌱', condition: { type: 'stages_completed', threshold: 1 } },
+  { key: 'answer_50', name: '学海无涯', description: '累计答题 50 道', icon: '📚', condition: { type: 'total_answered', threshold: 50 } },
+  { key: 'combo_10', name: '连击达人', description: '单次连续正确 10 题', icon: '🔥', condition: { type: 'max_combo', threshold: 10 } },
+  { key: 'perfect_stage', name: '完美通关', description: '单关 3 星通关', icon: '⭐', condition: { type: 'max_stars', threshold: 3 } },
+  { key: 'level_clear', name: '地图探索者', description: '完成任意级别所有普通关卡', icon: '🗺️', condition: { type: 'level_cleared', threshold: 1 } },
+  { key: 'boss_defeat', name: 'Boss 猎人', description: '击败第一个 Boss', icon: '👹', condition: { type: 'boss_defeated', threshold: 1 } },
+  { key: 'level_5', name: '登峰造极', description: '达到 RPG 等级 5', icon: '🏔️', condition: { type: 'rpg_level', threshold: 5 } },
+  { key: 'story_complete', name: '故事冒险家', description: '完成第一个故事章节', icon: '📖', condition: { type: 'chapters_completed', threshold: 1 } },
+  { key: 'perfect_accuracy', name: '百发百中', description: '单关正确率 100%', icon: '🎯', condition: { type: 'perfect_accuracy', threshold: 1 } },
+  { key: 'answer_200', name: '坚持不懈', description: '累计答题 200 道', icon: '💪', condition: { type: 'total_answered', threshold: 200 } },
+] as const;

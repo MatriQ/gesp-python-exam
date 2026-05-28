@@ -142,3 +142,87 @@ export interface ExamResult {
   }>;
   timeTaken: number;
 }
+
+// Game types
+export type GameMode = 'map' | 'rpg' | 'story' | 'leaderboard';
+export type StageStatus = 'locked' | 'available' | 'completed';
+export type StageType = 'normal' | 'boss';
+
+export interface GameProfile {
+  id: string;
+  userId: string;
+  nickname: string;
+  avatar: string;
+  totalXP: number;
+  level: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Stage {
+  id: string;
+  level: number;
+  stageIndex: number;
+  title: string;
+  description: string | null;
+  type: StageType;
+  questionCount: number;
+  timeLimit: number | null;
+  requiredScore: number;
+  createdAt: string;
+}
+
+export interface StageProgress {
+  id: string;
+  userId: string;
+  stageId: string;
+  status: StageStatus;
+  stars: number;
+  bestScore: number | null;
+  attempts: number;
+  completedAt: string | null;
+}
+
+export interface Achievement {
+  id: string;
+  key: string;
+  name: string;
+  description: string;
+  icon: string;
+  condition: Record<string, unknown>;
+  createdAt: string;
+}
+
+export interface UserAchievement {
+  id: string;
+  userId: string;
+  achievementId: string;
+  unlockedAt: string;
+}
+
+export interface LeaderboardEntry {
+  id: string;
+  userId: string;
+  totalScore: number;
+  updatedAt: string;
+  rank?: number;
+  user?: { name: string; avatar: string };
+}
+
+export interface StoryChapter {
+  id: string;
+  level: number;
+  chapterIndex: number;
+  title: string;
+  scenes: unknown[];
+  createdAt: string;
+}
+
+export interface StoryProgress {
+  id: string;
+  userId: string;
+  chapterId: string;
+  currentScene: number;
+  completed: boolean;
+  completedAt: string | null;
+}

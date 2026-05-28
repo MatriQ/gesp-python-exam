@@ -9,6 +9,8 @@ import progressRoutes from './routes/progress.js';
 import errorBookRoutes from './routes/error-book.js';
 import submissionRoutes from './routes/submissions.js';
 import examRoutes from './routes/exams.js';
+import adminRoutes from './routes/admin.js';
+import gameRoutes from './routes/game.js';
 import { setupJudgeListener } from './services/judge-queue.js';
 import { prisma } from './lib/prisma.js';
 
@@ -46,6 +48,8 @@ app.use('/api/error-book', errorBookRoutes);
 app.use('/api/questions', questionRoutes);
 app.use('/api/submissions', submissionRoutes);
 app.use('/api/exams', examRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/game', gameRoutes);
 
 io.on('connection', (socket) => {
   console.log('Client connected:', socket.id);

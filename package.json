@@ -8,6 +8,8 @@
     "build": "pnpm -r run build",
     "lint": "eslint .",
     "test": "pnpm -r run test",
+    "test:e2e": "pnpm --filter @gesp/e2e run test",
+    "test:e2e:headed": "pnpm --filter @gesp/e2e run test:headed",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

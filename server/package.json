@@ -11,7 +11,8 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
-    "generate-test-cases": "tsx src/scripts/generate-test-cases.ts"
+    "generate-test-cases": "tsx src/scripts/generate-test-cases.ts",
+    "seed-stages": "tsx src/scripts/seed-stages.ts"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.10",

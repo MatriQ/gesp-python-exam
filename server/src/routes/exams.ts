@@ -120,6 +120,61 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET /:id — Get active exam details
+router.get('/:id', async (req, res) => {
+  try {
+    const userId = req.user!.userId;
+    const { id } = req.params;
+
+    const exam = await prisma.mockExam.findFirst({
+      where: { id, userId, status: 'in_progress' },
+      include: {
+        answers: {
+          include: {
+            question: {
+              select: {
+                id: true,
+                type: true,
+                questionIndex: true,
+                questionText: true,
+                options: true,
+                level: true,
+                topics: true,
+                inputFormat: true,
+                outputFormat: true,
+                constraints: true,
+                sampleInput: true,
+                sampleOutput: true,
+                templateCode: true,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    if (!exam) {
+      res.status(404).json({ error: 'Exam not found' });
+      return;
+    }
+
+    res.json({
+      examId: exam.id,
+      level: exam.level,
+      timeLimit: exam.timeLimit,
+      startedAt: exam.startedAt,
+      questions: exam.answers.map(a => ({
+        answerId: a.id,
+        ...a.question,
+        userAnswer: a.userAnswer,
+      })),
+    });
+  } catch (error) {
+    console.error('Exam get error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 // PUT /:id/answer — Submit answer during exam
 router.put('/:id/answer', async (req, res) => {
   try {

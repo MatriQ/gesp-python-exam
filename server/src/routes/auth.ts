@@ -11,7 +11,7 @@ const router: RouterType = Router();
 // Rate limiter: 5 requests per minute
 const authLimiter = rateLimit({
   windowMs: 60 * 1000,
-  max: 5,
+  max: parseInt(process.env.AUTH_RATE_LIMIT_MAX || '5', 10),
   message: { error: 'Too many requests, please try again later' },
 });
 

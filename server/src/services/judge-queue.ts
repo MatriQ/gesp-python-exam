@@ -8,6 +8,8 @@ export const judgeQueue = new Queue('judge', { connection });
 
 export const queueEvents = new QueueEvents('judge', { connection });
 
+let activeIo: SocketIOServer | null = null;
+
 export interface JudgeJobData {
   submissionId: string;
   code: string;
@@ -39,11 +41,24 @@ export async function submitToJudge(data: JudgeJobData): Promise<string> {
   const job = await judgeQueue.add('judge', data, {
     attempts: 1,
   });
+  if (activeIo) {
+    await emitAdminQueueUpdate(activeIo);
+  }
   return job.id ?? '';
 }
 
+async function emitAdminQueueUpdate(io: SocketIOServer) {
+  try {
+    const counts = await judgeQueue.getJobCounts('active', 'waiting', 'completed', 'failed');
+    io.emit('admin:queue:update', counts);
+  } catch {
+    // queue unavailable
+  }
+}
+
 export function setupJudgeListener(io: SocketIOServer) {
-  queueEvents.on('completed', async ({ jobId, returnvalue }) => {
+  activeIo = io;
+  queueEvents.on('completed', async ({ returnvalue }) => {
     const result = returnvalue as unknown as JudgeJobResult;
     try {
       await prisma.codeSubmission.update({
@@ -57,6 +72,13 @@ export function setupJudgeListener(io: SocketIOServer) {
         },
       });
       io.to(`submission:${result.submissionId}`).emit('submission:update', result);
+      io.emit('admin:submission:update', {
+        submissionId: result.submissionId,
+        status: result.status,
+        executionTimeMs: result.totalExecutionTimeMs,
+        memoryUsedKb: Math.round(result.memoryUsedBytes / 1024),
+      });
+      await emitAdminQueueUpdate(io);
     } catch (err) {
       console.error(`Failed to update submission ${result.submissionId}:`, err);
     }
@@ -64,5 +86,6 @@ export function setupJudgeListener(io: SocketIOServer) {
 
   queueEvents.on('failed', async ({ jobId, failedReason }) => {
     console.error(`Judge job ${jobId} failed:`, failedReason);
+    await emitAdminQueueUpdate(io);
   });
 }

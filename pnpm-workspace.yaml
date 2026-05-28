@@ -4,3 +4,4 @@ packages:
   - "judge"
   - "scraper"
   - "shared"
+  - "e2e"
