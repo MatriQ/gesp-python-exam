@@ -85,3 +85,27 @@ export const adminApi = {
   getStats: () => adminClient.get<PlatformStats>('/stats'),
   retrySubmission: (id: string) => adminClient.post('/judge/retry/' + id),
 };
+
+// Feedback admin client (separate baseURL since feedback routes are at /api/feedback)
+const feedbackAdminClient = axios.create({
+  baseURL: '/api/feedback',
+});
+
+feedbackAdminClient.interceptors.request.use((config) => {
+  const key = localStorage.getItem('adminKey');
+  if (key) {
+    config.headers['x-admin-key'] = key;
+  }
+  return config;
+});
+
+export const feedbackAdminApi = {
+  getFeedbacks: (params?: { page?: number; limit?: number; status?: string }) =>
+    feedbackAdminClient.get<import('../../../shared/src/types').FeedbackListResponse>('/', { params }),
+  getFeedback: (id: string) =>
+    feedbackAdminClient.get<{ feedback: import('../../../shared/src/types').QuestionFeedback }>('/' + id),
+  resolveFeedback: (id: string, data: { status: string; adminNote?: string }) =>
+    feedbackAdminClient.patch<{ feedback: import('../../../shared/src/types').QuestionFeedback }>('/' + id, data),
+  getFeedbackStats: () =>
+    feedbackAdminClient.get<import('../../../shared/src/types').FeedbackStats>('/stats'),
+};

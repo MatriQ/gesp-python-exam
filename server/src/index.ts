@@ -11,6 +11,7 @@ import submissionRoutes from './routes/submissions.js';
 import examRoutes from './routes/exams.js';
 import adminRoutes from './routes/admin.js';
 import gameRoutes from './routes/game.js';
+import feedbackRoutes from './routes/feedback.js';
 import { setupJudgeListener } from './services/judge-queue.js';
 import { prisma } from './lib/prisma.js';
 
@@ -50,6 +51,7 @@ app.use('/api/submissions', submissionRoutes);
 app.use('/api/exams', examRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/game', gameRoutes);
+app.use('/api/feedback', feedbackRoutes);
 
 io.on('connection', (socket) => {
   console.log('Client connected:', socket.id);
