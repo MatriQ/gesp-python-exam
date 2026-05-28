@@ -2,6 +2,8 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { io, Socket } from 'socket.io-client';
 import { useAdminStore } from '../stores/adminStore';
 import { adminApi, type SubmissionsResponse } from '../api/admin';
+import { FEEDBACK_STATUSES } from '../../../shared/src/constants';
+import type { QuestionFeedback } from '../../../shared/src/types';
 
 const STATUS_STYLES: Record<string, { label: string; color: string; bg: string }> = {
   accepted: { label: 'AC', color: 'text-green-700', bg: 'bg-green-100' },
@@ -367,10 +369,269 @@ function SubmissionsTable() {
   );
 }
 
+function FeedbackStatusBadge({ status }: { status: string }) {
+  const entry = FEEDBACK_STATUSES.find((s) => s.value === status);
+  if (!entry) return <span className="inline-block text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600">{status}</span>;
+  return (
+    <span className={`inline-block text-xs font-medium px-2 py-0.5 rounded ${entry.color}`}>
+      {entry.label}
+    </span>
+  );
+}
+
+function FeedbackSection() {
+  const { feedbackList, feedbackStats, feedbackLoading, fetchFeedbackList, fetchFeedbackStats, resolveFeedback } = useAdminStore();
+  const [page, setPage] = useState(1);
+  const [statusFilter, setStatusFilter] = useState('');
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [adminNote, setAdminNote] = useState('');
+  const [resolving, setResolving] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetchFeedbackStats();
+  }, [fetchFeedbackStats]);
+
+  useEffect(() => {
+    fetchFeedbackList({ page, limit: 15, status: statusFilter || undefined });
+  }, [page, statusFilter, fetchFeedbackList]);
+
+  const handleResolve = async (id: string, status: string) => {
+    setResolving(id);
+    try {
+      await resolveFeedback(id, { status, adminNote: adminNote || undefined });
+      setExpandedId(null);
+      setAdminNote('');
+      await fetchFeedbackList({ page, limit: 15, status: statusFilter || undefined });
+      await fetchFeedbackStats();
+    } catch {
+      // silent
+    } finally {
+      setResolving(null);
+    }
+  };
+
+  const pendingCount = feedbackStats?.byStatus?.pending ?? 0;
+  const todayCount = feedbackStats?.recentDaily?.length
+    ? feedbackStats.recentDaily[feedbackStats.recentDaily.length - 1].count
+    : 0;
+
+  return (
+    <div className="space-y-6">
+      <div className="grid grid-cols-3 gap-4">
+        <div className="bg-white rounded-xl border border-gray-200 p-5">
+          <p className="text-xs text-gray-500">Total Feedback</p>
+          <p className="text-xl font-bold text-gray-800">{feedbackStats?.total ?? '-'}</p>
+        </div>
+        <div className="bg-white rounded-xl border border-gray-200 p-5">
+          <p className="text-xs text-gray-500">Pending</p>
+          <p className="text-xl font-bold text-yellow-600">{pendingCount}</p>
+        </div>
+        <div className="bg-white rounded-xl border border-gray-200 p-5">
+          <p className="text-xs text-gray-500">Today</p>
+          <p className="text-xl font-bold text-blue-600">{todayCount}</p>
+        </div>
+      </div>
+
+      {feedbackStats?.topQuestions && feedbackStats.topQuestions.length > 0 && (
+        <div className="bg-white rounded-xl border border-gray-200 p-5">
+          <h2 className="text-sm font-semibold text-gray-700 mb-4">Top Reported Questions</h2>
+          <div className="space-y-2">
+            {feedbackStats.topQuestions.slice(0, 5).map((tq) => {
+              const maxQ = feedbackStats.topQuestions![0].count;
+              const pct = maxQ > 0 ? (tq.count / maxQ) * 100 : 0;
+              return (
+                <div key={tq.questionId} className="flex items-center gap-3">
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs text-gray-600 truncate">{tq.questionText}</p>
+                    <div className="w-full bg-gray-100 rounded-full h-2 mt-1">
+                      <div
+                        className="bg-blue-400 h-2 rounded-full"
+                        style={{ width: `${pct}%` }}
+                      />
+                    </div>
+                  </div>
+                  <span className="text-xs font-bold text-gray-500 shrink-0">{tq.count}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+        <div className="px-5 py-4 border-b border-gray-100 flex flex-wrap items-center gap-3">
+          <h2 className="text-sm font-semibold text-gray-700">Feedback List</h2>
+          <select
+            value={statusFilter}
+            onChange={(e) => { setStatusFilter(e.target.value); setPage(1); }}
+            className="text-xs border border-gray-200 rounded px-2 py-1 text-gray-600"
+          >
+            <option value="">All</option>
+            {FEEDBACK_STATUSES.map((s) => (
+              <option key={s.value} value={s.value}>{s.label}</option>
+            ))}
+          </select>
+          {feedbackList && (
+            <span className="text-xs text-gray-400 ml-auto">
+              {feedbackList.total} total
+            </span>
+          )}
+        </div>
+
+        {feedbackLoading && !feedbackList ? (
+          <div className="text-center text-gray-400 py-10">Loading...</div>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-xs text-gray-400 border-b border-gray-100">
+                  <th className="text-left px-4 py-2 font-medium">ID</th>
+                  <th className="text-left px-4 py-2 font-medium">题目预览</th>
+                  <th className="text-left px-4 py-2 font-medium">反馈类型</th>
+                  <th className="text-left px-4 py-2 font-medium">用户</th>
+                  <th className="text-left px-4 py-2 font-medium">状态</th>
+                  <th className="text-left px-4 py-2 font-medium">时间</th>
+                  <th className="text-left px-4 py-2 font-medium">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {feedbackList?.items.map((fb: QuestionFeedback) => (
+                  <>
+                    <tr
+                      key={fb.id}
+                      className="border-b border-gray-50 hover:bg-gray-50"
+                    >
+                      <td className="px-4 py-2.5 font-mono text-xs text-gray-500">{fb.id.slice(-6)}</td>
+                      <td className="px-4 py-2.5 text-gray-600 max-w-[200px] truncate">
+                        {fb.question?.questionText ?? fb.questionId.slice(-6)}
+                      </td>
+                      <td className="px-4 py-2.5 text-gray-600">{fb.category}</td>
+                      <td className="px-4 py-2.5 text-gray-600">{fb.user?.name ?? fb.userId.slice(-6)}</td>
+                      <td className="px-4 py-2.5"><FeedbackStatusBadge status={fb.status} /></td>
+                      <td className="px-4 py-2.5 text-gray-400 text-xs">
+                        {new Date(fb.createdAt).toLocaleString()}
+                      </td>
+                      <td className="px-4 py-2.5">
+                        <button
+                          onClick={() => {
+                            setExpandedId(expandedId === fb.id ? null : fb.id);
+                            setAdminNote('');
+                          }}
+                          className="text-xs text-blue-600 hover:text-blue-800"
+                        >
+                          查看
+                        </button>
+                      </td>
+                    </tr>
+                    {expandedId === fb.id && (
+                      <tr key={`${fb.id}-detail`} className="bg-gray-50">
+                        <td colSpan={7} className="px-5 py-4">
+                          <div className="space-y-3">
+                            <div>
+                              <p className="text-xs font-medium text-gray-500 mb-1">题目内容</p>
+                              <p className="text-sm text-gray-700 whitespace-pre-wrap">{fb.question?.questionText ?? '-'}</p>
+                            </div>
+                            <div className="grid grid-cols-2 gap-4">
+                              <div>
+                                <p className="text-xs font-medium text-gray-500 mb-1">反馈类型</p>
+                                <p className="text-sm text-gray-700">{fb.category}</p>
+                              </div>
+                              <div>
+                                <p className="text-xs font-medium text-gray-500 mb-1">用户</p>
+                                <p className="text-sm text-gray-700">{fb.user?.name ?? '-'} ({fb.user?.email ?? '-'})</p>
+                              </div>
+                            </div>
+                            {fb.comment && (
+                              <div>
+                                <p className="text-xs font-medium text-gray-500 mb-1">评论</p>
+                                <p className="text-sm text-gray-700 whitespace-pre-wrap">{fb.comment}</p>
+                              </div>
+                            )}
+                            {fb.status === 'pending' && (
+                              <div className="border-t border-gray-200 pt-3 space-y-3">
+                                <div>
+                                  <p className="text-xs font-medium text-gray-500 mb-1">管理员备注</p>
+                                  <textarea
+                                    value={adminNote}
+                                    onChange={(e) => setAdminNote(e.target.value)}
+                                    placeholder="可选备注..."
+                                    className="w-full text-sm border border-gray-200 rounded px-3 py-2 text-gray-700 resize-none"
+                                    rows={2}
+                                  />
+                                </div>
+                                <div className="flex gap-2">
+                                  <button
+                                    onClick={() => handleResolve(fb.id, 'fixed')}
+                                    disabled={resolving === fb.id}
+                                    className="text-xs bg-green-600 text-white px-3 py-1.5 rounded hover:bg-green-700 disabled:bg-gray-300 transition-colors"
+                                  >
+                                    已修复
+                                  </button>
+                                  <button
+                                    onClick={() => handleResolve(fb.id, 'ignored')}
+                                    disabled={resolving === fb.id}
+                                    className="text-xs bg-gray-500 text-white px-3 py-1.5 rounded hover:bg-gray-600 disabled:bg-gray-300 transition-colors"
+                                  >
+                                    已忽略
+                                  </button>
+                                  <button
+                                    onClick={() => handleResolve(fb.id, 'invalid')}
+                                    disabled={resolving === fb.id}
+                                    className="text-xs bg-red-500 text-white px-3 py-1.5 rounded hover:bg-red-600 disabled:bg-gray-300 transition-colors"
+                                  >
+                                    无效反馈
+                                  </button>
+                                </div>
+                              </div>
+                            )}
+                            {fb.status !== 'pending' && fb.adminNote && (
+                              <div>
+                                <p className="text-xs font-medium text-gray-500 mb-1">管理员备注</p>
+                                <p className="text-sm text-gray-600">{fb.adminNote}</p>
+                              </div>
+                            )}
+                          </div>
+                        </td>
+                      </tr>
+                    )}
+                  </>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+
+        {feedbackList && feedbackList.totalPages > 1 && (
+          <div className="px-5 py-3 border-t border-gray-100 flex items-center justify-center gap-2">
+            <button
+              onClick={() => setPage(Math.max(1, page - 1))}
+              disabled={page === 1}
+              className="text-xs text-blue-600 disabled:text-gray-300"
+            >
+              Prev
+            </button>
+            <span className="text-xs text-gray-400">
+              {page} / {feedbackList.totalPages}
+            </span>
+            <button
+              onClick={() => setPage(Math.min(feedbackList.totalPages, page + 1))}
+              disabled={page === feedbackList.totalPages}
+              className="text-xs text-blue-600 disabled:text-gray-300"
+            >
+              Next
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function AdminDashboard() {
   const { adminKey, setAdminKey, clearAdminKey, fetchQueueStats, fetchHealth, fetchStats } =
     useAdminStore();
   const [keyInput, setKeyInput] = useState('');
+  const [activeTab, setActiveTab] = useState<'overview' | 'feedback'>('overview');
   const socketRef = useRef<Socket | null>(null);
 
   useEffect(() => {
@@ -444,14 +705,35 @@ export function AdminDashboard() {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <QueueCard />
-        <HealthCard />
+      <div className="flex gap-1 border-b border-gray-200">
+        <button
+          onClick={() => setActiveTab('overview')}
+          className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${activeTab === 'overview' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'}`}
+        >
+          📊 Overview
+        </button>
+        <button
+          onClick={() => setActiveTab('feedback')}
+          className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${activeTab === 'feedback' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'}`}
+        >
+          📝 题目反馈
+        </button>
       </div>
 
-      <StatsCard />
+      {activeTab === 'overview' && (
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <QueueCard />
+            <HealthCard />
+          </div>
 
-      <SubmissionsTable />
+          <StatsCard />
+
+          <SubmissionsTable />
+        </>
+      )}
+
+      {activeTab === 'feedback' && <FeedbackSection />}
     </div>
   );
 }
