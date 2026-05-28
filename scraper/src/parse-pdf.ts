@@ -1,15 +1,18 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
-import pdf from 'pdf-parse';
 import { extractQuestionsFromText, type ExtractionResult } from './llm-extractor.js';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT_DIR = path.resolve(__dirname, '..');
-const PDFS_DIR = path.join(ROOT_DIR, 'pdfs');
-const OUTPUT_DIR = path.join(ROOT_DIR, 'output');
+const require = createRequire(import.meta.url);
+const pdfParse = require('pdf-parse');
 
-interface ParseOptions {
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+export const ROOT_DIR = path.resolve(__dirname, '..');
+export const PDFS_DIR = path.join(ROOT_DIR, 'pdfs');
+export const OUTPUT_DIR = path.join(ROOT_DIR, 'output');
+
+export interface ParseOptions {
   input?: string;
   session?: string;
   level?: number;
@@ -40,13 +43,13 @@ function parseArgs(): ParseOptions {
   return opts;
 }
 
-async function parsePdf(filePath: string): Promise<string> {
+export async function parsePdf(filePath: string): Promise<string> {
   const dataBuffer = fs.readFileSync(filePath);
-  const data = await pdf(dataBuffer);
+  const data = await pdfParse(dataBuffer);
   return data.text;
 }
 
-function writeOutput(result: ExtractionResult): string {
+export function writeOutput(result: ExtractionResult): string {
   const sessionDir = path.join(OUTPUT_DIR, result.session);
   fs.mkdirSync(sessionDir, { recursive: true });
 
@@ -64,7 +67,7 @@ function writeOutput(result: ExtractionResult): string {
   return outputPath;
 }
 
-async function processSinglePdf(pdfPath: string, session: string, level: number): Promise<void> {
+export async function processSinglePdf(pdfPath: string, session: string, level: number): Promise<void> {
   if (!fs.existsSync(pdfPath)) {
     console.error(`PDF not found: ${pdfPath}`);
     process.exit(1);
@@ -91,7 +94,7 @@ async function processSinglePdf(pdfPath: string, session: string, level: number)
   console.log(`Output: ${outputPath}`);
 }
 
-async function processAllPdfs(): Promise<void> {
+export async function processAllPdfs(): Promise<void> {
   if (!fs.existsSync(PDFS_DIR)) {
     console.error(`PDFs directory not found: ${PDFS_DIR}`);
     process.exit(1);
@@ -155,6 +158,28 @@ async function processFromDirectoryStructure(): Promise<void> {
   }
 }
 
+export function hasPdfsAvailable(): boolean {
+  if (!fs.existsSync(PDFS_DIR)) return false;
+  const manifestPath = path.join(PDFS_DIR, 'manifest.json');
+  if (fs.existsSync(manifestPath)) {
+    try {
+      const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8')) as Array<{ downloaded: boolean }>;
+      return manifest.some((e) => e.downloaded);
+    } catch {
+      return false;
+    }
+  }
+  const sessionDirs = fs.readdirSync(PDFS_DIR).filter((name) => {
+    const fullPath = path.join(PDFS_DIR, name);
+    return fs.statSync(fullPath).isDirectory() && /^\d{4}-\d{2}$/.test(name);
+  });
+  return sessionDirs.some((session) => {
+    const sessionPath = path.join(PDFS_DIR, session);
+    const pdfFiles = fs.readdirSync(sessionPath).filter((f) => f.endsWith('.pdf'));
+    return pdfFiles.length > 0;
+  });
+}
+
 async function main(): Promise<void> {
   const opts = parseArgs();
 
@@ -173,7 +198,10 @@ async function main(): Promise<void> {
   await processSinglePdf(opts.input, opts.session, opts.level);
 }
 
-main().catch((err) => {
-  console.error('Fatal error:', err);
-  process.exit(1);
-});
+const isDirectRun = process.argv[1]?.endsWith('parse-pdf.ts') || process.argv[1]?.endsWith('parse-pdf.js');
+if (isDirectRun) {
+  main().catch((err) => {
+    console.error('Fatal error:', err);
+    process.exit(1);
+  });
+}

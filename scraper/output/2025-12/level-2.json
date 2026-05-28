@@ -5,7 +5,7 @@
   "mock": true,
   "questions": [
     {
-      "id": "33d85c45-3df3-4cc5-8056-4f05dbc226cc",
+      "id": "931e9afb-c247-4e2f-b24f-60c24ad5957f",
       "type": "mc",
       "questionIndex": 1,
       "questionText": "以下哪个是将字符串转换为整数的函数？",
@@ -30,7 +30,7 @@
       "answer": "B",
       "explanation": "以下哪个是将字符串转换为整数的函数？ 正确答案是B。int()是正确的。",
       "topics": [
-        "数学函数"
+        "程序设计语言"
       ],
       "difficulty": "medium",
       "images": null,
@@ -42,10 +42,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "09b9f89f-50fe-44ce-91be-af331d0344c7",
+      "id": "002992ec-1e03-47e7-8c3a-8d5ccff75963",
       "type": "mc",
       "questionIndex": 2,
       "questionText": "在流程图中，菱形表示什么？",
@@ -70,7 +70,7 @@
       "answer": "C",
       "explanation": "在流程图中，菱形表示什么？ 正确答案是C。判断是正确的。",
       "topics": [
-        "数学函数"
+        "多层循环结构"
       ],
       "difficulty": "medium",
       "images": null,
@@ -82,10 +82,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "39e10c40-5c74-4681-91d8-3c2fd5b91cec",
+      "id": "d7887006-bf3a-439a-b6b1-00cf2d885683",
       "type": "mc",
       "questionIndex": 3,
       "questionText": "表达式 int(\"123\") + 1 的值是？",
@@ -110,7 +110,8 @@
       "answer": "B",
       "explanation": "表达式 int(\"123\") + 1 的值是？ 正确答案是B。124是正确的。",
       "topics": [
-        "计算机存储与网络"
+        "计算机存储与网络",
+        "程序设计语言"
       ],
       "difficulty": "medium",
       "images": null,
@@ -122,10 +123,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "cd873a7d-8cbd-4eb0-ab20-53fe342d3081",
+      "id": "30e2b548-955a-44f3-9db3-3471212d834e",
       "type": "mc",
       "questionIndex": 4,
       "questionText": "计算机中1KB等于多少字节？",
@@ -150,7 +151,8 @@
       "answer": "B",
       "explanation": "计算机中1KB等于多少字节？ 正确答案是B。1024是正确的。",
       "topics": [
-        "多层循环结构"
+        "多层循环结构",
+        "程序设计语言"
       ],
       "difficulty": "medium",
       "images": null,
@@ -162,10 +164,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "277aa5b1-be0f-454f-97f9-6a3b94e522e3",
+      "id": "867b93f3-1607-4ae5-b3cf-65e0eb82b290",
       "type": "mc",
       "questionIndex": 5,
       "questionText": "以下哪种网络协议用于网页浏览？",
@@ -190,8 +192,8 @@
       "answer": "B",
       "explanation": "以下哪种网络协议用于网页浏览？ 正确答案是B。HTTP是正确的。",
       "topics": [
-        "数学函数",
-        "程序设计语言"
+        "ASCII编码",
+        "计算机存储与网络"
       ],
       "difficulty": "medium",
       "images": null,
@@ -203,10 +205,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "24c3b0fb-a6e3-466e-aeb7-39ec22638fe6",
+      "id": "bf753a77-dfe7-4f61-9d80-8d3ed9db2cfb",
       "type": "mc",
       "questionIndex": 6,
       "questionText": "Python中 elif 是什么的缩写？",
@@ -231,8 +233,7 @@
       "answer": "A",
       "explanation": "Python中 elif 是什么的缩写？ 正确答案是A。else if是正确的。",
       "topics": [
-        "计算机存储与网络",
-        "数据类型转换"
+        "数学函数"
       ],
       "difficulty": "medium",
       "images": null,
@@ -244,10 +245,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "8e41599a-1d6a-47cc-95ac-b0115d51e76d",
+      "id": "a831fa92-f9f9-4300-ae4a-db3971efd2a1",
       "type": "mc",
       "questionIndex": 7,
       "questionText": "多层循环中，break 语句的作用范围是？",
@@ -272,7 +273,7 @@
       "answer": "B",
       "explanation": "多层循环中，break 语句的作用范围是？ 正确答案是B。跳出当前循环是正确的。",
       "topics": [
-        "计算机存储与网络"
+        "多层循环结构"
       ],
       "difficulty": "medium",
       "images": null,
@@ -284,10 +285,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "4242c544-2182-4ad9-a039-d7d4f5299bb0",
+      "id": "f9c801a6-5190-4af3-bfcd-fc4ca8410326",
       "type": "mc",
       "questionIndex": 8,
       "questionText": "表达式 round(3.14159, 2) 的值是？",
@@ -312,7 +313,8 @@
       "answer": "A",
       "explanation": "表达式 round(3.14159, 2) 的值是？ 正确答案是A。3.14是正确的。",
       "topics": [
-        "数据类型转换"
+        "数据类型转换",
+        "ASCII编码"
       ],
       "difficulty": "medium",
       "images": null,
@@ -324,10 +326,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "fd898a1e-d5ee-4bee-be67-a63029813f82",
+      "id": "5a98ef88-ff12-4938-bd40-b73f37e8667d",
       "type": "mc",
       "questionIndex": 9,
       "questionText": "以下哪种是程序设计语言？",
@@ -352,7 +354,6 @@
       "answer": "B",
       "explanation": "以下哪种是程序设计语言？ 正确答案是B。Python是正确的。",
       "topics": [
-        "计算机存储与网络",
         "程序设计语言"
       ],
       "difficulty": "medium",
@@ -365,10 +366,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "eead33a8-74ad-4480-9441-073cdfd4c210",
+      "id": "86d30b17-c3a4-4c83-a229-bd5cc4f16723",
       "type": "mc",
       "questionIndex": 10,
       "questionText": "表达式 abs(-5) 的值是？",
@@ -393,8 +394,7 @@
       "answer": "B",
       "explanation": "表达式 abs(-5) 的值是？ 正确答案是B。5是正确的。",
       "topics": [
-        "计算机存储与网络",
-        "多层分支结构"
+        "计算机存储与网络"
       ],
       "difficulty": "medium",
       "images": null,
@@ -406,10 +406,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "f318737c-82ac-4b9c-945b-345c98f3e62f",
+      "id": "5749fc8a-0356-449f-835f-dd318032e486",
       "type": "mc",
       "questionIndex": 11,
       "questionText": "二进制数 1010 转换为十进制是？",
@@ -434,7 +434,7 @@
       "answer": "B",
       "explanation": "二进制数 1010 转换为十进制是？ 正确答案是B。10是正确的。",
       "topics": [
-        "流程图"
+        "计算机存储与网络"
       ],
       "difficulty": "medium",
       "images": null,
@@ -446,10 +446,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "3cd4f68e-287c-4d1e-9cd8-71850825307e",
+      "id": "fb42c1df-54c5-481c-99c0-8de9fb5f9152",
       "type": "mc",
       "questionIndex": 12,
       "questionText": "Python中 math.sqrt(16) 的值是？",
@@ -474,8 +474,7 @@
       "answer": "A",
       "explanation": "Python中 math.sqrt(16) 的值是？ 正确答案是A。4.0是正确的。",
       "topics": [
-        "ASCII编码",
-        "计算机存储与网络"
+        "流程图"
       ],
       "difficulty": "medium",
       "images": null,
@@ -487,10 +486,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "b3c051eb-4bc6-49a3-b79d-14821fe45e0a",
+      "id": "8ab19c76-5c8d-4b2b-8cab-f011852f3ccf",
       "type": "mc",
       "questionIndex": 13,
       "questionText": "以下哪个不是Python的比较运算符？",
@@ -515,7 +514,7 @@
       "answer": "C",
       "explanation": "以下哪个不是Python的比较运算符？ 正确答案是C。<>是正确的。",
       "topics": [
-        "程序设计语言"
+        "多层循环结构"
       ],
       "difficulty": "medium",
       "images": null,
@@ -527,10 +526,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "5ade6d4d-d617-468a-84b5-7275ad22df8c",
+      "id": "02904119-89d2-4c15-8bd2-c94ed6d36f73",
       "type": "mc",
       "questionIndex": 14,
       "questionText": "continue 语句的作用是？",
@@ -555,8 +554,7 @@
       "answer": "B",
       "explanation": "continue 语句的作用是？ 正确答案是B。跳过本次迭代是正确的。",
       "topics": [
-        "数学函数",
-        "数据类型转换"
+        "多层分支结构"
       ],
       "difficulty": "medium",
       "images": null,
@@ -568,10 +566,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "19c6f0d2-f6c8-44c5-996e-dd44c89ee0f2",
+      "id": "e7bda746-5ed9-4ed8-95e9-08054004bf49",
       "type": "mc",
       "questionIndex": 15,
       "questionText": "ASCII编码中，字符\"A\"的十进制值是多少？",
@@ -596,8 +594,7 @@
       "answer": "A",
       "explanation": "ASCII编码中，字符\"A\"的十进制值是多少？ 正确答案是A。65是正确的。",
       "topics": [
-        "数学函数",
-        "程序设计语言"
+        "计算机存储与网络"
       ],
       "difficulty": "medium",
       "images": null,
@@ -609,39 +606,16 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "847bc258-c3ba-439c-88e2-0ce88586a9b4",
+      "id": "59ed4e32-771f-436e-8f1d-112e6e97a214",
       "type": "tf",
       "questionIndex": 16,
       "questionText": "计算机存储的最小单位是字节(Byte)。",
       "options": null,
       "answer": "错",
       "explanation": "计算机存储的最小单位是字节(Byte)。 这个说法是错误的。",
-      "topics": [
-        "数学函数"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
-    },
-    {
-      "id": "9882e0bf-affc-46fc-993a-455344968815",
-      "type": "tf",
-      "questionIndex": 17,
-      "questionText": "HTTP协议默认使用80端口。",
-      "options": null,
-      "answer": "对",
-      "explanation": "HTTP协议默认使用80端口。 这个说法是正确的。",
       "topics": [
         "多层分支结构"
       ],
@@ -655,16 +629,62 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "99fc3859-0001-402c-9d6a-9294fab7ee92",
+      "id": "69f41bbc-ddc1-4a69-9a25-083424c85fbc",
+      "type": "tf",
+      "questionIndex": 17,
+      "questionText": "HTTP协议默认使用80端口。",
+      "options": null,
+      "answer": "对",
+      "explanation": "HTTP协议默认使用80端口。 这个说法是正确的。",
+      "topics": [
+        "计算机存储与网络"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T11:27:55.465Z"
+    },
+    {
+      "id": "bfdc5b6c-06a5-4787-91ad-bfeaddf058dd",
       "type": "tf",
       "questionIndex": 18,
       "questionText": "Python中，float类型可以精确表示所有小数。",
       "options": null,
       "answer": "错",
       "explanation": "Python中，float类型可以精确表示所有小数。 这个说法是错误的。",
+      "topics": [
+        "计算机存储与网络"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T11:27:55.465Z"
+    },
+    {
+      "id": "1f23936a-5ce9-4273-add5-0b6e0f43d257",
+      "type": "tf",
+      "questionIndex": 19,
+      "questionText": "多层if-elif-else结构中，最多只会执行一个分支。",
+      "options": null,
+      "answer": "对",
+      "explanation": "多层if-elif-else结构中，最多只会执行一个分支。 这个说法是正确的。",
       "topics": [
         "数学函数"
       ],
@@ -678,33 +698,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "013d02f4-bdc5-4e3e-92fb-0e038dd881aa",
-      "type": "tf",
-      "questionIndex": 19,
-      "questionText": "多层if-elif-else结构中，最多只会执行一个分支。",
-      "options": null,
-      "answer": "对",
-      "explanation": "多层if-elif-else结构中，最多只会执行一个分支。 这个说法是正确的。",
-      "topics": [
-        "计算机存储与网络"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
-    },
-    {
-      "id": "bae80762-ba33-443b-81bf-3f4253f0dfe3",
+      "id": "30be05ea-0e20-4585-b6da-90736936b78b",
       "type": "tf",
       "questionIndex": 20,
       "questionText": "break语句只能用于for循环，不能用于while循环。",
@@ -712,7 +709,7 @@
       "answer": "错",
       "explanation": "break语句只能用于for循环，不能用于while循环。 这个说法是错误的。",
       "topics": [
-        "计算机存储与网络"
+        "多层分支结构"
       ],
       "difficulty": "medium",
       "images": null,
@@ -724,10 +721,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "638618e2-8f39-47ec-8f17-55a11fd390b2",
+      "id": "6d28c054-729c-47a5-90c2-c812dae38261",
       "type": "tf",
       "questionIndex": 21,
       "questionText": "流程图中，箭头表示程序的执行方向。",
@@ -735,7 +732,7 @@
       "answer": "对",
       "explanation": "流程图中，箭头表示程序的执行方向。 这个说法是正确的。",
       "topics": [
-        "多层循环结构"
+        "ASCII编码"
       ],
       "difficulty": "medium",
       "images": null,
@@ -747,10 +744,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "a0aae22d-e512-4374-a4d5-8f0cde55526c",
+      "id": "0043d206-4015-45cf-941d-943e31cfc661",
       "type": "tf",
       "questionIndex": 22,
       "questionText": "二进制是计算机内部使用的数制。",
@@ -758,7 +755,7 @@
       "answer": "对",
       "explanation": "二进制是计算机内部使用的数制。 这个说法是正确的。",
       "topics": [
-        "计算机存储与网络"
+        "ASCII编码"
       ],
       "difficulty": "medium",
       "images": null,
@@ -770,39 +767,16 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "24d87207-f1c6-4140-b032-a29bec0aac2a",
+      "id": "c81b0e8c-ee5f-41be-b884-d1244d510ef4",
       "type": "tf",
       "questionIndex": 23,
       "questionText": "Python中，嵌套循环的总次数等于各层循环次数之和。",
       "options": null,
       "answer": "错",
       "explanation": "Python中，嵌套循环的总次数等于各层循环次数之和。 这个说法是错误的。",
-      "topics": [
-        "数据类型转换"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
-    },
-    {
-      "id": "89693f13-d64a-4082-b985-d60b9f3ce736",
-      "type": "tf",
-      "questionIndex": 24,
-      "questionText": "str()函数可以将任何类型转换为字符串。",
-      "options": null,
-      "answer": "对",
-      "explanation": "str()函数可以将任何类型转换为字符串。 这个说法是正确的。",
       "topics": [
         "多层循环结构"
       ],
@@ -816,18 +790,18 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "81f5570a-303a-4496-b237-8ca929ef2740",
+      "id": "aff115d6-203a-44d3-8725-6da5ea851db2",
       "type": "tf",
-      "questionIndex": 25,
-      "questionText": "ASCII编码可以表示所有中文字符。",
+      "questionIndex": 24,
+      "questionText": "str()函数可以将任何类型转换为字符串。",
       "options": null,
-      "answer": "错",
-      "explanation": "ASCII编码可以表示所有中文字符。 这个说法是错误的。",
+      "answer": "对",
+      "explanation": "str()函数可以将任何类型转换为字符串。 这个说法是正确的。",
       "topics": [
-        "流程图"
+        "程序设计语言"
       ],
       "difficulty": "medium",
       "images": null,
@@ -839,10 +813,33 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "a7936f80-9e8f-435f-b96b-283cd3ef0440",
+      "id": "82b1d3c5-03fb-4deb-a163-1e1cc7fb0988",
+      "type": "tf",
+      "questionIndex": 25,
+      "questionText": "ASCII编码可以表示所有中文字符。",
+      "options": null,
+      "answer": "错",
+      "explanation": "ASCII编码可以表示所有中文字符。 这个说法是错误的。",
+      "topics": [
+        "多层循环结构"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T11:27:55.465Z"
+    },
+    {
+      "id": "e6885b8a-c4a1-4d4a-8bf3-aac7529b3030",
       "type": "programming",
       "questionIndex": 26,
       "questionText": "数字统计\n\n输入一个正整数n，输出1到n之间所有能被3整除但不能被5整除的数的个数。",
@@ -871,10 +868,10 @@
           "isSample": true
         }
       ],
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     },
     {
-      "id": "f081f8a2-b585-4c2b-999b-98791ba063ec",
+      "id": "0fced9bd-f1f8-4d45-b38d-203d48ef8cf1",
       "type": "programming",
       "questionIndex": 27,
       "questionText": "字符统计\n\n输入一个字符串，分别统计其中大写字母、小写字母和数字的个数。",
@@ -882,8 +879,8 @@
       "answer": "s = input()\nupper = lower = digit = 0\nfor c in s:\n    if c.isupper():\n        upper += 1\n    elif c.islower():\n        lower += 1\n    elif c.isdigit():\n        digit += 1\nprint(upper, lower, digit)",
       "explanation": "解题思路：输入一个字符串，分别统计其中大写字母、小写字母和数字的个数。",
       "topics": [
-        "计算机存储与网络",
-        "流程图"
+        "ASCII编码",
+        "数据类型转换"
       ],
       "difficulty": "hard",
       "images": null,
@@ -903,8 +900,8 @@
           "isSample": true
         }
       ],
-      "createdAt": "2026-05-27T01:47:31.401Z"
+      "createdAt": "2026-05-27T11:27:55.465Z"
     }
   ],
-  "generatedAt": "2026-05-27T01:47:31.401Z"
+  "generatedAt": "2026-05-27T11:27:55.465Z"
 }

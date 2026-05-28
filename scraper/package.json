@@ -7,6 +7,8 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "test": "echo \"No tests yet\"",
+    "pipeline": "tsx src/pipeline.ts",
+    "download": "python3 download_pdfs.py",
     "import": "tsx src/import-to-db.ts",
     "parse": "tsx src/parse-pdf.ts",
     "mock-data": "tsx src/generate-mock-data.ts"

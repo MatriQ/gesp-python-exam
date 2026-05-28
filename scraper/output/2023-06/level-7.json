@@ -5,7 +5,7 @@
   "mock": true,
   "questions": [
     {
-      "id": "13eb5b2f-ee2f-444b-b738-58220891944c",
+      "id": "8f83f3de-17cb-4afa-afd5-a81a6f60b766",
       "type": "mc",
       "questionIndex": 1,
       "questionText": "滚动数组的作用是？",
@@ -30,7 +30,8 @@
       "answer": "B",
       "explanation": "滚动数组的作用是？ 正确答案是B。减少空间复杂度是正确的。",
       "topics": [
-        "指数函数"
+        "LCS",
+        "数学库函数"
       ],
       "difficulty": "medium",
       "images": null,
@@ -42,10 +43,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "9f301bf0-3a67-4937-a2cc-4ff95c1fe4ad",
+      "id": "875ae4c0-3f80-41f5-9795-cd0a35228ff3",
       "type": "mc",
       "questionIndex": 2,
       "questionText": "图的邻接矩阵表示法的空间复杂度是？",
@@ -70,7 +71,8 @@
       "answer": "B",
       "explanation": "图的邻接矩阵表示法的空间复杂度是？ 正确答案是B。O(n²)是正确的。",
       "topics": [
-        "对数函数"
+        "数学库函数",
+        "三角函数"
       ],
       "difficulty": "medium",
       "images": null,
@@ -82,10 +84,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "14910c99-c080-4b51-952f-8e5ae37d57b9",
+      "id": "471a7118-9e9e-41f1-8a28-443f9714ccdd",
       "type": "mc",
       "questionIndex": 3,
       "questionText": "区间DP的状态通常定义为？",
@@ -110,7 +112,8 @@
       "answer": "B",
       "explanation": "区间DP的状态通常定义为？ 正确答案是B。dp[i][j]表示区间[i,j]是正确的。",
       "topics": [
-        "数学库函数"
+        "滚动数组",
+        "二维动态规划"
       ],
       "difficulty": "medium",
       "images": null,
@@ -122,10 +125,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "aa1fe60d-28b2-442a-a2c9-0e987417f8f6",
+      "id": "e47e76bf-0a64-4c77-8791-e5db8e4c16f4",
       "type": "mc",
       "questionIndex": 4,
       "questionText": "哈希表的平均查找时间复杂度是？",
@@ -150,7 +153,7 @@
       "answer": "B",
       "explanation": "哈希表的平均查找时间复杂度是？ 正确答案是B。O(1)是正确的。",
       "topics": [
-        "指数函数"
+        "图的定义"
       ],
       "difficulty": "medium",
       "images": null,
@@ -162,10 +165,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "88c590ef-a7f4-42ef-8cec-c06413723aa1",
+      "id": "eece714b-69f3-4cc7-afcd-fff3aa673d17",
       "type": "mc",
       "questionIndex": 5,
       "questionText": "LCS问题使用什么算法策略？",
@@ -190,8 +193,7 @@
       "answer": "B",
       "explanation": "LCS问题使用什么算法策略？ 正确答案是B。动态规划是正确的。",
       "topics": [
-        "指数函数",
-        "LCS"
+        "数学库函数"
       ],
       "difficulty": "medium",
       "images": null,
@@ -203,10 +205,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "d3b6ae1e-42fd-4972-af03-8bc8f4389bdd",
+      "id": "619c0256-26f3-462a-8dd3-1f265f262c46",
       "type": "mc",
       "questionIndex": 6,
       "questionText": "泛洪算法（Flood Fill）通常使用什么实现？",
@@ -231,7 +233,7 @@
       "answer": "B",
       "explanation": "泛洪算法（Flood Fill）通常使用什么实现？ 正确答案是B。BFS/DFS是正确的。",
       "topics": [
-        "泛洪算法"
+        "哈希表"
       ],
       "difficulty": "medium",
       "images": null,
@@ -243,10 +245,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "66aef3b2-c4e7-4ce4-8398-281cbcf68774",
+      "id": "98fb2654-6aac-4ac7-8a15-2ae40777ec9f",
       "type": "mc",
       "questionIndex": 7,
       "questionText": "Python中 math.log(100) 默认的底数是？",
@@ -271,8 +273,7 @@
       "answer": "C",
       "explanation": "Python中 math.log(100) 默认的底数是？ 正确答案是C。e是正确的。",
       "topics": [
-        "数学库函数",
-        "三角函数"
+        "泛洪算法"
       ],
       "difficulty": "medium",
       "images": null,
@@ -284,10 +285,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "ed11e3c8-8c29-4a2e-983f-2e9ede42ca07",
+      "id": "a7474e56-7a1f-42e7-9cdb-72f7ec8f2510",
       "type": "mc",
       "questionIndex": 8,
       "questionText": "二维DP中状态dp[i][j]通常表示？",
@@ -312,8 +313,7 @@
       "answer": "B",
       "explanation": "二维DP中状态dp[i][j]通常表示？ 正确答案是B。前i个物品/行，第j个状态的结果是正确的。",
       "topics": [
-        "数学库函数",
-        "对数函数"
+        "图的遍历"
       ],
       "difficulty": "medium",
       "images": null,
@@ -325,10 +325,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "189c2619-20e5-4e1e-a93f-3794e8c6018d",
+      "id": "a5fc2cc3-9fcd-4d0d-9813-8733eb38aea8",
       "type": "mc",
       "questionIndex": 9,
       "questionText": "图的遍历方式不包括？",
@@ -353,8 +353,8 @@
       "answer": "C",
       "explanation": "图的遍历方式不包括？ 正确答案是C。二分查找是正确的。",
       "topics": [
-        "数学库函数",
-        "图的遍历"
+        "区间DP",
+        "LIS"
       ],
       "difficulty": "medium",
       "images": null,
@@ -366,10 +366,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "d83b09d9-2bf9-45cd-a1e3-a519649c514f",
+      "id": "3eee262d-c910-4377-b2db-b64926f71984",
       "type": "mc",
       "questionIndex": 10,
       "questionText": "哈希冲突的常见解决方法不包括？",
@@ -394,8 +394,8 @@
       "answer": "D",
       "explanation": "哈希冲突的常见解决方法不包括？ 正确答案是D。排序法是正确的。",
       "topics": [
-        "数学库函数",
-        "LIS"
+        "三角函数",
+        "区间DP"
       ],
       "difficulty": "medium",
       "images": null,
@@ -407,10 +407,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "39c70032-11db-41e2-b013-06e3968028ed",
+      "id": "34c60e80-9a4e-4a81-88e2-67772af7bba3",
       "type": "mc",
       "questionIndex": 11,
       "questionText": "三角函数 math.sin() 的参数单位是？",
@@ -435,7 +435,7 @@
       "answer": "B",
       "explanation": "三角函数 math.sin() 的参数单位是？ 正确答案是B。弧度是正确的。",
       "topics": [
-        "LCS"
+        "区间DP"
       ],
       "difficulty": "medium",
       "images": null,
@@ -447,10 +447,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "84cb91a3-8233-4beb-8986-df0d02d08a46",
+      "id": "8bec0f65-5be7-4c7c-8adc-833599c8abed",
       "type": "mc",
       "questionIndex": 12,
       "questionText": "指数函数 math.exp(1) 的值约等于？",
@@ -475,7 +475,8 @@
       "answer": "B",
       "explanation": "指数函数 math.exp(1) 的值约等于？ 正确答案是B。2.718是正确的。",
       "topics": [
-        "三角函数"
+        "泛洪算法",
+        "区间DP"
       ],
       "difficulty": "medium",
       "images": null,
@@ -487,10 +488,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "4671966d-50ea-463f-84fc-a1f9fffa15f4",
+      "id": "a475c667-bb70-4a4c-b15a-91ba677e95ab",
       "type": "mc",
       "questionIndex": 13,
       "questionText": "Dijkstra算法不能处理什么类型的图？",
@@ -515,7 +516,7 @@
       "answer": "C",
       "explanation": "Dijkstra算法不能处理什么类型的图？ 正确答案是C。负权边图是正确的。",
       "topics": [
-        "对数函数"
+        "哈希表"
       ],
       "difficulty": "medium",
       "images": null,
@@ -527,10 +528,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "87c4b245-f01c-4aff-af81-6a8a645283da",
+      "id": "31631d0d-6cf9-457b-a015-b10bc6eec05f",
       "type": "mc",
       "questionIndex": 14,
       "questionText": "DP空间优化的核心思想是？",
@@ -555,8 +556,7 @@
       "answer": "B",
       "explanation": "DP空间优化的核心思想是？ 正确答案是B。复用不再需要的状态空间是正确的。",
       "topics": [
-        "滚动数组",
-        "LCS"
+        "LIS"
       ],
       "difficulty": "medium",
       "images": null,
@@ -568,10 +568,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "4c72f2fd-a6b3-4fc0-9885-4f7ca9654d98",
+      "id": "70e89df0-c82b-4e89-949a-b866f51a0af1",
       "type": "mc",
       "questionIndex": 15,
       "questionText": "LIS问题的中文含义是？",
@@ -596,214 +596,7 @@
       "answer": "B",
       "explanation": "LIS问题的中文含义是？ 正确答案是B。最长递增子序列是正确的。",
       "topics": [
-        "指数函数",
-        "三角函数"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
-    },
-    {
-      "id": "bd210e9d-630b-432d-aa63-f029f9a3a6b2",
-      "type": "tf",
-      "questionIndex": 16,
-      "questionText": "LIS问题可以用动态规划求解。",
-      "options": null,
-      "answer": "对",
-      "explanation": "LIS问题可以用动态规划求解。 这个说法是正确的。",
-      "topics": [
-        "指数函数"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
-    },
-    {
-      "id": "a73aac92-09fd-421b-ae32-a3bb63a1c54e",
-      "type": "tf",
-      "questionIndex": 17,
-      "questionText": "哈希表查找的最坏时间复杂度是O(1)。",
-      "options": null,
-      "answer": "错",
-      "explanation": "哈希表查找的最坏时间复杂度是O(1)。 这个说法是错误的。",
-      "topics": [
-        "数学库函数"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
-    },
-    {
-      "id": "b9822a88-a50a-4bf4-8b80-7384ad2d0773",
-      "type": "tf",
-      "questionIndex": 18,
-      "questionText": "图的邻接表表示适合存储稀疏图。",
-      "options": null,
-      "answer": "对",
-      "explanation": "图的邻接表表示适合存储稀疏图。 这个说法是正确的。",
-      "topics": [
-        "哈希表"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
-    },
-    {
-      "id": "44d78120-1925-4b8c-bebb-05e38d2d6129",
-      "type": "tf",
-      "questionIndex": 19,
-      "questionText": "区间DP的状态转移通常涉及区间端点。",
-      "options": null,
-      "answer": "对",
-      "explanation": "区间DP的状态转移通常涉及区间端点。 这个说法是正确的。",
-      "topics": [
-        "对数函数"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
-    },
-    {
-      "id": "020d5f55-d819-408f-83ce-487858182a6c",
-      "type": "tf",
-      "questionIndex": 20,
-      "questionText": "对数函数 log₂(8) 等于3。",
-      "options": null,
-      "answer": "对",
-      "explanation": "对数函数 log₂(8) 等于3。 这个说法是正确的。",
-      "topics": [
-        "数学库函数"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
-    },
-    {
-      "id": "40846772-63ba-49d9-92e4-ecefcfb8e787",
-      "type": "tf",
-      "questionIndex": 21,
-      "questionText": "滚动数组优化不改变时间复杂度。",
-      "options": null,
-      "answer": "对",
-      "explanation": "滚动数组优化不改变时间复杂度。 这个说法是正确的。",
-      "topics": [
-        "数学库函数"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
-    },
-    {
-      "id": "0cbb86a5-fe65-49b5-9c0b-28770ed358bf",
-      "type": "tf",
-      "questionIndex": 22,
-      "questionText": "Dijkstra算法可以处理负权边。",
-      "options": null,
-      "answer": "错",
-      "explanation": "Dijkstra算法可以处理负权边。 这个说法是错误的。",
-      "topics": [
-        "三角函数"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
-    },
-    {
-      "id": "f3efca66-d203-4b40-be40-31e3b6c30d8c",
-      "type": "tf",
-      "questionIndex": 23,
-      "questionText": "LCS问题中子序列要求连续。",
-      "options": null,
-      "answer": "错",
-      "explanation": "LCS问题中子序列要求连续。 这个说法是错误的。",
-      "topics": [
-        "哈希表"
-      ],
-      "difficulty": "medium",
-      "images": null,
-      "codeBlocks": null,
-      "inputFormat": null,
-      "outputFormat": null,
-      "constraints": null,
-      "sampleInput": null,
-      "sampleOutput": null,
-      "templateCode": null,
-      "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
-    },
-    {
-      "id": "4bd2fdbd-6b6b-43e3-83c8-4b920b615fc0",
-      "type": "tf",
-      "questionIndex": 24,
-      "questionText": "泛洪算法可以用来计算连通分量。",
-      "options": null,
-      "answer": "对",
-      "explanation": "泛洪算法可以用来计算连通分量。 这个说法是正确的。",
-      "topics": [
+        "数学库函数",
         "二维动态规划"
       ],
       "difficulty": "medium",
@@ -816,10 +609,217 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "fae05928-d009-4b2b-9ee8-8dbaa8f12815",
+      "id": "a6943216-17e8-4f02-a6b2-f5c78e30548d",
+      "type": "tf",
+      "questionIndex": 16,
+      "questionText": "LIS问题可以用动态规划求解。",
+      "options": null,
+      "answer": "对",
+      "explanation": "LIS问题可以用动态规划求解。 这个说法是正确的。",
+      "topics": [
+        "图的定义"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T11:27:55.563Z"
+    },
+    {
+      "id": "31585b46-e6ad-4fbe-8026-3a2504031a9e",
+      "type": "tf",
+      "questionIndex": 17,
+      "questionText": "哈希表查找的最坏时间复杂度是O(1)。",
+      "options": null,
+      "answer": "错",
+      "explanation": "哈希表查找的最坏时间复杂度是O(1)。 这个说法是错误的。",
+      "topics": [
+        "哈希表"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T11:27:55.563Z"
+    },
+    {
+      "id": "6bf98e9c-eb6e-4322-bfa6-012312fd8323",
+      "type": "tf",
+      "questionIndex": 18,
+      "questionText": "图的邻接表表示适合存储稀疏图。",
+      "options": null,
+      "answer": "对",
+      "explanation": "图的邻接表表示适合存储稀疏图。 这个说法是正确的。",
+      "topics": [
+        "数学库函数"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T11:27:55.563Z"
+    },
+    {
+      "id": "eae08852-6b1f-46ef-bf11-4a61c2372904",
+      "type": "tf",
+      "questionIndex": 19,
+      "questionText": "区间DP的状态转移通常涉及区间端点。",
+      "options": null,
+      "answer": "对",
+      "explanation": "区间DP的状态转移通常涉及区间端点。 这个说法是正确的。",
+      "topics": [
+        "LCS"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T11:27:55.563Z"
+    },
+    {
+      "id": "6a0a3a6c-87d9-44c6-9312-ca441af0af31",
+      "type": "tf",
+      "questionIndex": 20,
+      "questionText": "对数函数 log₂(8) 等于3。",
+      "options": null,
+      "answer": "对",
+      "explanation": "对数函数 log₂(8) 等于3。 这个说法是正确的。",
+      "topics": [
+        "哈希表"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T11:27:55.563Z"
+    },
+    {
+      "id": "0c99980b-b9af-461b-858e-142e51d0639c",
+      "type": "tf",
+      "questionIndex": 21,
+      "questionText": "滚动数组优化不改变时间复杂度。",
+      "options": null,
+      "answer": "对",
+      "explanation": "滚动数组优化不改变时间复杂度。 这个说法是正确的。",
+      "topics": [
+        "三角函数"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T11:27:55.563Z"
+    },
+    {
+      "id": "3cc53358-c5dc-4a76-b8f5-590c0914e3cd",
+      "type": "tf",
+      "questionIndex": 22,
+      "questionText": "Dijkstra算法可以处理负权边。",
+      "options": null,
+      "answer": "错",
+      "explanation": "Dijkstra算法可以处理负权边。 这个说法是错误的。",
+      "topics": [
+        "区间DP"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T11:27:55.563Z"
+    },
+    {
+      "id": "42c69ab8-9b85-4c4d-b47a-78610479939e",
+      "type": "tf",
+      "questionIndex": 23,
+      "questionText": "LCS问题中子序列要求连续。",
+      "options": null,
+      "answer": "错",
+      "explanation": "LCS问题中子序列要求连续。 这个说法是错误的。",
+      "topics": [
+        "数学库函数"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T11:27:55.563Z"
+    },
+    {
+      "id": "2b172fac-81b8-49ee-8aa4-81f00f4b66be",
+      "type": "tf",
+      "questionIndex": 24,
+      "questionText": "泛洪算法可以用来计算连通分量。",
+      "options": null,
+      "answer": "对",
+      "explanation": "泛洪算法可以用来计算连通分量。 这个说法是正确的。",
+      "topics": [
+        "LCS"
+      ],
+      "difficulty": "medium",
+      "images": null,
+      "codeBlocks": null,
+      "inputFormat": null,
+      "outputFormat": null,
+      "constraints": null,
+      "sampleInput": null,
+      "sampleOutput": null,
+      "templateCode": null,
+      "testCases": null,
+      "createdAt": "2026-05-27T11:27:55.563Z"
+    },
+    {
+      "id": "788f3b1b-f007-4739-b68d-80b08b5f34ba",
       "type": "tf",
       "questionIndex": 25,
       "questionText": "二维DP的状态定义一定比一维DP更优。",
@@ -839,10 +839,10 @@
       "sampleOutput": null,
       "templateCode": null,
       "testCases": null,
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "acebdafa-742e-4ac1-8a8a-4ad9a239f245",
+      "id": "d790ebe5-cc5d-4cae-9bb1-a6384911c264",
       "type": "programming",
       "questionIndex": 26,
       "questionText": "最长递增子序列\n\n给定一个整数序列，求最长严格递增子序列的长度。",
@@ -850,8 +850,8 @@
       "answer": "import bisect\nn = int(input())\nnums = list(map(int, input().split()))\ntails = []\nfor x in nums:\n    pos = bisect.bisect_left(tails, x)\n    if pos == len(tails):\n        tails.append(x)\n    else:\n        tails[pos] = x\nprint(len(tails))",
       "explanation": "解题思路：给定一个整数序列，求最长严格递增子序列的长度。",
       "topics": [
-        "哈希表",
-        "图的定义"
+        "LCS",
+        "二维动态规划"
       ],
       "difficulty": "hard",
       "images": null,
@@ -875,10 +875,10 @@
           "isSample": true
         }
       ],
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     },
     {
-      "id": "acd70c4f-4f86-4d8b-9b5c-ece9f1d25075",
+      "id": "ad2068cd-35be-4274-86f0-c8d746b02d8a",
       "type": "programming",
       "questionIndex": 27,
       "questionText": "图的BFS遍历\n\n给定一个无向图的邻接表表示，从节点1开始BFS遍历，输出遍历顺序。",
@@ -886,8 +886,8 @@
       "answer": "from collections import deque\nn, m = map(int, input().split())\nadj = [[] for _ in range(n + 1)]\nfor _ in range(m):\n    u, v = map(int, input().split())\n    adj[u].append(v)\n    adj[v].append(u)\nfor a in adj:\n    a.sort()\nvisited = [False] * (n + 1)\nq = deque([1])\nvisited[1] = True\nresult = []\nwhile q:\n    u = q.popleft()\n    result.append(u)\n    for v in adj[u]:\n        if not visited[v]:\n            visited[v] = True\n            q.append(v)\nprint(' '.join(map(str, result)))",
       "explanation": "解题思路：给定一个无向图的邻接表表示，从节点1开始BFS遍历，输出遍历顺序。",
       "topics": [
-        "对数函数",
-        "三角函数"
+        "指数函数",
+        "哈希表"
       ],
       "difficulty": "hard",
       "images": null,
@@ -923,8 +923,8 @@
           "isSample": true
         }
       ],
-      "createdAt": "2026-05-27T01:47:31.546Z"
+      "createdAt": "2026-05-27T11:27:55.563Z"
     }
   ],
-  "generatedAt": "2026-05-27T01:47:31.546Z"
+  "generatedAt": "2026-05-27T11:27:55.563Z"
 }

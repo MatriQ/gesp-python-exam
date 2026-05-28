@@ -124,13 +124,49 @@ let client: Anthropic | null = null;
 
 function getClient(): Anthropic {
   if (!client) {
-    const apiKey = process.env['ANTHROPIC_API_KEY'];
+    const apiKey = process.env['ANTHROPIC_API_KEY'] || process.env['CLAUDE_API_KEY'];
     if (!apiKey) {
-      throw new Error('ANTHROPIC_API_KEY environment variable is required');
+      throw new Error('ANTHROPIC_API_KEY or CLAUDE_API_KEY environment variable is required');
     }
     client = new Anthropic({ apiKey });
   }
   return client;
+}
+
+const MAX_RETRIES = 3;
+const BASE_DELAY_MS = 1000;
+
+async function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * Execute a function with exponential backoff retry logic.
+ */
+async function withRetry<T>(fn: () => Promise<T>, label: string): Promise<T> {
+  let lastError: unknown;
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      return await fn();
+    } catch (err: unknown) {
+      lastError = err;
+      const isRetryable =
+        err instanceof Error &&
+        (err.message.includes('rate') ||
+          err.message.includes('429') ||
+          err.message.includes('503') ||
+          err.message.includes('500') ||
+          err.message.includes('timeout') ||
+          err.message.includes('ECONNRESET'));
+      if (!isRetryable || attempt === MAX_RETRIES) {
+        break;
+      }
+      const delay = BASE_DELAY_MS * Math.pow(2, attempt - 1);
+      console.warn(`  Retry ${attempt}/${MAX_RETRIES} for ${label} after ${delay}ms: ${err instanceof Error ? err.message : String(err)}`);
+      await sleep(delay);
+    }
+  }
+  throw lastError;
 }
 
 /**
@@ -165,12 +201,45 @@ export async function extractQuestionsFromText(
     }
   }
 
+  validateQuestions(allQuestions, session, level);
+
   return {
     questions: allQuestions,
     session,
     level,
     parseErrors,
   };
+}
+
+function validateQuestions(questions: ExtractedQuestion[], session: string, level: number): void {
+  const low = questions.filter((q) => q.confidence === 'low');
+  const medium = questions.filter((q) => q.confidence === 'medium');
+  const missing = questions.filter((q) => !q.questionText.trim());
+  const mcNoOptions = questions.filter((q) => q.type === 'mc' && (!q.options || q.options.length < 2));
+  const tfNoAnswer = questions.filter((q) => q.type === 'tf' && !q.answer);
+  const progNoSolution = questions.filter((q) => q.type === 'programming' && !q.referenceSolution);
+
+  if (low.length > 0) {
+    console.warn(`⚠ [${session}/L${level}] ${low.length} questions with LOW confidence (indices: ${low.map((q) => q.questionIndex).join(', ')})`);
+  }
+  if (medium.length > 0) {
+    console.warn(`⚠ [${session}/L${level}] ${medium.length} questions with MEDIUM confidence`);
+  }
+  if (missing.length > 0) {
+    console.warn(`⚠ [${session}/L${level}] ${missing.length} questions with EMPTY text`);
+  }
+  if (mcNoOptions.length > 0) {
+    console.warn(`⚠ [${session}/L${level}] ${mcNoOptions.length} MC questions with insufficient options`);
+  }
+  if (tfNoAnswer.length > 0) {
+    console.warn(`⚠ [${session}/L${level}] ${tfNoAnswer.length} TF questions missing answer`);
+  }
+  if (progNoSolution.length > 0) {
+    console.warn(`⚠ [${session}/L${level}] ${progNoSolution.length} programming questions missing reference solution`);
+  }
+
+  const highCount = questions.length - low.length - medium.length;
+  console.log(`📊 [${session}/L${level}] Quality: ${highCount} high / ${medium.length} medium / ${low.length} low`);
 }
 
 function splitIntoChunks(text: string): string[] {
@@ -181,7 +250,7 @@ function splitIntoChunks(text: string): string[] {
   const MAX_CHUNK_CHARS = 12000;
 
   for (const line of lines) {
-    const isQuestionStart = /^[\s]*(\d{1,2})[\.．、]/.test(line);
+    const isQuestionStart = /^[\s]*(\d{1,2})[.．、]/.test(line);
 
     if (isQuestionStart && charCount > MAX_CHUNK_CHARS * 0.5) {
       if (currentChunk.length > 0) {
@@ -202,9 +271,6 @@ function splitIntoChunks(text: string): string[] {
   return chunks.length === 0 ? [] : chunks;
 }
 
-/**
- * Call Claude API to extract questions from a text chunk.
- */
 async function callClaudeAPI(
   chunk: string,
   session: string,
@@ -226,40 +292,42 @@ ${chunk}
 
 请返回JSON数组。`;
 
-  const response = await anthropic.messages.create({
-    model: MODEL,
-    max_tokens: MAX_TOKENS,
-    system: SYSTEM_PROMPT,
-    messages: [{ role: 'user', content: userPrompt }],
-  });
+  return withRetry(async () => {
+    const response = await anthropic.messages.create({
+      model: MODEL,
+      max_tokens: MAX_TOKENS,
+      system: SYSTEM_PROMPT,
+      messages: [{ role: 'user', content: userPrompt }],
+    });
 
-  const textBlock = response.content.find((block) => block.type === 'text');
-  if (!textBlock || textBlock.type !== 'text') {
-    throw new Error('No text in Claude response');
-  }
-
-  let responseText = textBlock.text.trim();
-
-  if (responseText.startsWith('```')) {
-    responseText = responseText.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
-  }
-
-  try {
-    const parsed = JSON.parse(responseText);
-    if (!Array.isArray(parsed)) {
-      throw new Error('Response is not an array');
+    const textBlock = response.content.find((block) => block.type === 'text');
+    if (!textBlock || textBlock.type !== 'text') {
+      throw new Error('No text in Claude response');
     }
-    return parsed.map(normalizeQuestion);
-  } catch (parseErr) {
-    const jsonMatch = responseText.match(/\[[\s\S]*\]/);
-    if (jsonMatch) {
-      const parsed = JSON.parse(jsonMatch[0]!);
+
+    let responseText = textBlock.text.trim();
+
+    if (responseText.startsWith('```')) {
+      responseText = responseText.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+    }
+
+    try {
+      const parsed = JSON.parse(responseText);
+      if (!Array.isArray(parsed)) {
+        throw new Error('Response is not an array');
+      }
       return parsed.map(normalizeQuestion);
+    } catch (parseErr) {
+      const jsonMatch = responseText.match(/\[[\s\S]*\]/);
+      if (jsonMatch) {
+        const parsed = JSON.parse(jsonMatch[0]!);
+        return parsed.map(normalizeQuestion);
+      }
+      throw new Error(
+        `Failed to parse Claude response as JSON: ${parseErr instanceof Error ? parseErr.message : String(parseErr)}`,
+      );
     }
-    throw new Error(
-      `Failed to parse Claude response as JSON: ${parseErr instanceof Error ? parseErr.message : String(parseErr)}`,
-    );
-  }
+  }, `Claude API (${session}/level-${level})`);
 }
 
 /**

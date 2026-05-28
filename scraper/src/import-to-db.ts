@@ -14,19 +14,22 @@ interface ParsedQuestion {
   type: string;
   questionText: string;
   options?: any;
-  answer?: string;
-  explanation?: string;
+  answer?: string | null;
+  explanation?: string | null;
   topics: string[];
   difficulty?: string;
   images?: any;
   codeBlocks?: any;
-  inputFormat?: string;
-  outputFormat?: string;
-  constraints?: string;
-  sampleInput?: string;
-  sampleOutput?: string;
-  templateCode?: string;
+  inputFormat?: string | null;
+  outputFormat?: string | null;
+  constraints?: string | null;
+  sampleInput?: string | null;
+  sampleOutput?: string | null;
+  sampleInputs?: string[] | null;
+  sampleOutputs?: string[] | null;
+  templateCode?: string | null;
   testCases?: any;
+  referenceSolution?: string | null;
   confidence?: string;
 }
 
@@ -53,6 +56,10 @@ async function importFile(
       continue;
     }
 
+    const sampleInput = q.sampleInput ?? (q.sampleInputs?.[0] ?? undefined);
+    const sampleOutput = q.sampleOutput ?? (q.sampleOutputs?.[0] ?? undefined);
+    const answer = q.referenceSolution ?? q.answer;
+
     try {
       await prisma.question.upsert({
         where: {
@@ -66,7 +73,7 @@ async function importFile(
           type: q.type,
           questionText: q.questionText,
           options: q.options ?? undefined,
-          answer: q.answer ?? undefined,
+          answer: answer ?? undefined,
           explanation: q.explanation ?? undefined,
           topics: q.topics ?? [],
           difficulty: q.difficulty ?? 'medium',
@@ -75,8 +82,8 @@ async function importFile(
           inputFormat: q.inputFormat ?? undefined,
           outputFormat: q.outputFormat ?? undefined,
           constraints: q.constraints ?? undefined,
-          sampleInput: q.sampleInput ?? undefined,
-          sampleOutput: q.sampleOutput ?? undefined,
+          sampleInput: sampleInput,
+          sampleOutput: sampleOutput,
           templateCode: q.templateCode ?? undefined,
           testCases: q.testCases ?? undefined,
         },
@@ -87,7 +94,7 @@ async function importFile(
           type: q.type,
           questionText: q.questionText,
           options: q.options ?? undefined,
-          answer: q.answer ?? undefined,
+          answer: answer ?? undefined,
           explanation: q.explanation ?? undefined,
           topics: q.topics ?? [],
           difficulty: q.difficulty ?? 'medium',
@@ -96,8 +103,8 @@ async function importFile(
           inputFormat: q.inputFormat ?? undefined,
           outputFormat: q.outputFormat ?? undefined,
           constraints: q.constraints ?? undefined,
-          sampleInput: q.sampleInput ?? undefined,
-          sampleOutput: q.sampleOutput ?? undefined,
+          sampleInput: sampleInput,
+          sampleOutput: sampleOutput,
           templateCode: q.templateCode ?? undefined,
           testCases: q.testCases ?? undefined,
         },
