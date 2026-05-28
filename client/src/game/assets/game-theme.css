@@ -1,0 +1,471 @@
+/* GESP Game Theme - Cartoon Cute Style */
+
+:root {
+  --game-primary: #FF6B6B;
+  --game-accent: #4ECDC4;
+  --game-yellow: #FFE66D;
+  --game-green: #95E1D3;
+  --game-pink: #F38181;
+  --game-purple: #AA96DA;
+  --game-blue: #A8D8EA;
+  --game-orange: #FF9A3C;
+  --game-mint: #B8F3FF;
+  --game-bg: #FFF8F0;
+  --game-card: #FFFFFF;
+  --game-text: #2D3436;
+  --game-text-light: #636E72;
+  --game-radius: 16px;
+  --game-radius-sm: 12px;
+  --game-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --game-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Layout */
+.game-layout {
+  min-height: 100vh;
+  background: var(--game-bg);
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--game-text);
+}
+
+.game-top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.game-top-nav .game-logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--game-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.game-top-nav .xp-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  max-width: 200px;
+  margin: 0 16px;
+}
+
+.game-top-nav .xp-bar-container .level-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  background: var(--game-primary);
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.game-top-nav .user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.game-top-nav .user-info .avatar {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.game-top-nav .back-link {
+  font-size: 13px;
+  color: var(--game-text-light);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.game-top-nav .back-link:hover {
+  color: var(--game-primary);
+}
+
+.game-main {
+  flex: 1;
+  padding-top: 56px;
+  padding-bottom: 68px;
+  overflow-y: auto;
+}
+
+.game-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 64px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.06);
+  border-top: 1px solid #f0f0f0;
+}
+
+.game-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+  gap: 2px;
+  font-size: 11px;
+  color: var(--game-text-light);
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+}
+
+.game-tab:hover {
+  color: var(--game-primary);
+  transform: translateY(-1px);
+}
+
+.game-tab.active {
+  color: var(--game-primary);
+  font-weight: 700;
+}
+
+.game-tab .tab-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.game-tab .tab-label {
+  line-height: 1;
+}
+
+/* Cards */
+.game-card {
+  background: var(--game-card);
+  border-radius: var(--game-radius);
+  box-shadow: var(--game-shadow);
+  padding: 16px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.game-card:hover {
+  box-shadow: var(--game-shadow-hover);
+}
+
+/* Buttons */
+.game-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: var(--game-radius-sm);
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  background: var(--game-primary);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.game-btn:hover {
+  transform: scale(1.05);
+  box-shadow: var(--game-shadow-hover);
+}
+
+.game-btn:active {
+  transform: scale(0.98);
+}
+
+.game-btn-accent {
+  background: var(--game-accent);
+}
+
+.game-btn-outline {
+  background: transparent;
+  border: 2px solid var(--game-primary);
+  color: var(--game-primary);
+}
+
+.game-btn-outline:hover {
+  background: var(--game-primary);
+  color: white;
+}
+
+/* Progress Bar */
+.game-progress-bar {
+  height: 12px;
+  border-radius: 999px;
+  background: #e0e0e0;
+  overflow: hidden;
+}
+
+.game-progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--game-primary), var(--game-accent));
+  transition: width 0.3s ease;
+}
+
+.game-progress-bar-sm {
+  height: 6px;
+}
+
+/* Stars */
+.game-stars {
+  font-size: 24px;
+  display: flex;
+  gap: 4px;
+}
+
+/* Badge */
+.game-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--game-yellow);
+  color: var(--game-text);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-8px);
+  }
+  40%, 80% {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.8;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-bounceIn {
+  animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.animate-shake {
+  animation: shake 0.4s ease forwards;
+}
+
+.animate-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .game-top-nav {
+    padding: 0 8px;
+  }
+  .game-top-nav .xp-bar-container {
+    max-width: 120px;
+  }
+}
+
+/* ===== RESPONSIVE OPTIMIZATION ===== */
+
+/* Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .game-layout {
+    min-height: 100vh;
+  }
+
+  .game-top-nav {
+    padding: 8px 12px;
+    gap: 6px;
+  }
+
+  .game-logo {
+    font-size: 14px;
+  }
+
+  .xp-bar-container {
+    display: none !important;
+  }
+
+  .game-bottom-nav {
+    height: 56px;
+  }
+
+  .game-tab {
+    min-width: auto;
+    padding: 6px 4px;
+  }
+
+  .tab-icon {
+    font-size: 20px;
+  }
+
+  .tab-label {
+    font-size: 10px;
+  }
+
+  .game-main {
+    padding: 8px;
+    padding-bottom: 72px;
+    padding-top: 56px;
+  }
+
+  .game-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .game-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+    min-height: 44px;
+  }
+
+  .game-progress-bar {
+    height: 8px;
+  }
+
+  /* Stage nodes minimum touch size */
+  .game-stage-node {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Answer options full width */
+  .answer-option,
+  button[class*="game"] {
+    min-height: 44px;
+  }
+
+  /* Boss timer bigger text */
+  .boss-timer {
+    font-size: 32px !important;
+  }
+
+  /* Leaderboard cards instead of table */
+  .game-table {
+    display: block;
+  }
+
+  .game-table thead {
+    display: none;
+  }
+
+  .game-table tr {
+    display: block;
+    margin-bottom: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  .game-table td {
+    display: block;
+    text-align: left;
+    padding: 2px 0;
+  }
+}
+
+/* Tablet (481px - 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .game-main {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .game-bottom-nav {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .game-btn {
+    min-height: 44px;
+  }
+}
+
+/* Desktop (1025px+) */
+@media (min-width: 1025px) {
+  .game-layout {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .game-main {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Touch-friendly adjustments */
+@media (hover: none) and (pointer: coarse) {
+  .game-tab {
+    min-height: 56px;
+  }
+
+  button {
+    min-height: 44px;
+  }
+}
