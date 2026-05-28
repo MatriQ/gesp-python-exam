@@ -24,8 +24,12 @@ RUN cd shared && pnpm build
 # Build server
 RUN cd server && pnpm build
 
+# Copy and setup entrypoint
+COPY server/docker-entrypoint.sh /app/docker-entrypoint.sh
+RUN chmod +x /app/docker-entrypoint.sh
+
 # Expose port
 EXPOSE 3000
 
-# Start
-CMD ["sh", "-c", "cd server && npx prisma migrate deploy && node dist/index.js"]
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
+CMD ["node", "server/dist/index.js"]

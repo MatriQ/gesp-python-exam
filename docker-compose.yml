@@ -31,13 +31,11 @@ services:
       dockerfile: server/Dockerfile
     ports:
       - '3000:3000'
+    env_file: .env
     environment:
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432/gesp_exam
       REDIS_HOST: redis
       REDIS_PORT: 6379
-      JWT_SECRET: gesp-exam-secret-change-in-production
-      ADMIN_API_KEY: gesp-admin-key-change-in-production
-      AUTH_RATE_LIMIT_MAX: 100
       JUDGE_HEALTH_URL: http://judge:3001/judge/health
       PORT: 3000
     depends_on:
