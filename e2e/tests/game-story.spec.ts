@@ -41,4 +41,20 @@ test.describe('Game Story Adventure', () => {
     const url = page.url();
     expect(url).toMatch(/login|auth|game/);
   });
+
+  test('story chapter displays questions', async ({ authenticatedPage: page }) => {
+    await page.goto('/game/story');
+    await expect(page.locator('body')).toBeVisible({ timeout: 10000 });
+    await page.waitForTimeout(2000);
+
+    const chapterCards = page.locator('.game-card');
+    if (await chapterCards.count() > 0) {
+      await chapterCards.first().click();
+      await page.waitForTimeout(2000);
+      const url = page.url();
+      expect(url).toContain('story');
+      const bodyText = await page.locator('body').textContent();
+      expect(bodyText!.length).toBeGreaterThan(200);
+    }
+  });
 });

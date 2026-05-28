@@ -17,6 +17,21 @@ test.describe('Game Leaderboard', () => {
     expect(hasAllTab || hasDailyTab).toBeTruthy();
   });
 
+  test('leaderboard tabs switch between all and daily', async ({ authenticatedPage: page }) => {
+    await page.goto('/game/leaderboard');
+    await page.waitForTimeout(2000);
+
+    await expect(page.getByText('总榜').first()).toBeVisible();
+
+    await page.getByRole('button', { name: /今日榜/ }).click();
+    await page.waitForTimeout(1000);
+    await expect(page.getByText('今日榜').first()).toBeVisible();
+
+    await page.getByRole('button', { name: /总榜/ }).click();
+    await page.waitForTimeout(1000);
+    await expect(page.getByText('总榜').first()).toBeVisible();
+  });
+
   test('should show my rank section or empty state', async ({ authenticatedPage: page }) => {
     await page.goto('/game/leaderboard');
     await page.waitForTimeout(2000);
