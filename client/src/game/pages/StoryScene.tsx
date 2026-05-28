@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useGameStoryStore } from '../stores/gameStoryStore';
-import { saveStoryProgress, completeStoryChapter } from '../api/gameApi';
+import * as gameApi from '../api/gameApi';
 
 const SCENE_NARRATIVES = [
   '🤖 小机器人来到了一片神秘的代码森林，前方有一扇密码门...',
@@ -45,16 +45,26 @@ export function StoryScene() {
   const [showFeedback, setShowFeedback] = useState(false);
   const [chapterComplete, setChapterComplete] = useState(false);
 
-  // Mock question for each scene (in real app, fetched from API)
-  const [questions] = useState<Question[]>(() =>
-    Array.from({ length: 5 }, (_, i) => ({
-      id: `q-story-${i}`,
-      content: `第 ${i + 1} 个编程挑战：Python 中 print() 函数的作用是什么？`,
-      options: ['输入数据', '输出数据到控制台', '定义变量', '创建函数'],
-      correctAnswer: '输出数据到控制台',
-      type: 'mc',
-    }))
-  );
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!chapterId) return;
+    setLoading(true);
+    gameApi.getStoryQuestions(chapterId)
+      .then((res) => {
+        const mapped = (res.data.questions || []).map((q: any) => ({
+          id: q.id,
+          content: q.questionText,
+          options: q.options,
+          correctAnswer: q.correctAnswer,
+          type: q.type,
+        }));
+        setQuestions(mapped);
+      })
+      .catch(() => setQuestions([]))
+      .finally(() => setLoading(false));
+  }, [chapterId]);
 
   useEffect(() => {
     if (chapterId) {
@@ -74,14 +84,14 @@ export function StoryScene() {
 
     // Save progress
     if (chapterId) {
-      saveStoryProgress(chapterId, { currentScene: currentScene + 1 }).catch(() => {});
+      gameApi.saveStoryProgress(chapterId, { currentScene: currentScene + 1 }).catch(() => {});
     }
 
     setTimeout(() => {
       if (currentScene + 1 >= totalScenes) {
         // Chapter complete
         if (chapterId) {
-          completeStoryChapter(chapterId, {
+          gameApi.completeStoryChapter(chapterId, {
             correctCount: correct ? correctCount + 1 : correctCount,
             totalCount: totalCount + 1,
           }).catch(() => {});
@@ -105,6 +115,16 @@ export function StoryScene() {
     setIsCorrect(null);
     setShowFeedback(false);
   }, []);
+
+  if (loading) {
+    return (
+      <div style={{ padding: 16, maxWidth: 400, margin: '0 auto', textAlign: 'center' }}>
+        <div className="game-card" style={{ padding: 24 }}>
+          <p style={{ fontSize: 16 }}>加载中...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (chapterComplete) {
     const accuracy = totalCount > 0 ? correctCount / totalCount : 0;

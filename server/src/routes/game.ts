@@ -1,5 +1,6 @@
 import { Router, type Router as RouterType } from 'express';
 import { authMiddleware } from '../middleware/auth.js';
+import { prisma } from '../lib/prisma.js';
 import * as gs from '../services/gameService.js';
 
 const router: RouterType = Router();
@@ -221,6 +222,34 @@ router.get('/achievements', async (req, res) => {
 });
 
 // ── Story ────────────────────────────────────────────────────────────
+
+router.get('/story/chapters/:chapterId/questions', async (req, res) => {
+  try {
+    const { chapterId } = req.params;
+    const chapter = await prisma.storyChapter.findUnique({
+      where: { id: chapterId },
+    });
+    if (!chapter) {
+      res.status(404).json({ error: 'Chapter not found' });
+      return;
+    }
+    const questions = await gs.getRandomQuestions(chapter.level, 'mc', 5);
+    const questionIds = questions.map((q) => q.id);
+    const withAnswers = await prisma.question.findMany({
+      where: { id: { in: questionIds } },
+      select: { id: true, answer: true },
+    });
+    const answerMap = new Map(withAnswers.map((q) => [q.id, q.answer]));
+    const enriched = questions.map((q) => ({
+      ...q,
+      correctAnswer: answerMap.get(q.id) ?? '',
+    }));
+    res.json({ questions: enriched });
+  } catch (error) {
+    console.error('Story chapter questions error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 router.get('/story/chapters', async (req, res) => {
   try {

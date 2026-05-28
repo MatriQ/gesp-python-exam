@@ -47,5 +47,8 @@ export const getStoryProgress = () =>
 export const saveStoryProgress = (chapterId: string, data: { currentScene: number; completed?: boolean }) =>
   client.post(`/game/story/chapters/${chapterId}/progress`, data);
 
+export const getStoryQuestions = (chapterId: string) =>
+  client.get(`/game/story/chapters/${chapterId}/questions`);
+
 export const completeStoryChapter = (chapterId: string, data: { correctCount: number; totalCount: number }) =>
   client.post(`/game/story/chapters/${chapterId}/complete`, data);
