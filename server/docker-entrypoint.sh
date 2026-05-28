@@ -5,4 +5,4 @@ echo "Running database migrations..."
 cd /app/server && npx prisma migrate deploy
 
 echo "Starting server..."
-exec "$@"
+cd /app && exec "$@"
