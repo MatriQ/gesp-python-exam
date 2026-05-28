@@ -13,6 +13,17 @@ import { ExamEntry } from './pages/ExamEntry';
 import { ExamActive } from './pages/ExamActive';
 import { CodeEditor } from './pages/CodeEditor';
 import { ExamResult } from './pages/ExamResult';
+import { AdminDashboard } from './pages/AdminDashboard';
+import { GameLayout } from './game/components/GameLayout';
+import { GameHome } from './game/pages/GameHome';
+import { MapExploration } from './game/pages/MapExploration';
+import { StagePlay } from './game/pages/StagePlay';
+import { BossStage } from './game/pages/BossStage';
+import { Leaderboard } from './game/pages/Leaderboard';
+import { RpgProfile } from './game/pages/RpgProfile';
+import { StoryChapters } from './game/pages/StoryChapters';
+import { StoryScene } from './game/pages/StoryScene';
+import { GameOnboarding } from './game/pages/GameOnboarding';
 import { useAuthStore } from './stores/authStore';
 
 function App() {
@@ -34,6 +45,18 @@ function App() {
           <Route path="/progress" element={<Dashboard />} />
           <Route path="/errors" element={<ErrorBook />} />
           <Route path="/code/:id" element={<CodeEditor />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+        </Route>
+        <Route path="/game" element={<GameLayout />}>
+          <Route index element={<GameHome />} />
+          <Route path="onboarding" element={<GameOnboarding />} />
+          <Route path="map" element={<MapExploration />} />
+          <Route path="map/stage/:stageId" element={<StagePlay />} />
+          <Route path="map/boss/:stageId" element={<BossStage />} />
+          <Route path="leaderboard" element={<Leaderboard />} />
+          <Route path="rpg" element={<RpgProfile />} />
+          <Route path="story" element={<StoryChapters />} />
+          <Route path="story/chapter/:chapterId" element={<StoryScene />} />
         </Route>
         <Route path="/exam/:id/result" element={<ExamResult />} />
         <Route path="/login" element={<Login />} />
