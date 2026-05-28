@@ -231,7 +231,15 @@ export async function submitAnswer(
 // ── Leaderboard ──────────────────────────────────────────────────────
 
 export async function getLeaderboard(type: string) {
+  const where: Record<string, unknown> = {};
+  if (type === 'daily') {
+    const startOfDay = new Date();
+    startOfDay.setUTCHours(0, 0, 0, 0);
+    where.updatedAt = { gte: startOfDay };
+  }
+
   const entries = await prisma.leaderboardEntry.findMany({
+    where,
     orderBy: { totalScore: 'desc' },
     take: 50,
   });
