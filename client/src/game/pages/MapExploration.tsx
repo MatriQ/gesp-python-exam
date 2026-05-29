@@ -99,10 +99,11 @@ export function MapExploration() {
         <div style={{ position: 'relative', minHeight: 400 }}>
           {stages.map((stage, idx) => {
             const p = getProgress(stage.id);
+            const prevCompleted = idx === 0 || getProgress(stages[idx - 1]?.id)?.status === 'completed';
             const status: 'locked' | 'available' | 'completed' =
               p?.status === 'completed' ? 'completed' :
               p?.status === 'available' ? 'available' :
-              'available';
+              prevCompleted ? 'available' : 'locked';
 
             // Winding path layout: alternate left-right
             const isLeft = idx % 2 === 0;
