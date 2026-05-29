@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { io, Socket } from 'socket.io-client';
 import { useAdminStore } from '../stores/adminStore';
-import { adminApi, type SubmissionsResponse } from '../api/admin';
+import { adminApi, type SubmissionsResponse, adminUsersApi, type AdminUsersResponse, adminQuestionsApi, type AdminQuestionsResponse, type QuestionDistribution } from '../api/admin';
 import { FEEDBACK_STATUSES } from '../../../shared/src/constants';
 import type { QuestionFeedback } from '../../../shared/src/types';
 
@@ -627,11 +627,337 @@ function FeedbackSection() {
   );
 }
 
+const TYPE_LABELS: Record<string, string> = { mc: '选择题', tf: '判断题', programming: '编程题' };
+
+function UsersSection() {
+  const [data, setData] = useState<AdminUsersResponse | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [search, setSearch] = useState('');
+  const [searchInput, setSearchInput] = useState('');
+
+  useEffect(() => {
+    setLoading(true);
+    adminUsersApi.getUsers({ page, limit: 15, search: search || undefined })
+      .then((res) => setData(res.data))
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, [page, search]);
+
+  const handleSearch = () => {
+    setSearch(searchInput);
+    setPage(1);
+  };
+
+  if (loading && !data) return <div className="text-center text-gray-400 py-10">Loading...</div>;
+
+  return (
+    <div className="space-y-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="bg-white rounded-xl border border-gray-200 p-5">
+          <p className="text-xs text-gray-500">总用户数</p>
+          <p className="text-xl font-bold text-gray-800">{data?.total ?? '-'}</p>
+        </div>
+        <div className="bg-white rounded-xl border border-gray-200 p-5">
+          <p className="text-xs text-gray-500">有游戏角色</p>
+          <p className="text-xl font-bold text-green-600">{data?.users.filter(u => u.gameProfile).length ?? '-'}</p>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+        <div className="px-5 py-4 border-b border-gray-100 flex flex-wrap items-center gap-3">
+          <h2 className="text-sm font-semibold text-gray-700">用户列表</h2>
+          <div className="flex gap-2">
+            <input
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+              placeholder="搜索用户名/邮箱"
+              className="text-xs border border-gray-200 rounded px-2 py-1 text-gray-600 w-40"
+            />
+            <button onClick={handleSearch} className="text-xs bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">搜索</button>
+          </div>
+          {data && <span className="text-xs text-gray-400 ml-auto">{data.total} total</span>}
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="text-xs text-gray-400 border-b border-gray-100">
+                <th className="text-left px-4 py-2 font-medium">用户名</th>
+                <th className="text-left px-4 py-2 font-medium">邮箱</th>
+                <th className="text-left px-4 py-2 font-medium">游戏角色</th>
+                <th className="text-left px-4 py-2 font-medium">答题数</th>
+                <th className="text-left px-4 py-2 font-medium">正确率</th>
+                <th className="text-left px-4 py-2 font-medium">提交数</th>
+                <th className="text-left px-4 py-2 font-medium">考试数</th>
+                <th className="text-left px-4 py-2 font-medium">注册时间</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data?.users.map((u) => (
+                <tr key={u.id} className="border-b border-gray-50 hover:bg-gray-50">
+                  <td className="px-4 py-2.5 text-gray-700 font-medium">
+                    <div className="flex items-center gap-2">
+                      <span>{u.name}</span>
+                      {u.gameProfile && <span className="text-base">{u.gameProfile.avatar}</span>}
+                    </div>
+                  </td>
+                  <td className="px-4 py-2.5 text-gray-500 text-xs">{u.email}</td>
+                  <td className="px-4 py-2.5 text-gray-600">
+                    {u.gameProfile ? (
+                      <div className="text-xs">
+                        <span className="font-medium">{u.gameProfile.nickname}</span>
+                        <span className="text-gray-400 ml-1">Lv.{u.gameProfile.level} · {u.gameProfile.totalXP}XP</span>
+                      </div>
+                    ) : (
+                      <span className="text-gray-300 text-xs">-</span>
+                    )}
+                  </td>
+                  <td className="px-4 py-2.5 text-gray-600 text-xs">{u.answerStats.total}</td>
+                  <td className="px-4 py-2.5">
+                    {u.answerStats.total > 0 ? (
+                      <span className={`text-xs font-medium ${u.answerStats.correct / u.answerStats.total >= 0.7 ? 'text-green-600' : u.answerStats.correct / u.answerStats.total >= 0.4 ? 'text-yellow-600' : 'text-red-600'}`}>
+                        {Math.round((u.answerStats.correct / u.answerStats.total) * 100)}%
+                      </span>
+                    ) : (
+                      <span className="text-gray-300 text-xs">-</span>
+                    )}
+                  </td>
+                  <td className="px-4 py-2.5 text-gray-600 text-xs">{u._count.codeSubmissions}</td>
+                  <td className="px-4 py-2.5 text-gray-600 text-xs">{u._count.mockExams}</td>
+                  <td className="px-4 py-2.5 text-gray-400 text-xs">{new Date(u.createdAt).toLocaleDateString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {data && data.totalPages > 1 && (
+          <div className="px-5 py-3 border-t border-gray-100 flex items-center justify-center gap-2">
+            <button onClick={() => setPage(Math.max(1, page - 1))} disabled={page === 1} className="text-xs text-blue-600 disabled:text-gray-300">Prev</button>
+            <span className="text-xs text-gray-400">{page} / {data.totalPages}</span>
+            <button onClick={() => setPage(Math.min(data.totalPages, page + 1))} disabled={page === data.totalPages} className="text-xs text-blue-600 disabled:text-gray-300">Next</button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function QuestionsSection() {
+  const [data, setData] = useState<AdminQuestionsResponse | null>(null);
+  const [stats, setStats] = useState<QuestionDistribution | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [levelFilter, setLevelFilter] = useState('');
+  const [typeFilter, setTypeFilter] = useState('');
+  const [search, setSearch] = useState('');
+  const [searchInput, setSearchInput] = useState('');
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+
+  useEffect(() => {
+    adminQuestionsApi.getQuestionStats().then((res) => setStats(res.data)).catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    setLoading(true);
+    adminQuestionsApi.getQuestions({
+      page,
+      limit: 15,
+      level: levelFilter ? Number(levelFilter) : undefined,
+      type: typeFilter || undefined,
+      search: search || undefined,
+    })
+      .then((res) => setData(res.data))
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, [page, levelFilter, typeFilter, search]);
+
+  const handleSearch = () => { setSearch(searchInput); setPage(1); };
+
+  if (loading && !data) return <div className="text-center text-gray-400 py-10">Loading...</div>;
+
+  const levelStats: Record<number, Record<string, number>> = {};
+  for (const d of stats?.distribution ?? []) {
+    if (!levelStats[d.level]) levelStats[d.level] = {};
+    levelStats[d.level][d.type] = d.count;
+  }
+
+  return (
+    <div className="space-y-4">
+      {stats && (
+        <div className="bg-white rounded-xl border border-gray-200 p-5">
+          <h2 className="text-sm font-semibold text-gray-700 mb-3">题库分布</h2>
+          <div className="grid grid-cols-4 md:grid-cols-8 gap-2">
+            {Array.from({ length: 8 }, (_, i) => i + 1).map((lv) => {
+              const ls = levelStats[lv] ?? {};
+              const total = Object.values(ls).reduce((a, b) => a + b, 0);
+              return (
+                <div key={lv} className="text-center p-2 bg-gray-50 rounded-lg">
+                  <p className="text-xs text-gray-500">Level {lv}</p>
+                  <p className="text-lg font-bold text-gray-800">{total}</p>
+                  <div className="flex justify-center gap-1 mt-1">
+                    <span className="text-[10px] text-blue-500">{ls.mc ?? 0}选</span>
+                    <span className="text-[10px] text-green-500">{ls.tf ?? 0}判</span>
+                    <span className="text-[10px] text-purple-500">{ls.programming ?? 0}编</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-3 flex items-center gap-4 text-xs text-gray-500">
+            <span>总计: <strong className="text-gray-800">{stats.distribution.reduce((a, d) => a + d.count, 0)}</strong> 题</span>
+            <span>待处理反馈: <strong className="text-yellow-600">{stats.pendingFeedback}</strong></span>
+          </div>
+        </div>
+      )}
+
+      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+        <div className="px-5 py-4 border-b border-gray-100 flex flex-wrap items-center gap-3">
+          <h2 className="text-sm font-semibold text-gray-700">题目列表</h2>
+          <select
+            value={levelFilter}
+            onChange={(e) => { setLevelFilter(e.target.value); setPage(1); }}
+            className="text-xs border border-gray-200 rounded px-2 py-1 text-gray-600"
+          >
+            <option value="">所有等级</option>
+            {Array.from({ length: 8 }, (_, i) => i + 1).map((lv) => (
+              <option key={lv} value={lv}>Level {lv}</option>
+            ))}
+          </select>
+          <select
+            value={typeFilter}
+            onChange={(e) => { setTypeFilter(e.target.value); setPage(1); }}
+            className="text-xs border border-gray-200 rounded px-2 py-1 text-gray-600"
+          >
+            <option value="">所有类型</option>
+            <option value="mc">选择题</option>
+            <option value="tf">判断题</option>
+            <option value="programming">编程题</option>
+          </select>
+          <div className="flex gap-1">
+            <input
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+              placeholder="搜索题目内容"
+              className="text-xs border border-gray-200 rounded px-2 py-1 text-gray-600 w-36"
+            />
+            <button onClick={handleSearch} className="text-xs bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">搜索</button>
+          </div>
+          {data && <span className="text-xs text-gray-400 ml-auto">{data.total} 题</span>}
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="text-xs text-gray-400 border-b border-gray-100">
+                <th className="text-left px-4 py-2 font-medium">等级</th>
+                <th className="text-left px-4 py-2 font-medium">类型</th>
+                <th className="text-left px-4 py-2 font-medium">序号</th>
+                <th className="text-left px-4 py-2 font-medium">题目内容</th>
+                <th className="text-left px-4 py-2 font-medium">答案</th>
+                <th className="text-left px-4 py-2 font-medium">知识点</th>
+                <th className="text-left px-4 py-2 font-medium">答题次数</th>
+                <th className="text-left px-4 py-2 font-medium">反馈</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data?.questions.map((q) => (
+                <>
+                  <tr
+                    key={q.id}
+                    className="border-b border-gray-50 hover:bg-gray-50 cursor-pointer"
+                    onClick={() => setExpandedId(expandedId === q.id ? null : q.id)}
+                  >
+                    <td className="px-4 py-2.5">
+                      <span className="inline-block text-xs font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-700">L{q.level}</span>
+                    </td>
+                    <td className="px-4 py-2.5">
+                      <span className={`inline-block text-xs px-2 py-0.5 rounded ${q.type === 'mc' ? 'bg-blue-50 text-blue-600' : q.type === 'tf' ? 'bg-green-50 text-green-600' : 'bg-purple-50 text-purple-600'}`}>
+                        {TYPE_LABELS[q.type] || q.type}
+                      </span>
+                    </td>
+                    <td className="px-4 py-2.5 text-gray-500 text-xs">#{q.questionIndex}</td>
+                    <td className="px-4 py-2.5 text-gray-700 max-w-[300px] truncate text-xs">{q.questionText.split('\n')[0]}</td>
+                    <td className="px-4 py-2.5 text-gray-600 text-xs font-mono">{q.answer ?? '-'}</td>
+                    <td className="px-4 py-2.5">
+                      <div className="flex flex-wrap gap-1">
+                        {q.topics.slice(0, 2).map((t) => (
+                          <span key={t} className="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded">{t}</span>
+                        ))}
+                        {q.topics.length > 2 && <span className="text-[10px] text-gray-400">+{q.topics.length - 2}</span>}
+                      </div>
+                    </td>
+                    <td className="px-4 py-2.5 text-gray-500 text-xs">{q._count.userAnswers}</td>
+                    <td className="px-4 py-2.5">
+                      {q._count.feedbacks > 0 && (
+                        <span className="text-xs bg-yellow-100 text-yellow-700 px-1.5 py-0.5 rounded">{q._count.feedbacks}</span>
+                      )}
+                    </td>
+                  </tr>
+                  {expandedId === q.id && (
+                    <tr key={`${q.id}-detail`} className="bg-gray-50">
+                      <td colSpan={8} className="px-5 py-4">
+                        <div className="space-y-3">
+                          <div>
+                            <p className="text-xs font-medium text-gray-500 mb-1">完整题目</p>
+                            <p className="text-sm text-gray-700 whitespace-pre-wrap">{q.questionText}</p>
+                          </div>
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <div>
+                              <p className="text-xs font-medium text-gray-500 mb-1">答案</p>
+                              <p className="text-sm text-gray-700 font-mono">{q.answer ?? '-'}</p>
+                            </div>
+                            <div>
+                              <p className="text-xs font-medium text-gray-500 mb-1">难度</p>
+                              <p className="text-sm text-gray-700">{q.difficulty ?? '-'}</p>
+                            </div>
+                            <div>
+                              <p className="text-xs font-medium text-gray-500 mb-1">答题次数</p>
+                              <p className="text-sm text-gray-700">{q._count.userAnswers}</p>
+                            </div>
+                            <div>
+                              <p className="text-xs font-medium text-gray-500 mb-1">代码提交</p>
+                              <p className="text-sm text-gray-700">{q._count.codeSubmissions}</p>
+                            </div>
+                          </div>
+                          <div>
+                            <p className="text-xs font-medium text-gray-500 mb-1">知识点</p>
+                            <div className="flex flex-wrap gap-1">
+                              {q.topics.map((t) => (
+                                <span key={t} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded">{t}</span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  )}
+                </>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {data && data.totalPages > 1 && (
+          <div className="px-5 py-3 border-t border-gray-100 flex items-center justify-center gap-2">
+            <button onClick={() => setPage(Math.max(1, page - 1))} disabled={page === 1} className="text-xs text-blue-600 disabled:text-gray-300">Prev</button>
+            <span className="text-xs text-gray-400">{page} / {data.totalPages}</span>
+            <button onClick={() => setPage(Math.min(data.totalPages, page + 1))} disabled={page === data.totalPages} className="text-xs text-blue-600 disabled:text-gray-300">Next</button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function AdminDashboard() {
   const { adminKey, setAdminKey, clearAdminKey, fetchQueueStats, fetchHealth, fetchStats } =
     useAdminStore();
   const [keyInput, setKeyInput] = useState('');
-  const [activeTab, setActiveTab] = useState<'overview' | 'feedback'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'feedback' | 'users' | 'questions'>('overview');
   const socketRef = useRef<Socket | null>(null);
 
   useEffect(() => {
@@ -705,16 +1031,28 @@ export function AdminDashboard() {
         </button>
       </div>
 
-      <div className="flex gap-1 border-b border-gray-200">
+      <div className="flex gap-1 border-b border-gray-200 overflow-x-auto">
         <button
           onClick={() => setActiveTab('overview')}
-          className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${activeTab === 'overview' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'}`}
+          className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${activeTab === 'overview' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'}`}
         >
           📊 Overview
         </button>
         <button
+          onClick={() => setActiveTab('users')}
+          className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${activeTab === 'users' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'}`}
+        >
+          👥 用户管理
+        </button>
+        <button
+          onClick={() => setActiveTab('questions')}
+          className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${activeTab === 'questions' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'}`}
+        >
+          📚 题库管理
+        </button>
+        <button
           onClick={() => setActiveTab('feedback')}
-          className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${activeTab === 'feedback' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'}`}
+          className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${activeTab === 'feedback' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'}`}
         >
           📝 题目反馈
         </button>
@@ -733,6 +1071,8 @@ export function AdminDashboard() {
         </>
       )}
 
+      {activeTab === 'users' && <UsersSection />}
+      {activeTab === 'questions' && <QuestionsSection />}
       {activeTab === 'feedback' && <FeedbackSection />}
     </div>
   );

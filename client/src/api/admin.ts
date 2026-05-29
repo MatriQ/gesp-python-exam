@@ -109,3 +109,62 @@ export const feedbackAdminApi = {
   getFeedbackStats: () =>
     feedbackAdminClient.get<import('../../../shared/src/types').FeedbackStats>('/stats'),
 };
+
+export interface AdminUser {
+  id: string;
+  email: string;
+  name: string;
+  createdAt: string;
+  _count: { userAnswers: number; codeSubmissions: number; mockExams: number };
+  gameProfile: { nickname: string; avatar: string; totalXP: number; level: number } | null;
+  answerStats: { total: number; correct: number };
+}
+
+export interface AdminUsersResponse {
+  users: AdminUser[];
+  total: number;
+  page: number;
+  totalPages: number;
+}
+
+export interface AdminQuestion {
+  id: string;
+  session: string;
+  level: number;
+  type: string;
+  questionIndex: number;
+  questionText: string;
+  answer: string | null;
+  topics: string[];
+  difficulty: string | null;
+  createdAt: string;
+  _count: { userAnswers: number; codeSubmissions: number; feedbacks: number };
+}
+
+export interface AdminQuestionsResponse {
+  questions: AdminQuestion[];
+  total: number;
+  page: number;
+  totalPages: number;
+}
+
+export interface QuestionDistribution {
+  distribution: Array<{ level: number; type: string; count: number }>;
+  pendingFeedback: number;
+}
+
+export const adminUsersApi = {
+  getUsers: (params?: { page?: number; limit?: number; search?: string }) =>
+    adminClient.get<AdminUsersResponse>('/users', { params }),
+  getUser: (id: string) =>
+    adminClient.get('/users/' + id),
+};
+
+export const adminQuestionsApi = {
+  getQuestions: (params?: { page?: number; limit?: number; level?: number; type?: string; search?: string }) =>
+    adminClient.get<AdminQuestionsResponse>('/questions', { params }),
+  getQuestionStats: () =>
+    adminClient.get<QuestionDistribution>('/questions/stats'),
+  getQuestion: (id: string) =>
+    adminClient.get('/questions/' + id),
+};
