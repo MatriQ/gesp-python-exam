@@ -102,7 +102,7 @@ export function MapExploration() {
             const status: 'locked' | 'available' | 'completed' =
               p?.status === 'completed' ? 'completed' :
               p?.status === 'available' ? 'available' :
-              idx === 0 ? 'available' : 'locked';
+              'available';
 
             // Winding path layout: alternate left-right
             const isLeft = idx % 2 === 0;
